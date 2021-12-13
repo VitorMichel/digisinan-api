@@ -8,7 +8,7 @@ const getConnection = () =>
         port: 3306,
         user: 'admin',
         password: 'swordfish',
-        database: 'dbadoptus',
+        database: 'db-digisinan',
         connectTimeout: 10000,
         charset: 'utf8mb4'
     });
