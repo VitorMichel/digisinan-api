@@ -17,6 +17,7 @@ function createSamplePdf() {
     pdf.end()
 
     console.log("PDF created successfuly");
+    console.log("New Branch");
 
     return;
 }
