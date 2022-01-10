@@ -8,7 +8,7 @@ function createSamplePdf() {
 
     pdf.image('./template/pagina1.jpg', 1, 1, { width: 610 , height: 800 });
 
-    pdf.text('Porto Alegre', 175, 150);
+    pdf.text('Santa Cruz do Sul - Rio Grande do Sul', 175, 150);
 
     pdf.addPage();
 
