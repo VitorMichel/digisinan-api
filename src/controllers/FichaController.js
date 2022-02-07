@@ -179,7 +179,7 @@ module.exports = {
             .map(palavra => palavra[0])
             .join('');
         
-          return primeiraLetra;
+          return primeiraLetra.toUpperCase();
         }
 
         var today = new Date();
@@ -213,11 +213,8 @@ module.exports = {
         let siglaHospital = pegarPrimeiraLetra(dados.generalData.healthUnit.name);
         let siglaNome = pegarPrimeiraLetra(removerNomes(dados.patientData.patientName, nomesParaRemover))
 
-        let assuntoEmail = 'Novo Registro SRAG: ' + siglaHospital + '-' + siglaNome;
+        let assuntoEmail = 'Ficha SRAG: ' + siglaHospital + '-' + siglaNome;
         let nomeArquivo = 'SRAG ' + siglaHospital + ' ' + dataHoje + ' ' + siglaNome + '.pdf';
-      
-        // const {patientSignsAndSymptoms, patientRiskFactorsAndComorbiditie} = dados.clinicalAndEpidemiologicalData;
-        // const {patientHasBeenPositiveForOtherVirusTypes, patientHasBeenPositiveForOtherVirusTypesRTPCR} = dados.laboratoryData;
       
         if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456')
             caminhoAssinatura = './template/assinatura1.jpg';
