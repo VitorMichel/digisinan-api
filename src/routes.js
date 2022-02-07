@@ -3,7 +3,7 @@ const { Router } = require('express');
 const FichaController = require('./controllers/FichaController.js');
 const LocalizationtionController = require('./controllers/LocalizationController.js');
 const OtherController = require('./controllers/OtherController.js');
-const CreatePdf = require('./createPdf');
+const CreatePdf = require('./testePdf.js');
 
 const routes = Router();
 
@@ -15,6 +15,25 @@ routes.get('/paises', LocalizationtionController.getPais);
 routes.get('/ocupacao', OtherController.getOcupacao);
 routes.get('/laboratorio', OtherController.getLaboratorio);
 
-routes.get('/create', CreatePdf.createSamplePdf);
+// routes.post('/invoice', (request, response, next) => {
+//     const stream = response.writeHead(200, {
+//         'Content-Type': 'application/pdf',
+//         'Content-Disposition': 'attachment;filename=invoice.pdf',
+//     });
+
+//     CreatePdf.testePDF(
+//         '',
+//         (chunk) => stream.write(chunk),
+//         () => stream.end()
+//     );
+// });
+
+// routes.post('/testeBase64', (req, res) => {
+//     CreatePdf.testeBase64(res);
+// });
+
+routes.post('/inicio', (req, res) => {
+    CreatePdf.createSamplePdf();
+});
 
 module.exports = routes;
