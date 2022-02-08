@@ -32,8 +32,8 @@ routes.get('/laboratorio', OtherController.getLaboratorio);
 //     CreatePdf.testeBase64(res);
 // });
 
-routes.post('/inicio', (req, res) => {
-    CreatePdf.createSamplePdf();
-});
+// routes.post('/inicio', (req, res) => {
+//     CreatePdf.createSamplePdf();
+// });
 
 module.exports = routes;
