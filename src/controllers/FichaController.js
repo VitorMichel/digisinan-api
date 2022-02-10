@@ -27,8 +27,6 @@ module.exports = {
         const {laboratoryData} = request.body;
         // const {finalData} = request.body;
 
-        //TESTE COMMIT
-
         const {patientSignsAndSymptoms, patientRiskFactorsAndComorbiditie} = clinicalAndEpidemiologicalData;
         const {patientHasBeenPositiveForOtherVirusTypes, patientHasBeenPositiveForOtherVirusTypesRTPCR} = laboratoryData;
 
