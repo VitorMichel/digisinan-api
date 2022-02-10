@@ -25,7 +25,7 @@ module.exports = {
         const {clinicalAndEpidemiologicalData} = request.body;
         // const {serviceData} = request.body;
         const {laboratoryData} = request.body;
-        // const {finalData} = request.body;
+        // const {finalData} = request.body
 
         const {patientSignsAndSymptoms, patientRiskFactorsAndComorbiditie} = clinicalAndEpidemiologicalData;
         const {patientHasBeenPositiveForOtherVirusTypes, patientHasBeenPositiveForOtherVirusTypesRTPCR} = laboratoryData;
