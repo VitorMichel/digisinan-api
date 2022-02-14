@@ -165,7 +165,7 @@ module.exports = {
         });
         // // End transaction
 
-        let queryProfisional = `SELECT NOME_PROF FROM PROFISSIONAL WHERE ID_REG_PROF = '543894';`;
+        let queryProfisional = `SELECT NOME_PROF FROM PROFISSIONAL WHERE ID_REG_PROF = '${finalData.healthProfessionalResponsibleForFillingOutTheForm}';`;
         let nomeProfissional = '';
 
         connection.query(queryProfisional, function (error, results, fields) {
