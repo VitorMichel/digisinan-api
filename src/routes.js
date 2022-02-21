@@ -16,6 +16,8 @@ routes.get('/paises', LocalizationtionController.getPais);
 routes.get('/ocupacao', OtherController.getOcupacao);
 routes.get('/laboratorio', OtherController.getLaboratorio);
 
+routes.get('/getTeste', OtherController.getTeste);
+
 routes.get('/teste', GerarLinkPdf.criarLink)
 
 module.exports = routes;
