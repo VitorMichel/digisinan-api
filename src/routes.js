@@ -4,6 +4,7 @@ const FichaController = require('./controllers/FichaController.js');
 const LocalizationtionController = require('./controllers/LocalizationController.js');
 const OtherController = require('./controllers/OtherController.js');
 const CreatePdf = require('./testePdf.js');
+const GerarLinkPdf = require('./createLinkPdf.js');
 
 const routes = Router();
 
@@ -15,25 +16,6 @@ routes.get('/paises', LocalizationtionController.getPais);
 routes.get('/ocupacao', OtherController.getOcupacao);
 routes.get('/laboratorio', OtherController.getLaboratorio);
 
-// routes.post('/invoice', (request, response, next) => {
-//     const stream = response.writeHead(200, {
-//         'Content-Type': 'application/pdf',
-//         'Content-Disposition': 'attachment;filename=invoice.pdf',
-//     });
-
-//     CreatePdf.testePDF(
-//         '',
-//         (chunk) => stream.write(chunk),
-//         () => stream.end()
-//     );
-// });
-
-// routes.post('/testeBase64', (req, res) => {
-//     CreatePdf.testeBase64(res);
-// });
-
-// routes.post('/inicio', (req, res) => {
-//     CreatePdf.createSamplePdf();
-// });
+routes.get('/teste', GerarLinkPdf.criarLink)
 
 module.exports = routes;
