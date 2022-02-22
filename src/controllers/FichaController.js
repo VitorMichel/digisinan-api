@@ -41,8 +41,6 @@ module.exports = {
     let dadoFinal = '';
     let nomeProfissional = '';
 
-    let isSuccess = false;
-
     dadoGeral += ' INSERT INTO DADO_GERAL (DT_NOTIFIC, DT_SIN_PRI, SG_UF_NOT, ID_MUNICIPIO, ID_UNIDADE, NOME_UNIDADE)';
     dadoGeral += ` VALUES ('${generalData.notificationDate}', '${generalData.symptomsDate}', '${generalData.ufIbgeCode}', '${generalData.cityIbgeCode}', '${generalData.healthUnit.cnes}', '${generalData.healthUnit.name}');`;
 
@@ -72,8 +70,6 @@ module.exports = {
     dadoFinal += ` VALUES (@ULTIMA_FICHA, '${finalData.patientObservationsOfTheCase || null}', '${finalData.healthProfessionalResponsibleForFillingOutTheForm || null}', '${finalData.patientDONumber || null}');`;
 
     let pegarNomeProfissional = `SELECT NOME_PROF FROM PROFISSIONAL WHERE ID_REG_PROF = '${finalData.healthProfessionalResponsibleForFillingOutTheForm}'`;
-
-    console.log('aqui')
 
     // Begin transaction
     connection.beginTransaction(function (err) {
@@ -187,6 +183,8 @@ module.exports = {
       });
     });
     // End transaction
+
+    console.log('teste')
 
     let removerNomes = (str, arr) => {
       return arr.reduce((acc, val) => {
