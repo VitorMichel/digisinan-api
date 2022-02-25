@@ -227,7 +227,7 @@ module.exports = {
     }
 
     const dados = request.body;
-    let caminhoAssinatura = './template/blank.jpg';
+    let caminhoAssinatura = '';
     const nomesParaRemover = ['da', 'de', 'dos'];
 
     let siglaHospital = pegarPrimeiraLetra(dados.generalData.healthUnit.name);
