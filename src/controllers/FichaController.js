@@ -71,118 +71,118 @@ module.exports = {
 
     let pegarNomeProfissional = `SELECT NOME_PROF FROM PROFISSIONAL WHERE ID_REG_PROF = '${finalData.healthProfessionalResponsibleForFillingOutTheForm}'`;
 
-    // Begin transaction
-    connection.beginTransaction(function (err) {
-      if (err) { throw err; }
-      connection.query(dadoGeral, function (err, result) {
-        if (err) {
-          console.log(err);
-          connection.rollback(function () {
-            throw err;
-          });
-        }
-        connection.query(ultimaFicha, function (err, result) {
-          if (err) {
-            console.log(err);
-            connection.rollback(function () {
-              throw err;
-            });
-          }
-          connection.query(dadoPaciente, function (err, result) {
-            if (err) {
-              console.log(err);
-              connection.rollback(function () {
-                throw err;
-              });
-            }
-            connection.query(idUf, function (err, result) {
-              if (err) {
-                console.log(err);
-                connection.rollback(function () {
-                  throw err;
-                });
-              }
-              connection.query(idMunicipio, function (err, result) {
-                if (err) {
-                  console.log(err);
-                  connection.rollback(function () {
-                    throw err;
-                  });
-                }
-                connection.query(ultimoPaciente, function (err, result) {
-                  if (err) {
-                    console.log(err);
-                    connection.rollback(function () {
-                      throw err;
-                    });
-                  }
-                  connection.query(dadoResidencialPaciente, function (err, result) {
-                    if (err) {
-                      console.log(err);
-                      connection.rollback(function () {
-                        throw err;
-                      });
-                    }
-                    connection.query(dadoEpidemiologicoClinico, function (err, result) {
-                      if (err) {
-                        console.log(err);
-                        connection.rollback(function () {
-                          throw err;
-                        });
-                      }
-                      connection.query(dadoServico, function (err, result) {
-                        if (err) {
-                          console.log(err);
-                          connection.rollback(function () {
-                            throw err;
-                          });
-                        }
-                        connection.query(dadoLaboratorial, function (err, result) {
-                          if (err) {
-                            console.log(err);
-                            connection.rollback(function () {
-                              throw err;
-                            });
-                          }
-                          connection.query(dadoFinal, function (err, result) {
-                            if (err) {
-                              console.log(err);
-                              connection.rollback(function () {
-                                throw err;
-                              });
-                            }
-                            connection.query(pegarNomeProfissional, function (err, result) {
-                              if (err) {
-                                console.log(err);
-                                connection.rollback(function () {
-                                  throw err;
-                                });
-                                nomeProfissional = result[0].NOME_PROF;
-                              }
-                              connection.commit(function (err) {
-                                if (err) {
-                                  console.log(err);
-                                  connection.rollback(function () {
-                                    throw err;
-                                  });
-                                }
-                                console.log('Transaction concluída');
-                                connection.end();
-                              });
-                            });
-                          });
-                        });
-                      });
-                    });
-                  });
-                });
-              });
-            });
-          });
-        });
-      });
-    });
-    // End transaction
+    // // Begin transaction
+    // connection.beginTransaction(function (err) {
+    //   if (err) { throw err; }
+    //   connection.query(dadoGeral, function (err, result) {
+    //     if (err) {
+    //       console.log(err);
+    //       connection.rollback(function () {
+    //         throw err;
+    //       });
+    //     }
+    //     connection.query(ultimaFicha, function (err, result) {
+    //       if (err) {
+    //         console.log(err);
+    //         connection.rollback(function () {
+    //           throw err;
+    //         });
+    //       }
+    //       connection.query(dadoPaciente, function (err, result) {
+    //         if (err) {
+    //           console.log(err);
+    //           connection.rollback(function () {
+    //             throw err;
+    //           });
+    //         }
+    //         connection.query(idUf, function (err, result) {
+    //           if (err) {
+    //             console.log(err);
+    //             connection.rollback(function () {
+    //               throw err;
+    //             });
+    //           }
+    //           connection.query(idMunicipio, function (err, result) {
+    //             if (err) {
+    //               console.log(err);
+    //               connection.rollback(function () {
+    //                 throw err;
+    //               });
+    //             }
+    //             connection.query(ultimoPaciente, function (err, result) {
+    //               if (err) {
+    //                 console.log(err);
+    //                 connection.rollback(function () {
+    //                   throw err;
+    //                 });
+    //               }
+    //               connection.query(dadoResidencialPaciente, function (err, result) {
+    //                 if (err) {
+    //                   console.log(err);
+    //                   connection.rollback(function () {
+    //                     throw err;
+    //                   });
+    //                 }
+    //                 connection.query(dadoEpidemiologicoClinico, function (err, result) {
+    //                   if (err) {
+    //                     console.log(err);
+    //                     connection.rollback(function () {
+    //                       throw err;
+    //                     });
+    //                   }
+    //                   connection.query(dadoServico, function (err, result) {
+    //                     if (err) {
+    //                       console.log(err);
+    //                       connection.rollback(function () {
+    //                         throw err;
+    //                       });
+    //                     }
+    //                     connection.query(dadoLaboratorial, function (err, result) {
+    //                       if (err) {
+    //                         console.log(err);
+    //                         connection.rollback(function () {
+    //                           throw err;
+    //                         });
+    //                       }
+    //                       connection.query(dadoFinal, function (err, result) {
+    //                         if (err) {
+    //                           console.log(err);
+    //                           connection.rollback(function () {
+    //                             throw err;
+    //                           });
+    //                         }
+    //                         connection.query(pegarNomeProfissional, function (err, result) {
+    //                           if (err) {
+    //                             console.log(err);
+    //                             connection.rollback(function () {
+    //                               throw err;
+    //                             });
+    //                             nomeProfissional = result[0].NOME_PROF;
+    //                           }
+    //                           connection.commit(function (err) {
+    //                             if (err) {
+    //                               console.log(err);
+    //                               connection.rollback(function () {
+    //                                 throw err;
+    //                               });
+    //                             }
+    //                             console.log('Transaction concluída');
+    //                             connection.end();
+    //                           });
+    //                         });
+    //                       });
+    //                     });
+    //                   });
+    //                 });
+    //               });
+    //             });
+    //           });
+    //         });
+    //       });
+    //     });
+    //   });
+    // });
+    // // End transaction
 
     let removerNomes = (str, arr) => {
       return arr.reduce((acc, val) => {
