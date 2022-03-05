@@ -534,7 +534,7 @@ module.exports = {
     });
 
     stream.on('end', function () {
-      GerarLinkPdf.criarLink(pdfEmBase64, nomeArquivo);
+      // GerarLinkPdf.criarLink(pdfEmBase64, nomeArquivo);
       response.json({ ficha: pdfEmBase64, assunto: assuntoEmail, filename: nomeArquivo });
     });
   }
