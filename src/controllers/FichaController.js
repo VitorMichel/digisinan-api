@@ -234,19 +234,19 @@ module.exports = {
     let assuntoEmail = 'Ficha SRAG: ' + siglaHospital + '-' + siglaNome;
     let nomeArquivo = 'SRAG ' + siglaHospital + ' ' + dataHoje + ' ' + siglaNome + '.pdf';
 
-    if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456')
-      caminhoAssinatura = './template/assinatura1.jpg';
-    else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '654321')
-      caminhoAssinatura = './template/assinatura2.jpg'
-    else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '789456')
-      caminhoAssinatura = './template/assinatura3.jpg';
+    // if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456')
+    //   caminhoAssinatura = './template/assinatura1.jpg';
+    // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '654321')
+    //   caminhoAssinatura = './template/assinatura2.jpg'
+    // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '789456')
+    //   caminhoAssinatura = './template/assinatura3.jpg';
 
     let pdf = new PDFDocument({ autoFirstPage: false });
 
     pdf.addPage({ margin: 5 });
     pdf.fontSize(9);
     pdf.fillColor('blue');
-    pdf.image('./template/pagina1.jpeg', 1, 1, { width: 610, height: 800 });
+    // pdf.image('./template/pagina1.jpeg', 1, 1, { width: 610, height: 800 });
 
     console.log('pegou imagem')
 
@@ -406,7 +406,7 @@ module.exports = {
 
     pdf.addPage({ margin: 5 });
     pdf.fillColor('blue');
-    pdf.image('./template/pagina2.jpeg', 1, 1, { width: 610, height: 800 });
+    // pdf.image('./template/pagina2.jpeg', 1, 1, { width: 610, height: 800 });
 
     console.log('adiciono imagem pag2')
 
@@ -532,8 +532,8 @@ module.exports = {
 
     console.log('caminho assinatura')
 
-    if(!!caminhoAssinatura)
-      pdf.image(caminhoAssinatura, 250, 750, { height: 35, width: 75 }); // campo assinatura
+    // if(!!caminhoAssinatura)
+    //   pdf.image(caminhoAssinatura, 250, 750, { height: 35, width: 75 }); // campo assinatura
 
     console.log('terminou escrever pdf')
 
