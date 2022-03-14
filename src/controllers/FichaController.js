@@ -246,7 +246,7 @@ module.exports = {
     pdf.addPage({ margin: 5 });
     pdf.fontSize(9);
     pdf.fillColor('blue');
-    // pdf.image('./template/pagina1.jpeg', 1, 1, { width: 610, height: 800 });
+    pdf.image('https://wigwsxuobmtlhlcdigsa.supabase.in/storage/v1/object/sign/forms/ficha-1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmb3Jtcy9maWNoYS0xLmpwZWciLCJpYXQiOjE2NDcyOTc0NjIsImV4cCI6MTk2MjY1NzQ2Mn0.XZGWmR_DLg8Z_3KfoOExItDM9cnt55a6liEQjR5hNGc', 1, 1, { width: 610, height: 800 });
 
     console.log('pegou imagem')
 
