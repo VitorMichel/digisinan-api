@@ -9,7 +9,8 @@ let port = process.env.PORT || 3333;
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", 'GETPUT,POST,DELETE');
-    res.header("Access-Control-Allow-Headers: Content-Type");
+    // res.header("Access-Control-Allow-Headers: Content-Type");
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
     app.use(cors());
     next();
 });
