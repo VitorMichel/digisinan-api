@@ -210,26 +210,26 @@ module.exports = {
     //     return new Buffer(bitmap).toString('base64');
     // }
 
-    function getDataUri(url, callback) {
-      var image = new Image();
+    // function getDataUri(url, callback) {
+    //   var image = new Image();
 
-      image.crossOrigin = 'anonymous'
-      image.onload = function () {
-        var canvas = document.createElement('canvas');
-        canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
-        canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
+    //   image.crossOrigin = 'anonymous'
+    //   image.onload = function () {
+    //     var canvas = document.createElement('canvas');
+    //     canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
+    //     canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
 
-        canvas.getContext('2d').drawImage(this, 0, 0);
+    //     canvas.getContext('2d').drawImage(this, 0, 0);
 
-        // // Get raw image data
-        // callback(canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, ''));
+    //     // // Get raw image data
+    //     // callback(canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, ''));
 
-        // ... or get as Data URI
-        callback(canvas.toDataURL('image/png'));
-      };
+    //     // ... or get as Data URI
+    //     callback(canvas.toDataURL('image/png'));
+    //   };
 
-      image.src = url;
-    }
+    //   image.src = url;
+    // }
 
     var today = new Date();
     var day = today.getDate() + "";
@@ -272,7 +272,7 @@ module.exports = {
     // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '789456')
     //   caminhoAssinatura = './template/assinatura3.jpg';
 
-    getDataUri('https://img.elo7.com.br/product/original/3249FFD/quadro-decorativo-natureza-paisagem-mar-sol-coqueiro-ponte-quadro-belezas-naturais.jpg', function (dataUri) {
+    // getDataUri('https://img.elo7.com.br/product/original/3249FFD/quadro-decorativo-natureza-paisagem-mar-sol-coqueiro-ponte-quadro-belezas-naturais.jpg', function (dataUri) {
       let pdf = new PDFDocument({ autoFirstPage: false });
 
       pdf.addPage({ margin: 5 });
@@ -612,6 +612,6 @@ module.exports = {
         response.json({ ficha: pdfEmBase64, assunto: assuntoEmail, filename: nomeArquivo });
       });
       // });
-    });
+    // });
   }
 }
