@@ -272,7 +272,7 @@ module.exports = {
     // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '789456')
     //   caminhoAssinatura = './template/assinatura3.jpg';
 
-    getDataUri('https://img.elo7.com.br/product/original/3249FFD/quadro-decorativo-natureza-paisagem-mar-sol-coqueiro-ponte-quadro-belezas-naturais.jpg', function (dataUri) {
+    getDataUri('http://pdfkit.org/docs/img/14.png', function (dataUri) {
       let pdf = new PDFDocument({ autoFirstPage: false });
 
       pdf.addPage({ margin: 5 });
