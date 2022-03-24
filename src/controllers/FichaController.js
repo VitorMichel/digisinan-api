@@ -263,12 +263,14 @@ module.exports = {
     // }, function(err, response, corpo) {
     // if (err) throw err;
 
-    request.request({
+    connection.request({
       url: 'https://static.escolakids.uol.com.br/2019/07/paisagem-natural.jpg',
       encoding: null
     }, function (err, response, corpo) {
       if (err)
         throw err;
+
+
 
 
       pdf.image(corpo, 1, 1, { width: 610, height: 800 });
