@@ -257,7 +257,7 @@ module.exports = {
       pdf.fillColor('blue');
 
       const logo = await fetchImage("https://i.imgur.com/2ff9bM7.png");
-      doc.image(logo, 0, 200);
+      pdf.image(logo, 0, 200);
 
       console.log('pegou imagem')
 
