@@ -257,11 +257,19 @@ module.exports = {
     pdf.fillColor('blue');
     // let imagemPag1 = base64_encode('./template/pagina1.jpeg');
 
+    // request({
+    //   url: 'https://static.escolakids.uol.com.br/2019/07/paisagem-natural.jpg',
+    //   encoding: null // Prevents Request from converting response to string
+    // }, function(err, response, corpo) {
+    // if (err) throw err;
+
     request({
       url: 'https://static.escolakids.uol.com.br/2019/07/paisagem-natural.jpg',
-      encoding: null // Prevents Request from converting response to string
-    }, function(err, response, corpo) {
-    if (err) throw err;
+      encoding: null
+    }, function(err, response, corpo){
+      if(err)
+        throw err;
+    
 
     pdf.image(corpo, 1, 1, {width: 610, height: 800});
 
@@ -578,5 +586,6 @@ module.exports = {
       console.log('retornou json')
       response.json({ ficha: pdfEmBase64, assunto: assuntoEmail, filename: nomeArquivo });
     });
+  });
   }
 }
