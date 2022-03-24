@@ -6,6 +6,7 @@ const { Base64Encode } = require('base64-stream');
 const { json } = require('express/lib/response');
 var fs = require('fs');
 var request = require('request');
+const {Image} = require('canvas');
 
 module.exports = {
   async getNumeroFicha(request, response) {
