@@ -203,34 +203,6 @@ module.exports = {
       return primeiraLetra.toUpperCase();
     }
 
-    //   function base64_encode(file) {
-    //     // read binary data
-    //     var bitmap = fs.readFileSync(file);
-    //     // convert binary data to base64 encoded string
-    //     return new Buffer(bitmap).toString('base64');
-    // }
-
-    // function getDataUri(url, callback) {
-    //   var image = new Image();
-
-    //   image.crossOrigin = 'anonymous'
-    //   image.onload = function () {
-    //     var canvas = document.createElement('canvas');
-    //     canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
-    //     canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
-
-    //     canvas.getContext('2d').drawImage(this, 0, 0);
-
-    //     // // Get raw image data
-    //     // callback(canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, ''));
-
-    //     // ... or get as Data URI
-    //     callback(canvas.toDataURL('image/png'));
-    //   };
-
-    //   image.src = url;
-    // }
-
     var today = new Date();
     var day = today.getDate() + "";
     var month = (today.getMonth() + 1) + "";
@@ -272,34 +244,13 @@ module.exports = {
     // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '789456')
     //   caminhoAssinatura = './template/assinatura3.jpg';
 
-    // getDataUri('https://img.elo7.com.br/product/original/3249FFD/quadro-decorativo-natureza-paisagem-mar-sol-coqueiro-ponte-quadro-belezas-naturais.jpg', function (dataUri) {
       let pdf = new PDFDocument({ autoFirstPage: false });
 
       pdf.addPage({ margin: 5 });
       pdf.fontSize(9);
       pdf.fillColor('blue');
-      // let imagemPag1 = base64_encode('./template/pagina1.jpeg');
 
-      // request({
-      //   url: 'https://static.escolakids.uol.com.br/2019/07/paisagem-natural.jpg',
-      //   encoding: null // Prevents Request from converting response to string
-      // }, function(err, response, corpo) {
-      // if (err) throw err;
-
-      // connection.request({
-      //   url: 'https://static.escolakids.uol.com.br/2019/07/paisagem-natural.jpg',
-      //   encoding: null
-      // }, function (err, response, corpo) {
-      //   if (err)
-      //     throw err;
-
-
-
-
-      // pdf.image(corpo, 1, 1, { width: 610, height: 800 });
-
-      // pdf.image('https://wigwsxuobmtlhlcdigsa.supabase.in/storage/v1/object/sign/forms/ficha-1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmb3Jtcy9maWNoYS0xLmpwZWciLCJpYXQiOjE2NDcyOTc0NjIsImV4cCI6MTk2MjY1NzQ2Mn0.XZGWmR_DLg8Z_3KfoOExItDM9cnt55a6liEQjR5hNGc', 1, 1, { width: 610, height: 800 });
-      pdf.image(dataUri, 1, 1, { width: 610, height: 800 });
+      //pagina1 image
 
       console.log('pegou imagem')
 
@@ -611,7 +562,5 @@ module.exports = {
         console.log('retornou json')
         response.json({ ficha: pdfEmBase64, assunto: assuntoEmail, filename: nomeArquivo });
       });
-      // });
-    // });
   }
 }
