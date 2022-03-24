@@ -4,6 +4,7 @@ const GerarLinkPdf = require('../createLinkPdf.js');
 const PDFDocument = require('pdfkit');
 const { Base64Encode } = require('base64-stream');
 const { json } = require('express/lib/response');
+var fs = require('fs');
 
 module.exports = {
   async getNumeroFicha(request, response) {
