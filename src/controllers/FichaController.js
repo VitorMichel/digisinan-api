@@ -3,10 +3,8 @@ const connection = getConnection();
 const GerarLinkPdf = require('../createLinkPdf.js');
 const PDFDocument = require('pdfkit');
 const { Base64Encode } = require('base64-stream');
-const { json } = require('express/lib/response');
 var fs = require('fs');
-var request = require('request');
-const {Image} = require('canvas');
+var axios = require('axios');
 
 module.exports = {
   async getNumeroFicha(request, response) {
@@ -203,6 +201,14 @@ module.exports = {
       return primeiraLetra.toUpperCase();
     }
 
+    async function fetchImage(src) {
+      const image = await axios
+          .get(src, {
+              responseType: 'arraybuffer'
+          })
+      return image.data;
+  }
+
     var today = new Date();
     var day = today.getDate() + "";
     var month = (today.getMonth() + 1) + "";
@@ -250,7 +256,8 @@ module.exports = {
       pdf.fontSize(9);
       pdf.fillColor('blue');
 
-      //pagina1 image
+      const logo = await fetchImage("https://i.imgur.com/2ff9bM7.png");
+      doc.image(logo, 0, 200);
 
       console.log('pegou imagem')
 
