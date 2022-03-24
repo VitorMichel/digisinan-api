@@ -5,6 +5,7 @@ const PDFDocument = require('pdfkit');
 const { Base64Encode } = require('base64-stream');
 const { json } = require('express/lib/response');
 var fs = require('fs');
+var request = require('request');
 
 module.exports = {
   async getNumeroFicha(request, response) {
@@ -201,12 +202,12 @@ module.exports = {
       return primeiraLetra.toUpperCase();
     }
 
-    function base64_encode(file) {
-      // read binary data
-      var bitmap = fs.readFileSync(file);
-      // convert binary data to base64 encoded string
-      return new Buffer(bitmap).toString('base64');
-  }
+  //   function base64_encode(file) {
+  //     // read binary data
+  //     var bitmap = fs.readFileSync(file);
+  //     // convert binary data to base64 encoded string
+  //     return new Buffer(bitmap).toString('base64');
+  // }
 
     var today = new Date();
     var day = today.getDate() + "";
@@ -254,9 +255,18 @@ module.exports = {
     pdf.addPage({ margin: 5 });
     pdf.fontSize(9);
     pdf.fillColor('blue');
-    let imagemPag1 = base64_encode('./template/pagina1.jpeg');
+    // let imagemPag1 = base64_encode('./template/pagina1.jpeg');
+
+    request({
+      url: 'https://static.escolakids.uol.com.br/2019/07/paisagem-natural.jpg',
+      encoding: null // Prevents Request from converting response to string
+    }, function(err, response, corpo) {
+    if (err) throw err;
+
+    pdf.image(corpo, 1, 1, {width: 610, height: 800});
+
     // pdf.image('https://wigwsxuobmtlhlcdigsa.supabase.in/storage/v1/object/sign/forms/ficha-1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmb3Jtcy9maWNoYS0xLmpwZWciLCJpYXQiOjE2NDcyOTc0NjIsImV4cCI6MTk2MjY1NzQ2Mn0.XZGWmR_DLg8Z_3KfoOExItDM9cnt55a6liEQjR5hNGc', 1, 1, { width: 610, height: 800 });
-    pdf.image(imagemPag1, 1, 1, { width: 610, height: 800 });
+    // pdf.image(imagemPag1, 1, 1, { width: 610, height: 800 });
 
     console.log('pegou imagem')
 
