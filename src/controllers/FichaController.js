@@ -531,7 +531,7 @@ module.exports = {
 
       // pdf.text(nomeProfissional, 67, 767, { width: 320 }); // campo 82 profissional
 
-      if (!dados.finalData.healthProfessionalResponsibleForFillingOutTheForm == undefined)
+      if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm != undefined)
         pdf.text('COREN/RS ' + dados.finalData.healthProfessionalResponsibleForFillingOutTheForm, 470, 767); // campo 83 conselho profissional
 
       if(!!caminhoAssinatura)
