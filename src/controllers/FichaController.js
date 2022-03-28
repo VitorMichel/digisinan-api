@@ -413,7 +413,7 @@ module.exports = {
 
       pdf.addPage({ margin: 5 });
       pdf.fillColor('blue');
-      const pagina2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYxLmpwZWciLCJpYXQiOjE2NDg1MDU1NzEsImV4cCI6MTk2Mzg2NTU3MX0.lKZtX-wOaFzQ2nauVMcVWP3QwwwrzODx7mgmQuNanKk");
+      const pagina2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf2.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYyLmpwZWciLCJpYXQiOjE2NDg1MDY5MTQsImV4cCI6MTk2Mzg2NjkxNH0.yuYv9_dlMQJSm7m1t4jx9IuWZvByIybO5o57w8uAX4Y");
       pdf.image(pagina2, 1, 1, { width: 610, height: 800 });
 
       pdf.text(dados.serviceData.patientUsedAntiviralForFlu || '9', 95, 37); // campo 42 usou antiviral para gripe
