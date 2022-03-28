@@ -537,27 +537,19 @@ module.exports = {
       if(!!caminhoAssinatura)
         pdf.image(caminhoAssinatura, 250, 750, { height: 35, width: 75 }); // campo assinatura
 
-      console.log('terminou escrever pdf')
-
       let pdfEmBase64 = '';
       let stream = pdf.pipe(new Base64Encode());
 
-      console.log('criou pdf pipe base64')
-
       pdf.end();
-
-      console.log('final pdf')
 
       console.log("PDF created successfuly");
 
       stream.on('data', function (chunk) {
         pdfEmBase64 += chunk;
-        console.timeLog('adicionou chunk')
       });
 
       stream.on('end', function () {
         // GerarLinkPdf.criarLink(pdfEmBase64, nomeArquivo);
-        console.log('retornou json')
         response.json({ ficha: pdfEmBase64, assunto: assuntoEmail, filename: nomeArquivo });
       });
   }
