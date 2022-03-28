@@ -16,8 +16,8 @@ async function criarLink() {
     doc.pipe(stream);
 
     doc.text('teste');
-    const logo = await fetchImage("https://i.imgur.com/2ff9bM7.png");
-    doc.image(logo, 0, 200);
+    const logo = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYxLmpwZWciLCJpYXQiOjE2NDg1MDU1NzEsImV4cCI6MTk2Mzg2NTU3MX0.lKZtX-wOaFzQ2nauVMcVWP3QwwwrzODx7mgmQuNanKk");
+    doc.image(logo, 1, 1, { width: 610, height: 800 });
 
     doc.end();
 }

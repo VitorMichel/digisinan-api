@@ -72,118 +72,118 @@ module.exports = {
 
     let pegarNomeProfissional = `SELECT NOME_PROF FROM PROFISSIONAL WHERE ID_REG_PROF = '${finalData.healthProfessionalResponsibleForFillingOutTheForm}'`;
 
-    // // Begin transaction
-    // connection.beginTransaction(function (err) {
-    //   if (err) { throw err; }
-    //   connection.query(dadoGeral, function (err, result) {
-    //     if (err) {
-    //       console.log(err);
-    //       connection.rollback(function () {
-    //         throw err;
-    //       });
-    //     }
-    //     connection.query(ultimaFicha, function (err, result) {
-    //       if (err) {
-    //         console.log(err);
-    //         connection.rollback(function () {
-    //           throw err;
-    //         });
-    //       }
-    //       connection.query(dadoPaciente, function (err, result) {
-    //         if (err) {
-    //           console.log(err);
-    //           connection.rollback(function () {
-    //             throw err;
-    //           });
-    //         }
-    //         connection.query(idUf, function (err, result) {
-    //           if (err) {
-    //             console.log(err);
-    //             connection.rollback(function () {
-    //               throw err;
-    //             });
-    //           }
-    //           connection.query(idMunicipio, function (err, result) {
-    //             if (err) {
-    //               console.log(err);
-    //               connection.rollback(function () {
-    //                 throw err;
-    //               });
-    //             }
-    //             connection.query(ultimoPaciente, function (err, result) {
-    //               if (err) {
-    //                 console.log(err);
-    //                 connection.rollback(function () {
-    //                   throw err;
-    //                 });
-    //               }
-    //               connection.query(dadoResidencialPaciente, function (err, result) {
-    //                 if (err) {
-    //                   console.log(err);
-    //                   connection.rollback(function () {
-    //                     throw err;
-    //                   });
-    //                 }
-    //                 connection.query(dadoEpidemiologicoClinico, function (err, result) {
-    //                   if (err) {
-    //                     console.log(err);
-    //                     connection.rollback(function () {
-    //                       throw err;
-    //                     });
-    //                   }
-    //                   connection.query(dadoServico, function (err, result) {
-    //                     if (err) {
-    //                       console.log(err);
-    //                       connection.rollback(function () {
-    //                         throw err;
-    //                       });
-    //                     }
-    //                     connection.query(dadoLaboratorial, function (err, result) {
-    //                       if (err) {
-    //                         console.log(err);
-    //                         connection.rollback(function () {
-    //                           throw err;
-    //                         });
-    //                       }
-    //                       connection.query(dadoFinal, function (err, result) {
-    //                         if (err) {
-    //                           console.log(err);
-    //                           connection.rollback(function () {
-    //                             throw err;
-    //                           });
-    //                         }
-    //                         connection.query(pegarNomeProfissional, function (err, result) {
-    //                           if (err) {
-    //                             console.log(err);
-    //                             connection.rollback(function () {
-    //                               throw err;
-    //                             });
-    //                             nomeProfissional = result[0].NOME_PROF;
-    //                           }
-    //                           connection.commit(function (err) {
-    //                             if (err) {
-    //                               console.log(err);
-    //                               connection.rollback(function () {
-    //                                 throw err;
-    //                               });
-    //                             }
-    //                             console.log('Transaction concluída');
-    //                             connection.end();
-    //                           });
-    //                         });
-    //                       });
-    //                     });
-    //                   });
-    //                 });
-    //               });
-    //             });
-    //           });
-    //         });
-    //       });
-    //     });
-    //   });
-    // });
-    // // End transaction
+    // Begin transaction
+    connection.beginTransaction(function (err) {
+      if (err) { throw err; }
+      connection.query(dadoGeral, function (err, result) {
+        if (err) {
+          console.log(err);
+          connection.rollback(function () {
+            throw err;
+          });
+        }
+        connection.query(ultimaFicha, function (err, result) {
+          if (err) {
+            console.log(err);
+            connection.rollback(function () {
+              throw err;
+            });
+          }
+          connection.query(dadoPaciente, function (err, result) {
+            if (err) {
+              console.log(err);
+              connection.rollback(function () {
+                throw err;
+              });
+            }
+            connection.query(idUf, function (err, result) {
+              if (err) {
+                console.log(err);
+                connection.rollback(function () {
+                  throw err;
+                });
+              }
+              connection.query(idMunicipio, function (err, result) {
+                if (err) {
+                  console.log(err);
+                  connection.rollback(function () {
+                    throw err;
+                  });
+                }
+                connection.query(ultimoPaciente, function (err, result) {
+                  if (err) {
+                    console.log(err);
+                    connection.rollback(function () {
+                      throw err;
+                    });
+                  }
+                  connection.query(dadoResidencialPaciente, function (err, result) {
+                    if (err) {
+                      console.log(err);
+                      connection.rollback(function () {
+                        throw err;
+                      });
+                    }
+                    connection.query(dadoEpidemiologicoClinico, function (err, result) {
+                      if (err) {
+                        console.log(err);
+                        connection.rollback(function () {
+                          throw err;
+                        });
+                      }
+                      connection.query(dadoServico, function (err, result) {
+                        if (err) {
+                          console.log(err);
+                          connection.rollback(function () {
+                            throw err;
+                          });
+                        }
+                        connection.query(dadoLaboratorial, function (err, result) {
+                          if (err) {
+                            console.log(err);
+                            connection.rollback(function () {
+                              throw err;
+                            });
+                          }
+                          connection.query(dadoFinal, function (err, result) {
+                            if (err) {
+                              console.log(err);
+                              connection.rollback(function () {
+                                throw err;
+                              });
+                            }
+                            connection.query(pegarNomeProfissional, function (err, result) {
+                              if (err) {
+                                console.log(err);
+                                connection.rollback(function () {
+                                  throw err;
+                                });
+                                nomeProfissional = result[0].NOME_PROF;
+                              }
+                              connection.commit(function (err) {
+                                if (err) {
+                                  console.log(err);
+                                  connection.rollback(function () {
+                                    throw err;
+                                  });
+                                }
+                                console.log('Transaction concluída');
+                                connection.end();
+                              });
+                            });
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+    // End transaction
 
     let removerNomes = (str, arr) => {
       return arr.reduce((acc, val) => {
@@ -243,8 +243,8 @@ module.exports = {
     let assuntoEmail = 'Ficha SRAG: ' + siglaHospital + '-' + siglaNome;
     let nomeArquivo = 'SRAG ' + siglaHospital + ' ' + dataHoje + ' ' + siglaNome + '.pdf';
 
-    // if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456')
-    //   caminhoAssinatura = './template/assinatura1.jpg';
+    if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456')
+      caminhoAssinatura = 'https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS5qcGVnIiwiaWF0IjoxNjQ4NTA1NjE3LCJleHAiOjE5NjM4NjU2MTd9.khYSVb72zg7XdMHCcgRkqpCHU3WjNwytBdKfALAw1Oc';
     // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '654321')
     //   caminhoAssinatura = './template/assinatura2.jpg'
     // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '789456')
@@ -256,10 +256,8 @@ module.exports = {
       pdf.fontSize(9);
       pdf.fillColor('blue');
 
-      const logo = await fetchImage("https://i.imgur.com/2ff9bM7.png");
-      pdf.image(logo, 0, 200);
-
-      console.log('pegou imagem')
+      const pagina1 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYxLmpwZWciLCJpYXQiOjE2NDg1MDU1NzEsImV4cCI6MTk2Mzg2NTU3MX0.lKZtX-wOaFzQ2nauVMcVWP3QwwwrzODx7mgmQuNanKk");
+      pdf.image(pagina1, 1, 1, { width: 610, height: 800 });
 
       pdf.text(dados.generalData.notificationDate, 61, 139); // campo 01 data ficha
 
@@ -413,13 +411,9 @@ module.exports = {
 
       //PAGINA 2
 
-      console.log('criou segunda pagina')
-
       pdf.addPage({ margin: 5 });
       pdf.fillColor('blue');
-      // pdf.image('./template/pagina2.jpeg', 1, 1, { width: 610, height: 800 });
-
-      console.log('adiciono imagem pag2')
+      pdf.image('https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYxLmpwZWciLCJpYXQiOjE2NDg1MDU1NzEsImV4cCI6MTk2Mzg2NTU3MX0.lKZtX-wOaFzQ2nauVMcVWP3QwwwrzODx7mgmQuNanKk', 1, 1, { width: 610, height: 800 });
 
       pdf.text(dados.serviceData.patientUsedAntiviralForFlu || '9', 95, 37); // campo 42 usou antiviral para gripe
 
@@ -536,15 +530,13 @@ module.exports = {
 
       pdf.text(dados.finalData.patientObservationsOfTheCase, 138, 740, { width: 450 }); // campo 81 observacoes
 
-      // pdf.text(nomeProfissional, 67, 767, { width: 320 }); // campo 82 profissional
+      pdf.text(nomeProfissional, 67, 767, { width: 320 }); // campo 82 profissional
 
       if (!dados.finalData.healthProfessionalResponsibleForFillingOutTheForm == undefined)
         pdf.text('COREN/RS ' + dados.finalData.healthProfessionalResponsibleForFillingOutTheForm, 470, 767); // campo 83 conselho profissional
 
-      console.log('caminho assinatura')
-
-      // if(!!caminhoAssinatura)
-      //   pdf.image(caminhoAssinatura, 250, 750, { height: 35, width: 75 }); // campo assinatura
+      if(!!caminhoAssinatura)
+        pdf.image(caminhoAssinatura, 250, 750, { height: 35, width: 75 }); // campo assinatura
 
       console.log('terminou escrever pdf')
 
