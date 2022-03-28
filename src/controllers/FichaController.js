@@ -244,7 +244,7 @@ module.exports = {
     let nomeArquivo = 'SRAG ' + siglaHospital + ' ' + dataHoje + ' ' + siglaNome + '.pdf';
 
     if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456')
-      caminhoAssinatura = 'https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS5qcGVnIiwiaWF0IjoxNjQ4NTA1NjE3LCJleHAiOjE5NjM4NjU2MTd9.khYSVb72zg7XdMHCcgRkqpCHU3WjNwytBdKfALAw1Oc';
+      caminhoAssinatura = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS5qcGVnIiwiaWF0IjoxNjQ4NTA1NjE3LCJleHAiOjE5NjM4NjU2MTd9.khYSVb72zg7XdMHCcgRkqpCHU3WjNwytBdKfALAw1Oc");
     // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '654321')
     //   caminhoAssinatura = './template/assinatura2.jpg'
     // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '789456')
@@ -413,7 +413,8 @@ module.exports = {
 
       pdf.addPage({ margin: 5 });
       pdf.fillColor('blue');
-      pdf.image('https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYxLmpwZWciLCJpYXQiOjE2NDg1MDU1NzEsImV4cCI6MTk2Mzg2NTU3MX0.lKZtX-wOaFzQ2nauVMcVWP3QwwwrzODx7mgmQuNanKk', 1, 1, { width: 610, height: 800 });
+      const pagina2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYxLmpwZWciLCJpYXQiOjE2NDg1MDU1NzEsImV4cCI6MTk2Mzg2NTU3MX0.lKZtX-wOaFzQ2nauVMcVWP3QwwwrzODx7mgmQuNanKk");
+      pdf.image(pagina2, 1, 1, { width: 610, height: 800 });
 
       pdf.text(dados.serviceData.patientUsedAntiviralForFlu || '9', 95, 37); // campo 42 usou antiviral para gripe
 
