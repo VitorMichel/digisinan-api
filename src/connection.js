@@ -3,11 +3,11 @@ const mysql = require('mysql');
 const getConnection = () => 
 {
     const connection = mysql.createConnection({
-        host: process.env.DB_HOST,
+        host: 'mysqlserver.c0o0paimuqop.sa-east-1.rds.amazonaws.com',
         port: 3306,
-        user: process.env.USER,
-        password: process.env.PASSWORD,
-        database: process.env.DATABASE,
+        user: 'admin',
+        password: 'swordfish',
+        database: 'db-digisinan',
         connectTimeout: 10000,
         charset: 'utf8mb4'
     });
