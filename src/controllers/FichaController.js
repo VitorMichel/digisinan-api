@@ -73,8 +73,8 @@ module.exports = {
     let pegarNomeProfissional = `SELECT NOME_PROF FROM PROFISSIONAL WHERE ID_REG_PROF = '${finalData.healthProfessionalResponsibleForFillingOutTheForm}'`;
 
     // // Begin transaction
-    connection.beginTransaction(function (err) {
-      if (err) { throw err; }
+    // connection.beginTransaction(function (err) {
+    // if (err) { throw err; }
     //   connection.query(dadoGeral, function (err, result) {
     //     if (err) {
     //       console.log(err);
@@ -152,25 +152,25 @@ module.exports = {
     //                             throw err;
     //                           });
     //                         }
-                            connection.query(pegarNomeProfissional, function (err, result) {
-                              if (err) {
-                                console.log(err);
-                                connection.rollback(function () {
-                                  throw err;
-                                });
-                                nomeProfissional = result[0].NOME_PROF;
-                              }
-                              connection.commit(function (err) {
-                                if (err) {
-                                  console.log(err);
-                                  connection.rollback(function () {
-                                    throw err;
-                                  });
-                                }
-                                console.log('Transaction concluída');
-                                connection.end();
-                              });
-                            });
+    // connection.query(pegarNomeProfissional, function (err, result) {
+    //   if (err) {
+    //     console.log(err);
+    //     connection.rollback(function () {
+    //       throw err;
+    //     });
+    //     nomeProfissional = result[0].NOME_PROF;
+    //   }
+    //   connection.commit(function (err) {
+    //     if (err) {
+    //       console.log(err);
+    //       connection.rollback(function () {
+    //         throw err;
+    //       });
+    //     }
+    //     console.log('Transaction concluída');
+    //     connection.end();
+    //   });
+    // });
     //                       });
     //                     });
     //                   });
@@ -182,7 +182,7 @@ module.exports = {
     //       });
     //     });
     //   });
-    });
+    // });
     // // End transaction
 
     let removerNomes = (str, arr) => {
