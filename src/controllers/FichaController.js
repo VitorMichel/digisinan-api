@@ -530,7 +530,7 @@ module.exports = {
 
       pdf.text(dados.finalData.patientObservationsOfTheCase, 138, 740, { width: 450 }); // campo 81 observacoes
 
-      // pdf.text(nomeProfissional, 67, 767, { width: 320 }); // campo 82 profissional
+      pdf.text(nomeProfissional, 67, 767, { width: 320 }); // campo 82 profissional
 
       if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm != undefined)
         pdf.text('COREN/RS ' + dados.finalData.healthProfessionalResponsibleForFillingOutTheForm, 470, 767); // campo 83 conselho profissional
