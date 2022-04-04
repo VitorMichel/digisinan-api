@@ -392,7 +392,7 @@ module.exports = {
       pdf.text(dados.clinicalAndEpidemiologicalData.patientCovidVaccineFirstDoseDate, 391, 611); // campo 37.1 data 1 dose
       pdf.text(dados.clinicalAndEpidemiologicalData.patientCovidVaccineSecondDoseDate, 391, 621); // campo 37.2 data 2 dose
 
-      // pdf.text(dados.clinicalAndEpidemiologicalData.covidVaccineProducerLaboratory.name, 90, 645, {width: 215}); // campo 38 laboratório produtor //TODO
+      pdf.text(dados.clinicalAndEpidemiologicalData.covidVaccineProducerLaboratory.name, 90, 645, {width: 215}); // campo 38 laboratório produtor
 
       pdf.text(dados.clinicalAndEpidemiologicalData.patientFirstLotCovidVaccineDate, 380, 644); // campo 39.1 lote 1 dose
       pdf.text(dados.clinicalAndEpidemiologicalData.patientSecondLotCovidVaccineDate, 380, 662); // campo 39.2 lote 2 dose
@@ -428,7 +428,7 @@ module.exports = {
       pdf.text(dados.serviceData.patientDateOfHospitalizationBySRAG, 296, 77); // campo 46 data 
 
       pdf.text(dados.serviceData.patientHospitalizedCity.uf, 490, 77); // campo 47 uf
-      pdf.text(dados.serviceData.patientHospitalizedCity.name, 203, 92, { width: 182 }); // campo 48 município internação
+      pdf.text(dados.serviceData.patientHospitalizedCity.name, 203, 92, { width: 182 }); // campo 48 município internação      //TODO
       pdf.text(dados.serviceData.patientHospitalizedCity.cityIbgeCode, 458, 92); // campo 48.1 codigo ibge
 
       pdf.text(dados.serviceData.patientHospitalizedHealthUnit.name, 241, 105, { width: 149 }); // campo 49 unidade internação
@@ -486,7 +486,7 @@ module.exports = {
       pdf.text(dados.laboratoryData.patientResultOfRTPCRDate, 385, 401); // campo 68 data
 
       pdf.text(dados.laboratoryData.patientHasBeenPositiveForInfluenzaRTPCR || '9', 193, 445); // campo 69 positivo para influenza?
-      pdf.text(dados.laboratoryData.patientHasBeenPositiveForInfluenzaRTPCRType || '9', 440, 445); // campo 69.1 se sim, qual influenza?
+      pdf.text(dados.laboratoryData.patientHasBeenPositiveForInfluenzaRTPCRType, 440, 445); // campo 69.1 se sim, qual influenza?
       pdf.text(dados.laboratoryData.influenzaASubtype, 193, 464); // campo 69.2 influenza A
       pdf.text(dados.laboratoryData.influenzaASubtypeOtherValue, 474, 478, { width: 113 }); // campo 69.3 especifique
       pdf.text(dados.laboratoryData.influenzaBLineage, 194, 495); // campo 69.4 influenza B
