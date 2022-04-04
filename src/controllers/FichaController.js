@@ -263,15 +263,15 @@ module.exports = {
 
       pdf.text(dados.generalData.symptomsDate, 389, 139); // campo 02 data sintomas
 
-      pdf.text(dados.generalData.patientResidenceUf, 76, 153); // campo 03 uf
+      pdf.text(dados.generalData.patientResidenceUf, 76, 153); // campo 03 uf                                                           //TODO
 
-      pdf.text(dados.generalData.patientResidenceCity, 182, 153, { width: 215 }); //campo 04 cidade
+      pdf.text(dados.generalData.patientResidenceCity, 182, 153, { width: 215 }); //campo 04 cidade                                  //TODO
       pdf.text(dados.generalData.cityIbgeCode, 468, 153); // campo 04.1 código ibge
 
       pdf.text(dados.generalData.healthUnit.name, 148, 166, { width: 245 }); //campo 05 unidade de saúde
       pdf.text(dados.generalData.healthUnit.cnes, 470, 166); // campo 05.1 código cnes
 
-      if (dados.patientData.patientHasCpf) {
+      if (dados.patientData.patientHasCpf == '1') {
         pdf.text('X', 200, 179); // campo 06 tem cpf? sim
         pdf.text(dados.patientData.patientCpf, 356, 179); // campo 07 cpf
       }
@@ -279,7 +279,7 @@ module.exports = {
         pdf.text('X', 241, 179); // campo 06 tem cpf? nao
       }
 
-      if (dados.patientData.patientIsForeigner)
+      if (dados.patientData.patientIsForeigner == '1')
         pdf.text('X', 201, 196); // campo 08 estrangeiro? sim
       else
         pdf.text('X', 242, 196); // campo 08 estrangeiro? nao
@@ -392,7 +392,8 @@ module.exports = {
       pdf.text(dados.clinicalAndEpidemiologicalData.patientCovidVaccineFirstDoseDate, 391, 611); // campo 37.1 data 1 dose
       pdf.text(dados.clinicalAndEpidemiologicalData.patientCovidVaccineSecondDoseDate, 391, 621); // campo 37.2 data 2 dose
 
-      pdf.text(dados.clinicalAndEpidemiologicalData.covidVaccineProducerLaboratory.name, 90, 645, {width: 215}); // campo 38 laboratório produtor
+      if(dados.clinicalAndEpidemiologicalData.covidVaccineProducerLaboratory != null)
+        pdf.text(dados.clinicalAndEpidemiologicalData.covidVaccineProducerLaboratory, 90, 645, {width: 215}); // campo 38 laboratório produtor
 
       pdf.text(dados.clinicalAndEpidemiologicalData.patientFirstLotCovidVaccineDate, 380, 644); // campo 39.1 lote 1 dose
       pdf.text(dados.clinicalAndEpidemiologicalData.patientSecondLotCovidVaccineDate, 380, 662); // campo 39.2 lote 2 dose
