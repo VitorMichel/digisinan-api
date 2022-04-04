@@ -530,6 +530,7 @@ module.exports = {
 
       pdf.text(dados.finalData.patientObservationsOfTheCase, 138, 740, { width: 450 }); // campo 81 observacoes
 
+      console.log(nomeProfissional);
       pdf.text(nomeProfissional, 67, 767, { width: 320 }); // campo 82 profissional
 
       if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm != undefined)

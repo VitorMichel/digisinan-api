@@ -32,7 +32,7 @@ module.exports = {
     async getTeste(request, response)
     {
         let nomeProfissional = '';
-        let query = `SELECT NOME_PROF FROM PROFISSIONAL WHERE ID_REG_PROF = '543894'`;
+        let query = `SELECT NOME_PROF FROM PROFISSIONAL WHERE ID_REG_PROF = '123456'`;
         console.log(query);
 
         connection.query(query, function (error, results, fields) {
