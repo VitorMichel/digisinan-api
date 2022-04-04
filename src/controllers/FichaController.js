@@ -263,9 +263,9 @@ module.exports = {
 
       pdf.text(dados.generalData.symptomsDate, 389, 139); // campo 02 data sintomas
 
-      pdf.text(dados.generalData.patientResidenceUf, 76, 153); // campo 03 uf                                                           //TODO
+      pdf.text(dados.generalData.uf, 76, 153); // campo 03 uf
 
-      pdf.text(dados.generalData.patientResidenceCity, 182, 153, { width: 215 }); //campo 04 cidade                                  //TODO
+      pdf.text(dados.generalData.city, 182, 153, { width: 215 }); //campo 04 cidade
       pdf.text(dados.generalData.cityIbgeCode, 468, 153); // campo 04.1 código ibge
 
       pdf.text(dados.generalData.healthUnit.name, 148, 166, { width: 245 }); //campo 05 unidade de saúde
@@ -346,7 +346,7 @@ module.exports = {
 
       if (dados.clinicalAndEpidemiologicalData.patientHasContactWithAnimals == '3')
         pdf.text('3', 93, 491); // campo 33.1 outro
-      pdf.text(dados.clinicalAndEpidemiologicalData.patientHasContactWithAnimalsOtherValue, 160, 492, { width: 110 }); // campo 33.2 qual 
+      pdf.text(dados.clinicalAndEpidemiologicalData.patientHasContactWithAnimalsOtherValue, 160, 492, { width: 110 }); // campo 33.2 qual
 
       pdf.text(patientSignsAndSymptoms?.some(item => item === 'fever') ? '1' : '2', 287, 502); // campo 34.1 febre
       pdf.text(patientSignsAndSymptoms?.some(item => item === 'cough') ? '1' : '2', 349, 502); // campo 34.2 tosse
@@ -429,7 +429,7 @@ module.exports = {
       pdf.text(dados.serviceData.patientDateOfHospitalizationBySRAG, 296, 77); // campo 46 data 
 
       pdf.text(dados.serviceData.patientHospitalizedCity.uf, 490, 77); // campo 47 uf
-      pdf.text(dados.serviceData.patientHospitalizedCity.name, 203, 92, { width: 182 }); // campo 48 município internação      //TODO
+      pdf.text(dados.serviceData.patientHospitalizedCity.name, 203, 92, { width: 182 }); // campo 48 município internação
       pdf.text(dados.serviceData.patientHospitalizedCity.cityIbgeCode, 458, 92); // campo 48.1 codigo ibge
 
       pdf.text(dados.serviceData.patientHospitalizedHealthUnit.name, 241, 105, { width: 149 }); // campo 49 unidade internação
