@@ -1,3 +1,5 @@
+const { getConnection } = require('./connection.js');
+const connection = getConnection();
 var fs = require('fs');
 var axios = require('axios');
 const PDFDocument = require('pdfkit');

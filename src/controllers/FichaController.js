@@ -243,8 +243,10 @@ module.exports = {
     let assuntoEmail = 'Ficha SRAG: ' + siglaHospital + '-' + siglaNome;
     let nomeArquivo = 'SRAG ' + siglaHospital + ' ' + dataHoje + ' ' + siglaNome + '.pdf';
 
-    if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456')
+    if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456'){
       caminhoAssinatura = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS5qcGVnIiwiaWF0IjoxNjQ4NTA1NjE3LCJleHAiOjE5NjM4NjU2MTd9.khYSVb72zg7XdMHCcgRkqpCHU3WjNwytBdKfALAw1Oc");
+      nomeProfissional = 'Fabrício Bremm';
+    }
     // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '654321')
     //   caminhoAssinatura = './template/assinatura2.jpg'
     // else if (dados.finalData.healthProfessionalResponsibleForFillingOutTheForm === '789456')
