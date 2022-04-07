@@ -1,23 +1,23 @@
 const { Router } = require('express');
-
-const FichaController = require('./controllers/FichaController.js');
+const FileController = require('./controllers/FileController.js');
 const LocalizationtionController = require('./controllers/LocalizationController.js');
 const OtherController = require('./controllers/OtherController.js');
-const CreatePdf = require('./testePdf.js');
-const GerarLinkPdf = require('./createLinkPdf.js');
+
+//TESTING ONLY
+const TestClass = require('./TestClass.js');
 
 const routes = Router();
 
-routes.get('/ficha', FichaController.getNumeroFicha);
-routes.post('/addficha', FichaController.postAddFicha);
-routes.get('/estado', LocalizationtionController.getEstado);
-routes.get('/municipio', LocalizationtionController.getMunicipio);
-routes.get('/paises', LocalizationtionController.getPais);
-routes.get('/ocupacao', OtherController.getOcupacao);
-routes.get('/laboratorio', OtherController.getLaboratorio);
+routes.get('/file', FileController.getFileNumber);
+routes.post('/addfile', FileController.postAddFile);
+routes.get('/state', LocalizationtionController.getState);
+routes.get('/city', LocalizationtionController.getCity);
+routes.get('/country', LocalizationtionController.getCountry);
+routes.get('/occupation', OtherController.getOccupation);
+routes.get('/laboratory', OtherController.getLaboratory);
 
-routes.get('/getTeste', OtherController.getTeste);
-
-routes.get('/teste', GerarLinkPdf.criarLink)
+//TESTING ONLY
+routes.get('/getTest', OtherController.getTest);
+routes.get('/testMethod', TestClass.testMethod)
 
 module.exports = routes;
