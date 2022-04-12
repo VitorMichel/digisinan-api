@@ -222,7 +222,7 @@ module.exports = {
     minutes = checkZero(minutes);
     seconds = checkZero(seconds);
 
-    let todayDate = day + "/" + month + "/" + year;
+    let todayDate = day + "." + month + "." + year;
 
     function checkZero(data) {
       if (data.length == 1) {
