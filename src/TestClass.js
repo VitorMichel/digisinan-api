@@ -13,14 +13,19 @@ async function fetchImage(src) {
 }
 
 async function testMethod(request, response) {
-    let signaturePath;
-    signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS5qcGVnIiwiaWF0IjoxNjQ4NTA1NjE3LCJleHAiOjE5NjM4NjU2MTd9.khYSVb72zg7XdMHCcgRkqpCHU3WjNwytBdKfALAw1Oc");
+    let signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura-535040.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhLTUzNTA0MC5wbmciLCJpYXQiOjE2NDk4MDMxMjAsImV4cCI6MTk2NTE2MzEyMH0.4J1t09VaVYB6Jd1H0w9JVycUNDVwnpCaMRbeZrhOVWk");
+
     let stream = fs.createWriteStream('./testPDF.pdf');
     let doc = new PDFDocument();
     doc.pipe(stream);
-    const page2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf2.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYyLmpwZWciLCJpYXQiOjE2NDg1MDY5MTQsImV4cCI6MTk2Mzg2NjkxNH0.yuYv9_dlMQJSm7m1t4jx9IuWZvByIybO5o57w8uAX4Y");
+
+    const page2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf2.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYyLmpwZWciLCJpYXQiOjE2NDk4MDMzODksImV4cCI6MTk2NTE2MzM4OX0.snY8b0ijusyndORIzn1hxUvHnwSGSKEX8u2w8T6GjDI");
+
     doc.image(page2, 1, 1, { width: 610, height: 800 });
-    doc.image(signaturePath, 300, 750, { height: 45, width: 85 });
+
+    doc.text('COREN/RS 535040', 450, 767);
+    // doc.image(signaturePath, 245, 697, { height: 125, width: 165 });
+
     doc.end();
 
     return response.json({message: 'ok'});

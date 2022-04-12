@@ -233,7 +233,7 @@ module.exports = {
 
     const data = request.body;
     let signaturePath;
-    const namesToRemove = ['da', 'de', 'dos'];
+    const namesToRemove = ['da', 'de', 'dos', 'do', 'De', 'Do', 'Dos', 'Da', 'De'];
 
     let acronymHospital = getFirstLetter(data.generalData.healthUnit.name);
     let acronymName = getFirstLetter(removeNames(data.patientData.patientName, namesToRemove))
@@ -533,10 +533,10 @@ module.exports = {
     pdf.text(professionalName, 67, 767, { width: 320 }); // campo 82 profissional
 
     if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm != undefined)
-      pdf.text('COREN/RS ' + data.finalData.healthProfessionalResponsibleForFillingOutTheForm, 470, 767); // campo 83 conselho profissional
+      pdf.text('COREN/RS ' + data.finalData.healthProfessionalResponsibleForFillingOutTheForm, 450, 767); // campo 83 conselho profissional
 
     if (!!signaturePath)
-      pdf.image(signaturePath, 300, 750, { height: 45, width: 85 }); // campo assinatura
+      pdf.image(signaturePath, 245, 697, { height: 125, width: 165  }); // campo assinatura
 
     let pdfEmBase64 = '';
     let stream = pdf.pipe(new Base64Encode());
