@@ -246,7 +246,7 @@ module.exports = {
       professionalName = 'Fabrício Bremm';
     }
     else if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '535040') {
-      signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura-535040.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhLTUzNTA0MC5qcGVnIiwiaWF0IjoxNjQ5ODAyNjczLCJleHAiOjE5NjUxNjI2NzN9.CQErBiOWjzqSaryKvCp5_f8dVKaL2uiLmg3-sEEOmC0");
+      signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura-535040.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhLTUzNTA0MC5wbmciLCJpYXQiOjE2NDk4MDMxMjAsImV4cCI6MTk2NTE2MzEyMH0.4J1t09VaVYB6Jd1H0w9JVycUNDVwnpCaMRbeZrhOVWk");
       professionalName = 'Paulo Francisco Berni Teixeira';
     }
 
