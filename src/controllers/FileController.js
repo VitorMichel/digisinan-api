@@ -235,7 +235,7 @@ module.exports = {
     let signaturePath;
     const namesToRemove = ['da', 'de', 'dos', 'do', 'De', 'Do', 'Dos', 'Da', 'De'];
 
-    let acronymHospital = getFirstLetter(removeNames(data.generalData.healthUnit.name));
+    let acronymHospital = getFirstLetter(removeNames(data.generalData.healthUnit.name, namesToRemove));
     let acronymName = getFirstLetter(removeNames(data.patientData.patientName, namesToRemove));
 
     let emailSubject = 'Ficha SRAG: ' + acronymHospital + '-' + acronymName;
