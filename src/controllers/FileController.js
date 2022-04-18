@@ -536,7 +536,7 @@ module.exports = {
       pdf.text('COREN/RS ' + data.finalData.healthProfessionalResponsibleForFillingOutTheForm, 450, 767); // campo 83 conselho profissional
 
     if (!!signaturePath)
-      pdf.image(signaturePath, 245, 697, { height: 125, width: 165  }); // campo assinatura
+      pdf.image(signaturePath, 265, 730, { height: 75, width: 80 }); // imagem assinatura fabricio
 
     let pdfEmBase64 = '';
     let stream = pdf.pipe(new Base64Encode());

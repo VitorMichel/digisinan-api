@@ -13,7 +13,7 @@ async function fetchImage(src) {
 }
 
 async function testMethod(request, response) {
-    let signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura-535040.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhLTUzNTA0MC5wbmciLCJpYXQiOjE2NDk4MDMxMjAsImV4cCI6MTk2NTE2MzEyMH0.4J1t09VaVYB6Jd1H0w9JVycUNDVwnpCaMRbeZrhOVWk");
+    let signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1-removebg-preview.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS1yZW1vdmViZy1wcmV2aWV3LnBuZyIsImlhdCI6MTY1MDI4OTYzMCwiZXhwIjoxOTY1NjQ5NjMwfQ.yhlGZPGkPDIgnK6zPk_C9VX_f4Q19CTo-NdjyKIuWb8");
 
     let stream = fs.createWriteStream('./testPDF.pdf');
     let doc = new PDFDocument();
@@ -23,8 +23,9 @@ async function testMethod(request, response) {
 
     doc.image(page2, 1, 1, { width: 610, height: 800 });
 
-    doc.text('COREN/RS 535040', 450, 767);
-    // doc.image(signaturePath, 245, 697, { height: 125, width: 165 });
+    //doc.text('COREN/RS 535040', 450, 767);
+    //doc.image(signaturePath, 245, 697, { height: 125, width: 165 }); // imagem assinatura paulo
+    doc.image(signaturePath, 265, 730, { height: 75, width: 80 }); // imagem assinatura fabricio
 
     doc.end();
 
