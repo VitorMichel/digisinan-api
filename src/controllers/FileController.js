@@ -242,7 +242,7 @@ module.exports = {
     let stringFileName = 'SRAG ' + acronymHospital + ' ' + todayDate + ' ' + acronymName + '.pdf';
 
     if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456') {
-      signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS5qcGVnIiwiaWF0IjoxNjQ4NTA1NjE3LCJleHAiOjE5NjM4NjU2MTd9.khYSVb72zg7XdMHCcgRkqpCHU3WjNwytBdKfALAw1Oc");
+      signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1NEW.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMU5FVy5wbmciLCJpYXQiOjE2NTAyODkzMDksImV4cCI6MTk2NTY0OTMwOX0.-59ciVPwaMl7uGEnuSYRUo6hgOyujuIC0fNsDe9gTpM");
       professionalName = 'Fabrício Bremm';
     }
     else if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '535040') {
