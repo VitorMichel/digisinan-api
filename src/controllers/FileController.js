@@ -249,6 +249,10 @@ module.exports = {
       signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura-535040.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhLTUzNTA0MC5wbmciLCJpYXQiOjE2NDk4MDMxMjAsImV4cCI6MTk2NTE2MzEyMH0.4J1t09VaVYB6Jd1H0w9JVycUNDVwnpCaMRbeZrhOVWk");
       professionalName = 'Paulo Francisco Berni Teixeira';
     }
+    else if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '380367') {
+      signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura-380367.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhLTM4MDM2Ny5wbmciLCJpYXQiOjE2NTIyMTUxMDksImV4cCI6MTk2NzU3NTEwOX0.6kJ5C3xYvHgNxyHCVTjuZbEv33AWXBaVx4CfPrtEghE");
+      professionalName = 'Paulo Francisco Berni Teixeira';
+    }
 
     let pdf = new PDFDocument({ autoFirstPage: false });
 
