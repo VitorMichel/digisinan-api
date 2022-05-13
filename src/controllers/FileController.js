@@ -251,7 +251,7 @@ module.exports = {
     }
     else if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '380367') {
       signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura-380367.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhLTM4MDM2Ny5wbmciLCJpYXQiOjE2NTIyMTUxMDksImV4cCI6MTk2NzU3NTEwOX0.6kJ5C3xYvHgNxyHCVTjuZbEv33AWXBaVx4CfPrtEghE");
-      professionalName = 'Paulo Francisco Berni Teixeira';
+      professionalName = 'Ellin Maiara Mallmann Schimidt';
     }
 
     let pdf = new PDFDocument({ autoFirstPage: false });
