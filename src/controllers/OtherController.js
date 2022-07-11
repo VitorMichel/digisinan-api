@@ -5,7 +5,7 @@ const { json } = require('express/lib/response');
 module.exports = {
     async getOccupation(request, response)
     {
-        let query = 'SELECT * FROM DADO_OCUPACAO';
+        let query = 'SELECT * FROM CBO_OCUPACAO';
         console.log(query);
 
         connection.query(query, function (error, results, fields) {
@@ -18,7 +18,7 @@ module.exports = {
 
     async getLaboratory(request, response)
     {
-        let query = 'SELECT * FROM LABORATORIO';
+        let query = 'SELECT * FROM ESTADO';
         console.log(query);
 
         connection.query(query, function (error, results, fields) {
