@@ -12,7 +12,7 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
     // res.header("Access-Control-Allow-Headers: Content-Type");
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
-app.use(cors('localhost'));
+// app.use(cors('localhost'));
     next();
 });
 app.use(express.json());
