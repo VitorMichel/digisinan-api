@@ -4,7 +4,7 @@ const connection = getConnection();
 module.exports = {
     async getState(request, response)
     {
-        let query = 'SELECT * FROM ESTADO';
+        let query = 'SELECT * FROM LOC_ESTADO';
         console.log(query);
 
         connection.query(query, function (error, results, fields) {
@@ -17,7 +17,7 @@ module.exports = {
 
     async getCity(request, response)
     {
-        let query = 'SELECT * FROM MUNICIPIO';
+        let query = 'SELECT * FROM LOC_MUNICIPIO';
         console.log(query);
 
         connection.query(query, function (error, results, fields) {
@@ -30,7 +30,7 @@ module.exports = {
 
     async getCountry(request, response)
     {
-        let query = 'SELECT * FROM PAISES';
+        let query = 'SELECT * FROM LOC_PAIS';
         console.log(query);
 
         connection.query(query, function (error, results, fields) {
