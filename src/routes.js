@@ -1,25 +1,40 @@
 const { Router } = require('express');
-const FileController = require('./controllers/FileController.js');
 const LocalizationtionController = require('./controllers/LocalizationController.js');
 const OtherController = require('./controllers/OtherController.js');
 const CreateController = require('./controllers/Create.js');
+const FichasController = require('./controllers/FichasController.js');
+const FichaAidsController = require('./controllers/FichaAIDSController.js');
 
 //TESTING ONLY
 const TestClass = require('./TestClass.js');
 
 const routes = Router();
 
-// routes.get('/file', FileController.getFileNumber);
-// routes.post('/addfile', FileController.postAddFile);
+// Localizacao
 routes.get('/state', LocalizationtionController.getState);
 routes.get('/city', LocalizationtionController.getCity);
 routes.get('/country', LocalizationtionController.getCountry);
+
+// Usuario
 routes.post('/postUser', CreateController.getUserData);
 routes.get('/dadosConselho', CreateController.pegarDadosConselho);
-routes.get('/pegarUsuario', CreateController.pegarUsuarios);
+routes.get('/pegarUsuario', CreateController.pegarUsuarioPorCpf);
 routes.get('/login', CreateController.login);
 routes.get('/occupation', OtherController.getOccupation);
-// routes.get('/laboratory', OtherController.getLaboratory);
+
+// Dados iguais para fichas
+routes.get('/tipoIdade', FichasController.dadoTipoIdade);
+routes.get('/sexoLetra', FichasController.dadoSexoLetra);
+routes.get('/sexoNumero', FichasController.dadoSexoNumero);
+routes.get('/gestacao', FichasController.dadoGestacao);
+routes.get('/racaCor', FichasController.dadoRacaCor);
+routes.get('/escolaridade', FichasController.dadoEscolaridade);
+routes.get('/zona', FichasController.dadoZona);
+
+// Dados para Ficha AIDS Adulto
+routes.get('/relacoesSexuais', FichaAidsController.dadoRelacoesSexuais);
+routes.get('/evidenciaLaboratorialInfeccao', FichaAidsController.dadoEvidenciaLaboratorialInfeccao);
+routes.get('/evolucaoCaso', FichaAidsController.dadoEvolucaoCaso);
 
 //TESTING ONLY
 routes.get('/getTest', OtherController.getTest);

@@ -22,10 +22,10 @@ module.exports = {
         
     },
 
-    async pegarUsuarios(request, response)
+    async pegarUsuarioPorCpf(request, response)
     {
         const { cpf } = request.query;
-        
+
         // Pegar descrição do conselho e sigla
         let query = `SELECT * FROM USUARIO WHERE NR_CPF = '${cpf}'`;
 
