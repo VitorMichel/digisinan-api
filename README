@@ -1,2 +1,4 @@
 yarn
 yarn start
+-- or
+yarn nodemon
