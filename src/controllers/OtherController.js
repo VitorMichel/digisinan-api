@@ -3,7 +3,7 @@ const connection = getConnection();
 const { json } = require('express/lib/response');
 
 module.exports = {
-    async getOccupation(response)
+    async getOccupation(request, response)
     {
         let query = 'SELECT * FROM CBO_OCUPACAO';
         console.log(query);
@@ -16,7 +16,7 @@ module.exports = {
         });
     },
 
-    async getLaboratory(response)
+    async getLaboratory(request, response)
     {
         let query = 'SELECT * FROM ESTADO';
         console.log(query);
@@ -29,7 +29,7 @@ module.exports = {
         });
     },
 
-    async getTest(response)
+    async getTest(request, response)
     {
         let professionalName = '';
         let query = `SELECT NOME_PROF FROM PROFISSIONAL WHERE ID_REG_PROF = '123456'`;
