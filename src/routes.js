@@ -12,7 +12,6 @@ routes.get('/state', LocalizationtionController.getState);
 routes.get('/city', LocalizationtionController.getCity);
 routes.get('/country', LocalizationtionController.getCountry);
 routes.post('/postUser', CreateController.getUserData);
-routes.get('/dadosConselho', CreateController.pegarDadosConselho);
 routes.get('/login', CreateController.login);
 routes.get('/occupation', OtherController.getOccupation);
 
