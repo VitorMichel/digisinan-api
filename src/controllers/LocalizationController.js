@@ -2,7 +2,7 @@ const { getConnection } = require('../connection.js');
 const connection = getConnection();
 
 module.exports = {
-    async getState(response)
+    async getState(request, response)
     {
         let query = 'SELECT * FROM LOC_ESTADO';
         console.log(query);
@@ -15,7 +15,7 @@ module.exports = {
         });
     },
 
-    async getCity(response)
+    async getCity(request, response)
     {
         let query = 'SELECT * FROM LOC_MUNICIPIO';
         console.log(query);
@@ -28,7 +28,7 @@ module.exports = {
         });
     },
 
-    async getCountry(response)
+    async getCountry(request, response)
     {
         let query = 'SELECT * FROM LOC_PAIS';
         console.log(query);
