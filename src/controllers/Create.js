@@ -22,6 +22,19 @@ module.exports = {
         
     },
 
+    async pegarUsuarios(request, response)
+    {
+        // Pegar descrição do conselho e sigla
+        let query = 'SELECT * FROM USUARIO';
+
+        connection.query(query, function (error, results) {
+            if (error)
+                return response.json({ status: 404, message: error.message });
+
+            return response.json(results);
+        });
+    },
+
     async pegarDadosConselho(request, response)
     {
         // Pegar descrição do conselho e sigla
