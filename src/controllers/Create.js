@@ -24,8 +24,10 @@ module.exports = {
 
     async pegarUsuarios(request, response)
     {
+        const { cpf } = request.query;
+        
         // Pegar descrição do conselho e sigla
-        let query = 'SELECT * FROM USUARIO';
+        let query = `SELECT * FROM USUARIO WHERE NR_CPF = '${cpf}'`;
 
         connection.query(query, function (error, results) {
             if (error)
