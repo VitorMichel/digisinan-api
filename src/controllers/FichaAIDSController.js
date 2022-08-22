@@ -55,6 +55,8 @@ module.exports = {
     const { evolucao } = request.body;
     const { investigador } = request.body;
 
+    // console.log(request);
+
     // const { patientSignsAndSymptoms, patientRiskFactorsAndComorbiditie } = clinicalAndEpidemiologicalData;
     // const { patientHasBeenPositiveForOtherVirusTypes, patientHasBeenPositiveForOtherVirusTypesRTPCR } = laboratoryData;
 

@@ -32,6 +32,7 @@ routes.get('/escolaridade', FichasController.dadoEscolaridade);
 routes.get('/zona', FichasController.dadoZona);
 
 // Dados para Ficha AIDS Adulto
+routes.post('/postFichaAidsAdulto', FichaAidsController.postFichaAidsAdulto);
 routes.get('/relacoesSexuais', FichaAidsController.dadoRelacoesSexuais);
 routes.get('/evidenciaLaboratorialInfeccao', FichaAidsController.dadoEvidenciaLaboratorialInfeccao);
 routes.get('/evolucaoCaso', FichaAidsController.dadoEvolucaoCaso);
