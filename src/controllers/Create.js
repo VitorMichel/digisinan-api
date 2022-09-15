@@ -2,7 +2,7 @@ const { getConnection } = require('../connection.js');
 const connection = getConnection();
 
 module.exports = {
-    async getUserData(request, response)
+    async postUser(request, response)
     {
         let date = new Date();
 

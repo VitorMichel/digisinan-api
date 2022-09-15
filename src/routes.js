@@ -16,7 +16,7 @@ routes.get('/city', LocalizationtionController.getCity);
 routes.get('/country', LocalizationtionController.getCountry);
 
 // Usuario
-routes.post('/postUser', CreateController.getUserData);
+routes.post('/postUser', CreateController.postUser);
 routes.get('/dadosConselho', CreateController.pegarDadosConselho);
 routes.get('/pegarUsuario', CreateController.pegarUsuarioPorCpf);
 routes.get('/login', CreateController.login);
