@@ -3,6 +3,7 @@
 var fs = require('fs');
 var axios = require('axios');
 const PDFDocument = require('pdfkit');
+const { json } = require('express');
 
 async function fetchImage(src) {
     const image = await axios
@@ -12,21 +13,23 @@ async function fetchImage(src) {
     return image.data;
 }
 
-async function testMethod(response) {
-    let stream = fs.createWriteStream('./TesteFichaAidsAdulto.pdf');
+async function testMethod(request, response) {
+    // let stream = fs.createWriteStream('./TesteFichaAidsAdulto.pdf');
     let doc = new PDFDocument();
 
     doc.fontSize(9);
     doc.fillColor('blue');
 
-    doc.pipe(stream);
+    // doc.pipe(stream);
 
     const page1 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18xLmpwZyIsImlhdCI6MTY2MjgzMjY2NywiZXhwIjoxOTc4MTkyNjY3fQ._xUOv8IaqLTIHw1hwTFpMs_M6bu5BeGEtLO-5rYCSTc&t=2022-09-10T17%3A58%3A15.235Z");
     const page2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_2.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18yLmpwZyIsImlhdCI6MTY2MjgzMjY3NCwiZXhwIjoxOTc4MTkyNjc0fQ.qnyzBaBnAq_9DJ6tfjxGx-rT2HKxAOFYtSNPd4aqVTs&t=2022-09-10T17%3A58%3A21.842Z");
 
     doc.image(page1, 1, 1, { width: 610, height: 800 });
 
-    // doc.text('123456789123456', 485, 148); //(3) Nº
+    doc.text('123456789123456', 490, 35, { width: 245 }); // Nº
+
+    doc.text('01/01/1111', 480, 145); //(3) Data da notificação
     
     doc.text('RS', 62, 175); //(4) UF
 
@@ -40,7 +43,82 @@ async function testMethod(response) {
 
     doc.text('Vitor Ferreira Michel', 70, 230); //(8) Nome do paciente
 
-    doc.text('01/01/1111', 490, 230); //(8) Data de nascimento
+    doc.text('01/01/1111', 490, 229); //(9) Data de nascimento
+
+    doc.text('4', 116, 252); //(10) (ou)Idade
+
+    doc.text('M', 240, 246); //(11) Sexo
+
+    doc.text('6', 441, 246); //(12) Gestante
+
+    doc.text('1', 569, 246, { width: 245 }); //(13) Raça/Cor
+
+    doc.text('8', 569, 274); //(14) Escolaridade
+
+    doc.text('123456789', 70, 315); //(15) Número do cartão SUS
+
+    doc.text('Nome de alguma mãe', 262, 315); //(16) Nome da mãe
+
+    doc.text('RS', 65, 346); //(17) UF
+
+    doc.text('Porto Alegre', 100, 346); //(18) Município de residência
+    doc.text('123456', 350, 346); //(18) Código IBGE
+
+    doc.text('?', 450, 346); //(19) Distrito
+
+    doc.text('Tristeza', 65, 369); //(20) Bairro
+
+    doc.text('Rua Armando Barbedo', 220, 369); //(21) Logradouro
+    doc.text('?', 515, 369, { width: 245 }); //(21) Código???????
+
+    doc.text('1023', 65, 391); //(22) Número
+
+    doc.text('Ap 301 Bl B', 130, 391); //(23) Complemento
+
+    doc.text('?', 445, 392); //(24) Geo campo1
+    doc.text('?', 65, 416); //(25) Geo campo2
+
+    doc.text('Algum ponto de referência aqui', 235, 417); //(26) Ponto de referência
+
+    doc.text('91920-520', 490, 418); //(27) CEP
+
+    doc.text('(51)99658-4907', 65, 440); //(28) (DDD)Telefone
+
+    doc.text('1', 345, 432); //(29) Zona
+
+    doc.text('null', 400, 440); //(30) Pais (se residente do Brasil)
+
+    doc.text('Desenvolvedor de software', 75, 492); //(31) Ocupação
+
+    doc.text('9', 244, 519); //(32) Transmissão vertical
+
+    doc.text('9', 567, 515, { width: 245 }); //(33) Sexual
+
+    doc.text('9', 295, 560); //(34) Uso de drogas injetáveis
+    doc.text('9', 499, 559); //(34) Transfusão sanguínea
+    doc.text('9', 295, 578); //(34) Tratamento/hemotranfusão para hemofilia
+    doc.text('9', 499, 576); //(34) Acidente com material biológico com posterior soroconversão até 6 meses
+
+    doc.text('01/01/1111', 75, 614); //(35) Data da transfusão/acidente
+
+    doc.text('RS', 200, 614); //(36) UF
+
+    doc.text('Porto Alegre', 230, 614); //(37) Município onde ocorreu a transfusão/acidente
+    doc.text('123456', 515, 614, { width: 245 }); //Código IBGE
+
+    doc.text('Hospital Moinhos de Vento', 75, 640); //(38) Instituição onde ocorreu a transfusão/acidente
+    doc.text('123456', 498, 640, { width: 245 }); //Código
+
+    doc.text('3', 560, 660); //(39)
+
+    doc.text('9', 117, 719, { height: 800 }); //(40) Teste de triagem
+    doc.text('01/01/1111', 200, 722, { height: 800 }); //(40) Teste de triagem DATA
+    doc.text('9', 322, 720, { height: 800 }); //(40) Teste confirmatório
+    doc.text('01/01/1111', 430, 722, { height: 800 }); //(40) Teste confirmatório DATA
+    doc.text('9', 162, 750, { height: 800 }); //(40) Teste rápido 1
+    doc.text('9', 244, 751, { height: 800 }); //(40) Teste rápido 2
+    doc.text('9', 322, 751, { height: 800 }); //(40) Teste rápido 3
+    doc.text('01/01/1111', 400, 758, { height: 800 }); //(40) Data da coleta
 
     doc.addPage();
     doc.fillColor('blue');
@@ -98,7 +176,20 @@ async function testMethod(response) {
     doc.text('Alguma função aqui', 368, 414); // Função
     doc.text('', 73, 367); // Assinatura?
 
+    let pdfEmBase64 = '';
+    let stream = pdf.pipe(new Base64Encode());
+
     doc.end();
+
+    stream.on('data', function (chunk) {
+        pdfEmBase64 += chunk;
+    });
+
+    stream.on('end', function () {
+      response.json({ ficha: pdfEmBase64, assunto: emailSubject, filename: stringFileName });
+    });
+
+    // return response.json({ status: 200 });
 }
 
 module.exports = { testMethod };

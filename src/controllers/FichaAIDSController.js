@@ -315,307 +315,178 @@ module.exports = {
     //   professionalName = 'Ellin Maiara Mallmann Schimidt';
     // }
 
-//     let pdf = new PDFDocument({ autoFirstPage: false });
+    let doc = new PDFDocument();
 
-//     pdf.addPage({ margin: 5 });
-//     pdf.fontSize(9);
-//     pdf.fillColor('blue');
+    doc.fontSize(9);
+    doc.fillColor('blue');
 
-//     const page1 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf1.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYxLmpwZWciLCJpYXQiOjE2NDg1MDU1NzEsImV4cCI6MTk2Mzg2NTU3MX0.lKZtX-wOaFzQ2nauVMcVWP3QwwwrzODx7mgmQuNanKk");
-//     pdf.image(page1, 1, 1, { width: 610, height: 800 });
+    // doc.pipe(stream);
 
-//     pdf.text(data.generalData.notificationDate, 61, 139); // campo 01 data ficha
+    const page1 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18xLmpwZyIsImlhdCI6MTY2MjgzMjY2NywiZXhwIjoxOTc4MTkyNjY3fQ._xUOv8IaqLTIHw1hwTFpMs_M6bu5BeGEtLO-5rYCSTc&t=2022-09-10T17%3A58%3A15.235Z");
+    const page2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_2.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18yLmpwZyIsImlhdCI6MTY2MjgzMjY3NCwiZXhwIjoxOTc4MTkyNjc0fQ.qnyzBaBnAq_9DJ6tfjxGx-rT2HKxAOFYtSNPd4aqVTs&t=2022-09-10T17%3A58%3A21.842Z");
 
-//     pdf.text(data.generalData.symptomsDate, 389, 139); // campo 02 data sintomas
+    doc.image(page1, 1, 1, { width: 610, height: 800 });
 
-//     pdf.text(data.generalData.uf, 76, 153); // campo 03 uf
+    doc.text('123456789123456', 490, 35, { width: 245 }); // Nº
 
-//     pdf.text(data.generalData.city, 182, 153, { width: 215 }); //campo 04 cidade
-//     pdf.text(data.generalData.cityIbgeCode, 468, 153); // campo 04.1 código ibge
+    doc.text('01/01/1111', 480, 145); //(3) Data da notificação
+    
+    doc.text('RS', 62, 175); //(4) UF
 
-//     pdf.text(data.generalData.healthUnit.name, 148, 166, { width: 245 }); //campo 05 unidade de saúde
-//     pdf.text(data.generalData.healthUnit.cnes, 470, 166); // campo 05.1 código cnes
+    doc.text('Porto Alegre', 102, 175); //(5) Município da notificação
+    doc.text('123456', 515, 175, { width: 245 }); //(5) Código IBGE
+    
+    doc.text('Hospital Moinhos de Vento', 70, 201); //(6) Unidade de saúde (ou outra fonte notificadora)
+    doc.text('123456', 380, 201); //(6) Código
 
-//     if (data.patientData.patientHasCpf == '1') {
-//       pdf.text('X', 200, 179); // campo 06 tem cpf? sim
-//       pdf.text(data.patientData.patientCpf, 356, 179); // campo 07 cpf
-//     }
-//     else {
-//       pdf.text('X', 241, 179); // campo 06 tem cpf? nao
-//     }
+    doc.text('01/01/1111', 490, 201); //(7) Data do diagnóstico
 
-//     if (data.patientData.patientIsForeigner == '1')
-//       pdf.text('X', 201, 196); // campo 08 estrangeiro? sim
-//     else
-//       pdf.text('X', 242, 196); // campo 08 estrangeiro? nao
+    doc.text('Vitor Ferreira Michel', 70, 230); //(8) Nome do paciente
 
-//     pdf.text(data.patientData.patientCns, 238, 213) // campo 09 cns
+    doc.text('01/01/1111', 490, 229); //(9) Data de nascimento
 
-//     pdf.text(data.patientData.patientName, 121, 228, { width: 275 }); // campo 10 nome paciente
+    doc.text('4', 116, 252); //(10) (ou)Idade
 
-//     pdf.text(data.patientData.patientGender, 466, 227) // campo 11 sexo
+    doc.text('M', 240, 246); //(11) Sexo
 
-//     pdf.text(data.patientData.patientbBirthDate, 112, 253); // campo 12 data nascimento
+    doc.text('6', 441, 246); //(12) Gestante
 
-//     pdf.text(data.patientData.patientAge, 331, 241); // campo 13 idade
-//     pdf.text(data.patientData.patientAgeType, 357, 253); // campo 13.1 idade
+    doc.text('1', 569, 246, { width: 245 }); //(13) Raça/Cor
 
-//     pdf.text(data.patientData.patientPregnant, 482, 240) // campo 14 gestante
+    doc.text('8', 569, 274); //(14) Escolaridade
 
-//     pdf.text(data.patientData.patientRace, 146, 267); // campo 15 raça
+    doc.text('123456789', 70, 315); //(15) Número do cartão SUS
 
-//     if (data.patientData.patientEthnicity !== 'null')
-//       pdf.text(data.patientData.patientEthnicity, 199, 281, { width: 190 }); // campo 16 se indígena
-//     else
-//       pdf.text('#', 199, 281, { width: 190 }); // campo 16 se indígena
+    doc.text('Nome de alguma mãe', 262, 315); //(16) Nome da mãe
 
-//     if (data.patientData.patientIsMemberOfPeopleOrCommunityTraditional == '1') {
-//       pdf.text('X', 95, 306); // campo 17 membro de comunidade? sim
-//       pdf.text(data.patientData.patientCommunityTraditional, 432, 306, { width: 155 }); // campo 18 se sim , qual?
-//     }
-//     else {
-//       pdf.text('X', 136, 306); // campo 17 membro de comunidade? nao
-//       pdf.text('#', 432, 306, { width: 155 }); // campo 18 se sim , qual?
-//     }
+    doc.text('RS', 65, 346); //(17) UF
 
-//     pdf.text(data.patientData.patientSchooling, 161, 320); // campo 19 escolaridade
+    doc.text('Porto Alegre', 100, 346); //(18) Município de residência
+    doc.text('123456', 350, 346); //(18) Código IBGE
 
-//     pdf.text(data.patientData.patientOccupation, 137, 347, { width: 160 }); // campo 20 ocupação
+    doc.text('?', 450, 346); //(19) Distrito
 
-//     pdf.text(data.patientData.patientMotherName, 403, 347, { width: 185 }); // campo 21 nome da mãe
+    doc.text('Tristeza', 65, 369); //(20) Bairro
 
-//     pdf.text(data.patientResidencyData.patientResidenceCep, 110, 364); // campo 22 cep
+    doc.text('Rua Armando Barbedo', 220, 369); //(21) Logradouro
+    doc.text('?', 515, 369, { width: 245 }); //(21) Código???????
 
-//     pdf.text(data.patientResidencyData.patientResidenceUf, 105, 385); // campo 23 uf
+    doc.text('1023', 65, 391); //(22) Número
 
-//     pdf.text(data.patientResidencyData.patientResidenceCity, 233, 385, { width: 160 }); // campo 24 município
-//     pdf.text(data.patientResidencyData.patientResidenceCityIbgeCode, 463, 385); // campo 24.1 códig ibge
+    doc.text('Ap 301 Bl B', 130, 391); //(23) Complemento
 
-//     pdf.text(data.patientResidencyData.patientResidenceNeighborhood, 91, 411, { width: 145 }); // campo 25 bairro
+    doc.text('?', 445, 392); //(24) Geo campo1
+    doc.text('?', 65, 416); //(25) Geo campo2
 
-//     pdf.text(data.patientResidencyData.patientResidencePatio, 278, 411, { width: 230 }); // campo 26 logradouro
+    doc.text('Algum ponto de referência aqui', 235, 417); //(26) Ponto de referência
 
-//     pdf.text(data.patientResidencyData?.patientResidenceNumber?.toString(), 561, 411); // campo 27 número
+    doc.text('91920-520', 490, 418); //(27) CEP
 
-//     pdf.text(data.patientResidencyData.patientResidenceComplement, 91, 439, { width: 205 }); // campo 28 complemento
+    doc.text('(51)99658-4907', 65, 440); //(28) (DDD)Telefone
 
-//     pdf.text(data.patientResidencyData.patientPhone, 340, 439); // campo 29 telefone
+    doc.text('1', 345, 432); //(29) Zona
 
-//     pdf.text(data.patientResidencyData.patientResidenceArea, 125, 453); // campo 30 zona
+    doc.text('null', 400, 440); //(30) Pais (se residente do Brasil)
 
-//     pdf.text(data.patientResidencyData.patientResidenceCountry, 466, 453, { width: 123 }); // campo 31 país
+    doc.text('Desenvolvedor de software', 75, 492); //(31) Ocupação
 
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientHasNosocomialCase || '9', 382, 467); // campo 32 caso nosocomial
+    doc.text('9', 244, 519); //(32) Transmissão vertical
 
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientHasContactWithAnimals || '9', 445, 480); // campo 33 contato com aves, suínos
+    doc.text('9', 567, 515, { width: 245 }); //(33) Sexual
 
-//     if (data.clinicalAndEpidemiologicalData.patientHasContactWithAnimals == '3')
-//       pdf.text('3', 93, 491); // campo 33.1 outro
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientHasContactWithAnimalsOtherValue, 160, 492, { width: 110 }); // campo 33.2 qual
+    doc.text('9', 295, 560); //(34) Uso de drogas injetáveis
+    doc.text('9', 499, 559); //(34) Transfusão sanguínea
+    doc.text('9', 295, 578); //(34) Tratamento/hemotranfusão para hemofilia
+    doc.text('9', 499, 576); //(34) Acidente com material biológico com posterior soroconversão até 6 meses
 
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'fever') ? '1' : '2', 287, 502); // campo 34.1 febre
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'cough') ? '1' : '2', 349, 502); // campo 34.2 tosse
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'soreThroat') ? '1' : '2', 406, 502); // campo 34.3 dor garganta
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'dyspnoea') ? '1' : '2', 498, 502); // campo 34.4 dispneia
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'respiratoryDistress') ? '1' : '2', 563, 502); // campo 34.5 desc. resp.
+    doc.text('01/01/1111', 75, 614); //(35) Data da transfusão/acidente
 
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'oxygenSaturationLessThan95Percent') ? '1' : '2', 190, 512); // campo 34.6 sat. O2
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'diarrhoea') ? '1' : '2', 283, 512); // campo 34.7 diarreia
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'puke') ? '1' : '2', 334, 512); // campo 34.8 vômito
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'abdominalPain') ? '1' : '2', 384, 512); // campo 34.9 dor abdominal
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'fatigue') ? '1' : '2', 459, 512); // campo 34.10 fadiga
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'lossOfSmell') ? '1' : '2', 512, 512); // campo 34.11 perda olfato
+    doc.text('RS', 200, 614); //(36) UF
 
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'lossOfTaste') ? '1' : '2', 93, 523); // campo 34.12 perda paladar
-//     pdf.text(patientSignsAndSymptoms?.some(item => item === 'other') ? '1' : '2', 196, 523); // campo 34.13 outros
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientSignsAndSymptomsOtherValues, 236, 523, { width: 325 }); // campo 34.14 qual
+    doc.text('Porto Alegre', 230, 614); //(37) Município onde ocorreu a transfusão/acidente
+    doc.text('123456', 515, 614, { width: 245 }); //Código IBGE
 
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientHasRiskFactorsOrComorbiditie || '9', 277, 535); // campo 35
+    doc.text('Hospital Moinhos de Vento', 75, 640); //(38) Instituição onde ocorreu a transfusão/acidente
+    doc.text('123456', 498, 640, { width: 245 }); //Código
 
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'puerpera') ? 'X' : ' ', 93, 546); // campo 35.1 puérpera
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'chronicCardiovascularDisease') ? 'X' : ' ', 251, 546); // campo 35.2 doença cardio
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'chronicHematologicalDisease') ? 'X' : ' ', 394, 546); // campo 35.3 doença hemato
+    doc.text('3', 560, 660); //(39)
 
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'downSyndrome') ? 'X' : ' ', 93, 557); // campo 35.4 síndrome down
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'chronicLiverDisease') ? 'X' : ' ', 251, 557); // campo 35.5 doença hepática
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'asthma') ? 'X' : ' ', 396, 557); // campo 35.6 asma
-
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'mellitusDiabetes') ? 'X' : ' ', 93, 567); // campo 35.7 diabetes
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'chronicNeurologicalDisease') ? 'X' : ' ', 252, 567); // campo 35.8 doença neuro
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'anotherChronicPneumopathy') ? 'X' : ' ', 397, 567); // campo 35.9 outra pneumopatia
-
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'immunodeficiencyImmunodepression') ? 'X' : ' ', 93, 577); // campo 35.10 imunodeficiência
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'chronicKidneyDisease') ? 'X' : ' ', 249, 577); // campo 35.11 doença renal
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'obesity') ? 'X' : ' ', 393, 577); // campo 35.12 obesidade
-//     pdf.text(data.clinicalAndEpidemiologicalData?.patientObesityImc?.toString(), 479, 577); // campo 35.13 imc
-
-//     pdf.text(patientRiskFactorsAndComorbiditie?.some(item => item === 'other') ? 'X' : ' ', 93, 588); // campo 35.14 outros
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientOtherRiskFactorsValues, 136, 588, { width: 425 }); // campo 35.15 qual
-
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientReceivedCovidVaccine, 95, 613); // campo 36 recebeu vacina covid?
-
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientCovidVaccineFirstDoseDate, 391, 611); // campo 37.1 data 1 dose
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientCovidVaccineSecondDoseDate, 391, 621); // campo 37.2 data 2 dose
-
-//     if (data.clinicalAndEpidemiologicalData.covidVaccineProducerLaboratory != null)
-//       pdf.text(data.clinicalAndEpidemiologicalData.covidVaccineProducerLaboratory, 90, 645, { width: 215 }); // campo 38 laboratório produtor
-
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientFirstLotCovidVaccineDate, 380, 644); // campo 39.1 lote 1 dose
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientSecondLotCovidVaccineDate, 380, 662); // campo 39.2 lote 2 dose
-
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientReceivedFluVaccine || '9', 179, 686); // campo 40 recebeu vacina gripe?
-
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientFluVaccineDate, 353, 686); // campo 41 data vacina
-
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientMotherReceivedVaccine, 203, 702); // campo 41.1 mãe recebeu?
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientMotherVaccineDate, 383, 704); // campo 41.2 data vacina mãe
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientMotherBreastFeeding, 203, 712); // campo 41.3 mão paciente amamenta?
-
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientDateOfSingleDose, 192, 731); // campo 41.4 data dose única
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientDateOfFirstDose, 192, 741); // campo 41.5 data 1 dose
-//     pdf.text(data.clinicalAndEpidemiologicalData.patientDateOfSecondDose, 213, 752); // campo 41.5 data 2 dose
-
-//     //PAGINA 2
-
-//     pdf.addPage({ margin: 5 });
-//     pdf.fillColor('blue');
-//     const page2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/pdf2.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9wZGYyLmpwZWciLCJpYXQiOjE2NDg1MDY5MTQsImV4cCI6MTk2Mzg2NjkxNH0.yuYv9_dlMQJSm7m1t4jx9IuWZvByIybO5o57w8uAX4Y");
-//     pdf.image(page2, 1, 1, { width: 610, height: 800 });
-
-//     pdf.text(data.serviceData.patientUsedAntiviralForFlu || '9', 95, 37); // campo 42 usou antiviral para gripe
-
-//     pdf.text(data.serviceData.patientAntiviralForFlu, 339, 31); // campo 43 qual antiviral
-//     pdf.text(data.serviceData.patientOtherAntiviralForFlu, 353, 51, { width: 63 }); // campo 43.1 Outros, especifique
-
-//     pdf.text(data.serviceData.patientAntiviralForFluDate, 497, 46); // campo 44 data
-
-//     pdf.text(data.serviceData.patientWasHospitalized || '9', 187, 64); // campo 45 houve internação?
-
-//     pdf.text(data.serviceData.patientDateOfHospitalizationBySRAG, 296, 77); // campo 46 data 
-
-//     pdf.text(data.serviceData.patientHospitalizedCity.uf, 490, 77); // campo 47 uf
-//     pdf.text(data.serviceData.patientHospitalizedCity.name, 203, 92, { width: 182 }); // campo 48 município internação
-//     pdf.text(data.serviceData.patientHospitalizedCity.cityIbgeCode, 458, 92); // campo 48.1 codigo ibge
-
-//     pdf.text(data.serviceData.patientHospitalizedHealthUnit.name, 241, 105, { width: 149 }); // campo 49 unidade internação
-//     pdf.text(data.serviceData.patientHospitalizedHealthUnit.cnes, 462, 105); // campo 49.1 codigo cnes
-
-//     pdf.text(data.serviceData.patientWasHospitalizedAtUTI || '9', 186, 117); // campo 50 internado em uti?
-
-//     pdf.text(data.serviceData.patientHospitalizedAtUTIEntryDate, 290, 130); // campo 51 data
-
-//     pdf.text(data.serviceData.patientHospitalizedAtUTIExitDate, 482, 130); // campo 52 data dia
-
-//     pdf.text(data.serviceData.patientMadeUseOfVentilatorySupport || '9', 94, 159); // campo 53 uso suporte ventilatorio
-
-//     pdf.text(data.serviceData.patientDidChestXRay || '9', 348, 143); // campo 54 raiox torax
-//     pdf.text(data.serviceData.patientOtherChestXRay, 328, 164, { width: 123 }); // campo 54.1 outro
-
-//     pdf.text(data.serviceData.patientChestXRayDate, 500, 156); // campo 55 data
-
-//     pdf.text(data.serviceData.patientAspectOfTomography || '9', 186, 184); // campo 56 aspecto tomografia
-//     pdf.text(data.serviceData.patientOtherAspectOfTomography, 117, 205, { width: 128 }); // campo 56.1 outro 
-
-//     pdf.text(data.serviceData.patientAspectOfTomographyDate, 476, 201); // campo 57 data
-
-//     pdf.text(data.serviceData.patientCollectionWasPerformedForDiagnosis || '9', 174, 216); // campo 58 coletou amostra
-
-//     pdf.text(data.serviceData.patientCollectionPerformedForDiagnosisDate, 237, 231); // campo 59 data
-
-//     pdf.text(data.serviceData.patientCollectionPerformedForDiagnosis || '9', 424, 216); // campo 60 tipo de amostra
-//     pdf.text(data.serviceData.patientOtherCollectionPerformedForDiagnosis, 383, 237, { width: 98 }); // campo 60.1 outra, qual?
-
-//     pdf.text(data.laboratoryData?.patientResidenceNumberGalRequest?.toString(), 88, 267, { width: 110 }); // campo 61 requisição GAL
-//     pdf.text(data.laboratoryData.patientTypeOfTestForViralAntigenResearch, 342, 265); // campo 62 tipo do teste
-
-//     pdf.text(data.laboratoryData.patientTypeOfTestForViralAntigenResearchDate, 89, 292); // campo 63 data
-
-//     pdf.text(data.laboratoryData.patientAntigenicTestResult || '9', 484, 280); // campo 64 resultado da teste
-
-//     pdf.text(data.laboratoryData.laboratoryThatPerformedTheTestAntigenic.name, 89, 319, { width: 340 }); // campo 65 laboratório
-//     pdf.text(data.laboratoryData.laboratoryThatPerformedTheTestAntigenic.cnes, 482, 319); // campo 65.1 codigo cnes
-
-//     pdf.text(data.laboratoryData.patientHasBeenPositiveForInfluenza || '9', 389, 332); // campo 66 agente etiológico
-//     pdf.text(data.laboratoryData.patientHasBeenPositiveForInfluenzaType || '9', 202, 347); // campo 66.1 se sim
-//     pdf.text(data.laboratoryData.patientHasBeenPositiveForOtherVirus || '9', 474, 347); // campo 66.2 positivo
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypes?.some(item => item === 'sarsCovTwo') ? 'X' : ' ', 317, 362); // campo 66.3 sars-cov-2
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypes?.some(item => item === 'respiratorySincicialVirus') ? 'X' : ' ', 394, 362); // campo 66.4 VSR
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypes?.some(item => item === 'parainfluenzaOne') ? 'X' : ' ', 518, 362); // campo 66.5 parainfluenza 1
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypes?.some(item => item === 'parainfluenzaTwo') ? 'X' : ' ', 91, 374); // campo 66.6 parainfluenza 2
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypes?.some(item => item === 'parainfluenzaThree') ? 'X' : ' ', 179, 374); // campo 66.7 parainfluenza 3
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypes?.some(item => item === 'adenovirus') ? 'X' : ' ', 267, 374); // campo 66.8 adenovírus
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypes?.some(item => item === 'other') ? 'X' : ' ', 327, 375); // campo 66.9 outros
-//     pdf.text(data.laboratoryData.patientHasBeenPositiveForOtherVirusTypesOtherValue, 465, 375, { width: 123 }); // campo 66.10 especifique
-
-//     pdf.text(data.laboratoryData.patientResultOfRTPCR || '9', 189, 400); // campo 67 resultado da RT-PCR
-
-//     pdf.text(data.laboratoryData.patientResultOfRTPCRDate, 385, 401); // campo 68 data
-
-//     pdf.text(data.laboratoryData.patientHasBeenPositiveForInfluenzaRTPCR || '9', 193, 445); // campo 69 positivo para influenza?
-//     pdf.text(data.laboratoryData.patientHasBeenPositiveForInfluenzaRTPCRType, 440, 445); // campo 69.1 se sim, qual influenza?
-//     pdf.text(data.laboratoryData.influenzaASubtype, 193, 464); // campo 69.2 influenza A
-//     pdf.text(data.laboratoryData.influenzaASubtypeOtherValue, 474, 478, { width: 113 }); // campo 69.3 especifique
-//     pdf.text(data.laboratoryData.influenzaBLineage, 194, 495); // campo 69.4 influenza B
-//     pdf.text(data.laboratoryData.influenzaBLineageOtherValue, 487, 497, { width: 103 }); // campo 69.5 especifique
-//     pdf.text(data.laboratoryData.patientHasBeenPositiveForOtherVirusRTPCR || '9', 194, 513); // campo 69.6 positivo outros vírus?
-
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'sarsCovTwo') ? 'X' : ' ', 63, 530); // campo 69.7 sars
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'respiratorySincicialVirus') ? 'X' : ' ', 124, 530); // campo 69.8 VSR
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'parainfluenzaOne') ? 'X' : ' ', 233, 530); // campo 69.9 Para 1
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'parainfluenzaTwo') ? 'X' : ' ', 304, 530); // campo 69.10 Para 2
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'parainfluenzaThree') ? 'X' : ' ', 375, 530); // campo 69.11 Para 3
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'parainfluenzaFour') ? 'X' : ' ', 449, 530); // campo 69.12 Para 4
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'adenovirus') ? 'X' : ' ', 534, 530); // campo 69.13 Adenovírus
-
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'metapneumovirus') ? 'X' : ' ', 63, 544); // campo 69.14 meta
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'bocavirus') ? 'X' : ' ', 168, 544); // campo 69.15 boca
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'rinovirus') ? 'X' : ' ', 242, 544); // campo 69.16 rino
-//     pdf.text(patientHasBeenPositiveForOtherVirusTypesRTPCR?.some(item => item === 'other') ? 'X' : ' ', 305, 544); // campo 69.17 outro
-//     pdf.text(data.laboratoryData.patientHasBeenPositiveForOtherVirusTypesRTPCROtherValue, 443, 544, { width: 145 }); // campo 69.18 especifique
-
-//     pdf.text(data.laboratoryData.laboratoryThatPerformedTheTestRTPCR.name, 89, 573, { width: 340 }); // campo 70 laboratório
-//     pdf.text(data.laboratoryData.laboratoryThatPerformedTheTestRTPCR.cnes, 480, 573); // campo 70.1 codigo cnes
-
-//     pdf.text(data.laboratoryData.serologicalSampleTypeForSarsCov2 || '9', 303, 587); // campo 71 tipo de amostra
-//     pdf.text(data.laboratoryData.serologicalSampleTypeForSarsCov2OtherValue, 137, 599, { width: 165 }); // campo 71.1 outra, qual?
-
-//     pdf.text(data.laboratoryData.serologicalSampleTypeForSarsCov2Date, 475, 599); // campo 72 data
-
-//     pdf.text(data.laboratoryData.serologyTypeForSarsCov2, 265, 612); // campo 73 tipo de sorologia
-//     pdf.text(data.laboratoryData.serologyTypeForSarsCov2OtherValue, 208, 624, { width: 210 }); // campo 73.1 outro, qual?
-//     pdf.text(data.laboratoryData.serologicalTestResultForSarsCoV2IgG || '9', 324, 635); // campo 73.2 igg
-//     pdf.text(data.laboratoryData.serologicalTestResultForSarsCoV2IgM || '9', 362, 635); // campo 73.3 igm
-//     pdf.text(data.laboratoryData.serologicalTestResultForSarsCoV2IgA || '9', 396, 635); // campo 73.4 iga
-
-//     pdf.text(data.laboratoryData.patientResultDateSerologicalTest, 491, 624); // campo 74 data
-
-//     // Campos 75 a 79 não precisam retornar valores
-
-//     pdf.text(data.finalData.patientDONumber, 150, 724); // campo 80 numero DO
-
-//     pdf.text(data.finalData.patientObservationsOfTheCase, 138, 740, { width: 450 }); // campo 81 observacoes
-
-//     pdf.text(professionalName, 67, 767, { width: 320 }); // campo 82 profissional
-
-//     if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm != undefined)
-//       pdf.text('COREN/RS ' + data.finalData.healthProfessionalResponsibleForFillingOutTheForm, 450, 767); // campo 83 conselho profissional
-
-//     if (!!signaturePath)
-//       pdf.image(signaturePath, 265, 730, { height: 75, width: 80 }); // imagem assinatura fabricio
-
-//     let pdfEmBase64 = '';
-//     let stream = pdf.pipe(new Base64Encode());
-
-//     pdf.end();
-
-//     console.log("PDF created successfuly");
-
-//     stream.on('data', function (chunk) {
-//       pdfEmBase64 += chunk;
-//     });
-
-//     stream.on('end', function () {
-//       response.json({ ficha: pdfEmBase64, assunto: emailSubject, filename: stringFileName });
-//     });
+    doc.text('9', 117, 719, { height: 800 }); //(40) Teste de triagem
+    doc.text('01/01/1111', 200, 722, { height: 800 }); //(40) Teste de triagem DATA
+    doc.text('9', 322, 720, { height: 800 }); //(40) Teste confirmatório
+    doc.text('01/01/1111', 430, 722, { height: 800 }); //(40) Teste confirmatório DATA
+    doc.text('9', 162, 750, { height: 800 }); //(40) Teste rápido 1
+    doc.text('9', 244, 751, { height: 800 }); //(40) Teste rápido 2
+    doc.text('9', 322, 751, { height: 800 }); //(40) Teste rápido 3
+    doc.text('01/01/1111', 400, 758, { height: 800 }); //(40) Data da coleta
+
+    doc.addPage();
+    doc.fillColor('blue');
+
+    doc.image(page2, 1, 1, { width: 610, height: 800 });
+
+    doc.text('9', 73, 42); //(41) Sarcoma de Kaposi
+    doc.text('9', 73, 56); //(41) Tuberculose disseminada/extra-pulmonar/não cavitária
+    doc.text('9', 73, 70); //(41) Candidose oral ou leucoplasia pilosa
+    doc.text('9', 73, 83); //(41) Tuberculose pulmonar cavitária ou não especificada
+    doc.text('9', 73, 97); //(41) Herpes zoster em indivíduo menor ou igual a 60 anos
+    doc.text('9', 73, 111); //(41) Disfução do sistema nervoso central
+    doc.text('9', 73, 125); //(41) Diarréia igual ou maior a 1 mês
+    doc.text('9', 74, 137); //(41) Febre maior ou igual a 38 por tempo maior ou igual a 1 mês
+    doc.text('9', 313, 42); //(41) Caquexia ou perda de peso maior que 10%
+    doc.text('9', 313, 56); //(41) Astenia maior ou igual a 1 mês
+    doc.text('9', 313, 70); //(41) Dermatite persistente
+    doc.text('9', 313, 83); //(41) Anemia e/ou linfopenia e/ou trombocitopenia
+    doc.text('9', 313, 97); //(41) Tosse persistente ou qualquer pneumonia
+    doc.text('9', 313, 111); //(41) Linfadenopatia maior ou igual a 1cm, maior ou igual a 2 sítios extra-inguinais e por tempo maior ou igual a 1 mês
+
+    doc.text('9', 71, 168); //(42) Câncer cervical invasiso
+    doc.text('9', 71, 181); //(42) Candidose de esôfago
+    doc.text('9', 71, 195); //(42) Candidose de traquéia, brônquios ou pulmâo
+    doc.text('9', 71, 209); //(42) Citomegalovirose (exceto fígado, baço ou linfonodos)
+    doc.text('9', 71, 223); //(42) Criptococose extrapulmonar
+    doc.text('9', 71, 237); //(42) Criptosporidiose intestinal crônica > 1 mês
+    doc.text('9', 71, 251); //(42) Herpes simples mucocutâneo > 1 mês
+    doc.text('9', 71, 265); //(42) Histoplasmose disseminada
+    doc.text('9', 71, 279); //(42) Isosporidiose intestinal crônica > 1 mês
+    doc.text('9', 310, 167); //(42) Leucoencefalopatia multifocal progressiva
+    doc.text('9', 310, 183); //(42) Linfoma não Hodgkin e outros linfomas
+    doc.text('9', 310, 197); //(42) Linfoma primário do cérebro
+    doc.text('9', 310, 211); //(42) Micobacteriose disseminada exceto tuberculose e hanseníase
+    doc.text('9', 310, 224); //(42) Pneumonia por Pneumocystis carinii
+    doc.text('9', 310, 238); //(42) Reativação de doença de Chagas (meningoencefalite e/ou miocardite)
+    doc.text('9', 310, 251); //(42) Salmonelose (sepse recorrente não-tifóide)
+    doc.text('9', 310, 266); //(42) Toxoplasmose cerebral
+    doc.text('9', 310, 279); //(42) Contagem de linfócitos T CD4+ menor que 350 cel/mm³
+
+    doc.text('9', 521, 307); //(43) Critério de óbito
+
+    doc.text('RS', 62, 352); //(44) UF
+
+    doc.text('Porto Alegre', 92, 352); //(45) Municício onde se realiza o tratamento
+    doc.text('123456', 280, 352); //(45) Código (IBGE)
+
+    doc.text('Hospital Moinhos de Ventos', 360, 352); //(46) Unidade de saúde onde se realiza o tratamento
+    doc.text('123456', 515, 352, { width: 245 }); //(46) Código
+
+    doc.text('9', 439, 367); //(47) Evolução do caso
+    doc.text('01/01/1111', 492, 383); //(48) Data do óbito
+
+    doc.text('Vitor Ferreira Michel', 70, 414); // Nome
+    doc.text('Alguma função aqui', 368, 414); // Função
+    doc.text('', 73, 367); // Assinatura?
+
+    let pdfEmBase64 = '';
+    let stream = pdf.pipe(new Base64Encode());
+
+    doc.end();
+
+    stream.on('data', function (chunk) {
+        pdfEmBase64 += chunk;
+    });
+
+    stream.on('end', function () {
+      response.json({ ficha: pdfEmBase64, assunto: emailSubject, filename: stringFileName });
+    });
   }
 }
