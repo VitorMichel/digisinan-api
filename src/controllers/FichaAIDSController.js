@@ -59,18 +59,18 @@ module.exports = {
 
     let queryInsert = 'INSERT INTO FICHA_AIDS_ADULTO';
     // CD_FICHA = 4 (Aids Adulto)
-    queryInsert += `VALUES ('4', '${CD_USUARIO_REG}', '${date.toISOString().split('T')[0]}', '${CD_USUARIO_ATUAL}', '${date.toISOString().split('T')[0]}', '${CD_USUARIO_INAT}', '${DT_INATIVACAO}', 
-                    '${DS_MOTIVO_INAT}', '${IE_SITUACAO}', '${NR_NOTIFICACAO}', '${dadosGerais.dataNotificacao}', '${dadosGerais.uf}', '${dadosGerais.codigoIbgeCidade}', '${dadosGerais.codigoCnes}', '${dadosGerais.dataDiagnostico}',
-                    '${notificaoIndividual.nomePaciente}', '${notificaoIndividual.dataNascimento}', '${notificaoIndividual.idadeValor}', '${notificaoIndividual.idadeTipo}', '${notificaoIndividual.sexo}', '${notificaoIndividual.gestante}', '${notificaoIndividual.racaCor}', '${notificaoIndividual.escolaridade}',
-                    '${notificaoIndividual.numeroCartaoSus}', '${NR_TELEFONE}', '${CD_OCUPACAO}', '${notificaoIndividual.nomeMae}', '${CD_PAIS}', '${DS_CEP}', '${DS_SIGLA_UF}', '${CD_MUNICIPIO_RESID}',
-                    '${DS_DISTRITO}', '${DS_BAIRRO}', '${DS_LOGRADOURO}', '${DS_NUMERO}', '${DS_COMPLEMENTO}', '${DS_PONTO_REF}', '${DS_GEO_CAMPO_1}', '${DS_GEO_CAMPO_2}',
-                    '${IE_ZONA}', '${IE_TRANSM_VERTICAL}', '${IE_TRANSM_SEXUAL}', '${IE_TRANSM_SAN_INJ}', '${IE_TRANSM_SAN_TRANSF}', '${IE_TRANSM_SAN_TRAT}', '${IE_TRANSM_SAN_ACID}', '${DT_TRANSF_ACIDENTE}',
-                    '${DS_SIGLA_UF_OCORREU}', '${CD_MUNICIPIO_OCORREU}', '${NR_CNES_OCORREU}', '${IE_INVEST_ALGORITMO}', '${IE_TESTE_TRIAGEM}', '${DT_COL_TESTE_TRIAGEM}', '${IE_TESTE_CONFIRM}', '${DT_COL_TESTE_CONFIRM}',
-                    '${IE_TESTE_RAPIDO_1}', '${DT_COL_TESTE_RAPIDO_1}', '${IE_TESTE_RAPIDO_2}', '${DT_COL_TESTE_RAPIDO_2}', '${IE_TESTE_RAPIDO_3}', '${DT_COL_TESTE_RAPIDO_3}', '${IE_SARCOMA_KAPOSI}', '${IE_TB_DISSEMINADA}',
-                    '${IE_CANDIDOSE_ORAL}', '${IE_HERPES_ZOSTER}', '${IE_DISFUNCAO_SNC}', '${IE_DIARREIA}', '${IE_FEBRE}', '${IE_CAQUEXIA}', '${IE_ASTENIA}', '${IE_DERMATITE}', '${IE_ANEMIA}',
-                    '${IE_TOSSE}', '${IE_LINFADENOPATIA}', '${IE_CANCER_CERVICAL}', '${IE_CANDIDOSE_ESOFAGO}', '${IE_CANDIDOSE_TRAQUEIA}', '${IE_CITOMEGALOVIRUS}', '${IE_CRIPTOCOCOSE}', '${IE_CRIPTOSPORIDIOSE}', '${IE_HERPES_SIMPLES}',
-                    '${IE_HISTOPLASMOSE}', '${IE_ISOSPORIDIOSE}', '${IE_LEUCOENCEFALOPATIA}', '${IE_LINFOMA_N_HODGKIN}', '${IE_LINFOMA_CEREBRO}', '${IE_MICOBACTERIOSE}', '${IE_PNEUMONIA}', '${IE_REATIVACAO_CHAGAS}', '${IE_SALMONELOSE}',
-                    '${IE_TOXOPLASMOSE}', '${IE_CONT_LINFOCITOS}', '${IE_DECLARACAO_OBITO}', '${tratamento.uf}', '${tratamento.codigoIbge}', '${tratamento.cnesUnidadeSaude}', '${evolucao.evolucaoDoCaso}', '${evolucao.dataObito}', '${CD_USUARIO_LIBERACAO}', '${investigador.assinatura}');`;
+    // queryInsert += `VALUES ('4', '${CD_USUARIO_REG}', '${date.toISOString().split('T')[0]}', '${CD_USUARIO_ATUAL}', '${date.toISOString().split('T')[0]}', '${CD_USUARIO_INAT}', '${DT_INATIVACAO}', 
+    //                 '${DS_MOTIVO_INAT}', '${IE_SITUACAO}', '${NR_NOTIFICACAO}', '${dadosGerais.dataNotificacao}', '${dadosGerais.uf}', '${dadosGerais.codigoIbgeCidade}', '${dadosGerais.codigoCnes}', '${dadosGerais.dataDiagnostico}',
+    //                 '${notificaoIndividual.nomePaciente}', '${notificaoIndividual.dataNascimento}', '${notificaoIndividual.idadeValor}', '${notificaoIndividual.idadeTipo}', '${notificaoIndividual.sexo}', '${notificaoIndividual.gestante}', '${notificaoIndividual.racaCor}', '${notificaoIndividual.escolaridade}',
+    //                 '${notificaoIndividual.numeroCartaoSus}', '${NR_TELEFONE}', '${CD_OCUPACAO}', '${notificaoIndividual.nomeMae}', '${CD_PAIS}', '${DS_CEP}', '${DS_SIGLA_UF}', '${CD_MUNICIPIO_RESID}',
+    //                 '${DS_DISTRITO}', '${DS_BAIRRO}', '${DS_LOGRADOURO}', '${DS_NUMERO}', '${DS_COMPLEMENTO}', '${DS_PONTO_REF}', '${DS_GEO_CAMPO_1}', '${DS_GEO_CAMPO_2}',
+    //                 '${IE_ZONA}', '${IE_TRANSM_VERTICAL}', '${IE_TRANSM_SEXUAL}', '${IE_TRANSM_SAN_INJ}', '${IE_TRANSM_SAN_TRANSF}', '${IE_TRANSM_SAN_TRAT}', '${IE_TRANSM_SAN_ACID}', '${DT_TRANSF_ACIDENTE}',
+    //                 '${DS_SIGLA_UF_OCORREU}', '${CD_MUNICIPIO_OCORREU}', '${NR_CNES_OCORREU}', '${IE_INVEST_ALGORITMO}', '${IE_TESTE_TRIAGEM}', '${DT_COL_TESTE_TRIAGEM}', '${IE_TESTE_CONFIRM}', '${DT_COL_TESTE_CONFIRM}',
+    //                 '${IE_TESTE_RAPIDO_1}', '${DT_COL_TESTE_RAPIDO_1}', '${IE_TESTE_RAPIDO_2}', '${DT_COL_TESTE_RAPIDO_2}', '${IE_TESTE_RAPIDO_3}', '${DT_COL_TESTE_RAPIDO_3}', '${IE_SARCOMA_KAPOSI}', '${IE_TB_DISSEMINADA}',
+    //                 '${IE_CANDIDOSE_ORAL}', '${IE_HERPES_ZOSTER}', '${IE_DISFUNCAO_SNC}', '${IE_DIARREIA}', '${IE_FEBRE}', '${IE_CAQUEXIA}', '${IE_ASTENIA}', '${IE_DERMATITE}', '${IE_ANEMIA}',
+    //                 '${IE_TOSSE}', '${IE_LINFADENOPATIA}', '${IE_CANCER_CERVICAL}', '${IE_CANDIDOSE_ESOFAGO}', '${IE_CANDIDOSE_TRAQUEIA}', '${IE_CITOMEGALOVIRUS}', '${IE_CRIPTOCOCOSE}', '${IE_CRIPTOSPORIDIOSE}', '${IE_HERPES_SIMPLES}',
+    //                 '${IE_HISTOPLASMOSE}', '${IE_ISOSPORIDIOSE}', '${IE_LEUCOENCEFALOPATIA}', '${IE_LINFOMA_N_HODGKIN}', '${IE_LINFOMA_CEREBRO}', '${IE_MICOBACTERIOSE}', '${IE_PNEUMONIA}', '${IE_REATIVACAO_CHAGAS}', '${IE_SALMONELOSE}',
+    //                 '${IE_TOXOPLASMOSE}', '${IE_CONT_LINFOCITOS}', '${IE_DECLARACAO_OBITO}', '${tratamento.uf}', '${tratamento.codigoIbge}', '${tratamento.cnesUnidadeSaude}', '${evolucao.evolucaoDoCaso}', '${evolucao.dataObito}', '${CD_USUARIO_LIBERACAO}', '${investigador.assinatura}');`;
 
     // console.log(request.body);
     // console.log(dadosGerais);
@@ -260,13 +260,13 @@ module.exports = {
     //   return firstLetter.toUpperCase();
     // }
 
-    // async function fetchImage(src) {
-    //   const image = await axios
-    //     .get(src, {
-    //       responseType: 'arraybuffer'
-    //     })
-    //   return image.data;
-    // }
+    async function fetchImage(src) {
+      const image = await axios
+        .get(src, {
+          responseType: 'arraybuffer'
+        })
+      return image.data;
+    }
 
     // var today = new Date();
     // var day = today.getDate() + "";
@@ -300,7 +300,9 @@ module.exports = {
     // let acronymName = getFirstLetter(removeNames(data.patientData.patientName, namesToRemove));
 
     // let emailSubject = 'Ficha SRAG: ' + acronymHospital + '-' + acronymName;
+    let emailSubject = 'Ficha Aids Adulto';
     // let stringFileName = 'SRAG ' + acronymHospital + ' ' + todayDate + ' ' + acronymName + '.pdf';
+    let stringFileName = 'AidsAdulto.pdf';
 
     // if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456') {
     //   signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1-removebg-preview.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS1yZW1vdmViZy1wcmV2aWV3LnBuZyIsImlhdCI6MTY1MDI4OTYzMCwiZXhwIjoxOTY1NjQ5NjMwfQ.yhlGZPGkPDIgnK6zPk_C9VX_f4Q19CTo-NdjyKIuWb8");
@@ -477,7 +479,7 @@ module.exports = {
     doc.text('', 73, 367); // Assinatura?
 
     let pdfEmBase64 = '';
-    let stream = pdf.pipe(new Base64Encode());
+    let stream = doc.pipe(new Base64Encode());
 
     doc.end();
 
