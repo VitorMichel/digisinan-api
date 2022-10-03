@@ -13,6 +13,8 @@ module.exports = {
                 
             return response.json(results);
         });
+
+        connection.release();
     },
 
     async getCity(request, response)
