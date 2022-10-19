@@ -327,7 +327,7 @@ module.exports = {
 
     // doc.pipe(stream);
 
-    const page1 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18xLmpwZyIsImlhdCI6MTY2MjgzMjY2NywiZXhwIjoxOTc4MTkyNjY3fQ._xUOv8IaqLTIHw1hwTFpMs_M6bu5BeGEtLO-5rYCSTc&t=2022-09-10T17%3A58%3A15.235Z");
+    const page1 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18xLmpwZyIsImlhdCI6MTY2NjIyMjM5MCwiZXhwIjoxOTgxNTgyMzkwfQ.xU8RCD5W5XJTg-e2obyI3QjmYNZd0SO-lro9Oonzh9M&t=2022-10-19T23%3A33%3A51.795Z");
     const page2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_2.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18yLmpwZyIsImlhdCI6MTY2MjgzMjY3NCwiZXhwIjoxOTc4MTkyNjc0fQ.qnyzBaBnAq_9DJ6tfjxGx-rT2HKxAOFYtSNPd4aqVTs&t=2022-09-10T17%3A58%3A21.842Z");
 
     doc.image(page1, 1, 1, { width: 610, height: 800 });
@@ -424,9 +424,10 @@ module.exports = {
     doc.text(dadosLaboratorio.testeRapido1, 162, 750, { height: 800 }); //(40) Teste rápido 1
     doc.text(dadosLaboratorio.testeRapido2, 244, 751, { height: 800 }); //(40) Teste rápido 2
     doc.text(dadosLaboratorio.testeRapido3, 322, 751, { height: 800 }); //(40) Teste rápido 3
-    
-    doc.text('01/01/1111', 400, 758, { height: 800 }); //(40) Data da coleta
-    //TODO VITOR
+
+    doc.text(dadosLaboratorio.dataColetaTesteRapido1, 150, 758, { height: 800 }); //(40) Data da coleta 1
+    doc.text(dadosLaboratorio.dataColetaTesteRapido2, 316, 758, { height: 800 }); //(40) Data da coleta 2
+    doc.text(dadosLaboratorio.dataColetaTesteRapido3, 490, 758, { height: 800 }); //(40) Data da coleta 3
 
     doc.addPage();
     doc.fillColor('blue');

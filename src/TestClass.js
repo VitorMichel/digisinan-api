@@ -14,15 +14,15 @@ async function fetchImage(src) {
 }
 
 async function testMethod(request, response) {
-    // let stream = fs.createWriteStream('./TesteFichaAidsAdulto.pdf');
+    let stream = fs.createWriteStream('./TesteFichaAidsAdulto.pdf');
     let doc = new PDFDocument();
 
     doc.fontSize(9);
     doc.fillColor('blue');
 
-    // doc.pipe(stream);
+    doc.pipe(stream);
 
-    const page1 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18xLmpwZyIsImlhdCI6MTY2MjgzMjY2NywiZXhwIjoxOTc4MTkyNjY3fQ._xUOv8IaqLTIHw1hwTFpMs_M6bu5BeGEtLO-5rYCSTc&t=2022-09-10T17%3A58%3A15.235Z");
+    const page1 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18xLmpwZyIsImlhdCI6MTY2NjIyMjM5MCwiZXhwIjoxOTgxNTgyMzkwfQ.xU8RCD5W5XJTg-e2obyI3QjmYNZd0SO-lro9Oonzh9M&t=2022-10-19T23%3A33%3A51.795Z");
     const page2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_2.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18yLmpwZyIsImlhdCI6MTY2MjgzMjY3NCwiZXhwIjoxOTc4MTkyNjc0fQ.qnyzBaBnAq_9DJ6tfjxGx-rT2HKxAOFYtSNPd4aqVTs&t=2022-09-10T17%3A58%3A21.842Z");
 
     doc.image(page1, 1, 1, { width: 610, height: 800 });
@@ -115,10 +115,12 @@ async function testMethod(request, response) {
     doc.text('01/01/1111', 200, 722, { height: 800 }); //(40) Teste de triagem DATA
     doc.text('9', 322, 720, { height: 800 }); //(40) Teste confirmatório
     doc.text('01/01/1111', 430, 722, { height: 800 }); //(40) Teste confirmatório DATA
-    doc.text('9', 162, 750, { height: 800 }); //(40) Teste rápido 1
-    doc.text('9', 244, 751, { height: 800 }); //(40) Teste rápido 2
-    doc.text('9', 322, 751, { height: 800 }); //(40) Teste rápido 3
-    doc.text('01/01/1111', 400, 758, { height: 800 }); //(40) Data da coleta
+    doc.text('9', 71, 752, { height: 800 }); //(40) Teste rápido 1
+    doc.text('9', 246, 754, { height: 800 }); //(40) Teste rápido 2
+    doc.text('9', 413, 752, { height: 800 }); //(40) Teste rápido 3
+    doc.text('01/01/1111', 150, 758, { height: 800 }); //(40) Data da coleta 1
+    doc.text('01/01/1111', 316, 758, { height: 800 }); //(40) Data da coleta 2
+    doc.text('01/01/1111', 490, 758, { height: 800 }); //(40) Data da coleta 3
 
     doc.addPage();
     doc.fillColor('blue');
@@ -176,20 +178,9 @@ async function testMethod(request, response) {
     doc.text('Alguma função aqui', 368, 414); // Função
     doc.text('', 73, 367); // Assinatura?
 
-    let pdfEmBase64 = '';
-    let stream = pdf.pipe(new Base64Encode());
-
     doc.end();
 
-    stream.on('data', function (chunk) {
-        pdfEmBase64 += chunk;
-    });
-
-    stream.on('end', function () {
-      response.json({ ficha: pdfEmBase64, assunto: emailSubject, filename: stringFileName });
-    });
-
-    // return response.json({ status: 200 });
+    return response.json({ status: 200 });
 }
 
 module.exports = { testMethod };
