@@ -499,5 +499,7 @@ module.exports = {
     // stream.on('end', function () {
     //   response.json({ ficha: pdfEmBase64, assunto: emailSubject, filename: stringFileName });
     // });
+
+    console.log('aqui')
   }
 }
