@@ -46,7 +46,7 @@ module.exports = {
 
   async postFichaAidsAdulto(request, response, next) {
     const { dadosGerais } = request.body;
-    const { notificaoIndividual } = request.body;
+    const { notificacaoIndividual } = request.body;
     const { dadosResidencia } = request.body;
     const { antecedentesEpidemiologicos } = request.body;
     const { dadosLaboratorio } = request.body;
@@ -337,7 +337,7 @@ module.exports = {
     doc.text('123456789123456', 490, 35, { width: 245 }); // Nº //se vier, colocar. Senão, não
     //TODO VITOR
 
-    doc.text(dadosGerais.notificationDate, 480, 145); //(3) Data da notificação
+    doc.text(dadosGerais.dataNotificacao, 480, 145); //(3) Data da notificação
     
     doc.text(dadosGerais.uf, 62, 175); //(4) UF
 
@@ -349,23 +349,23 @@ module.exports = {
 
     doc.text(dadosGerais.dataDiagnostico, 490, 201); //(7) Data do diagnóstico
 
-    doc.text(notificaoIndividual.nomePaciente, 70, 230); //(8) Nome do paciente
+    doc.text(notificacaoIndividual.nomePaciente, 70, 230); //(8) Nome do paciente
 
-    doc.text(notificaoIndividual.dataNascimento, 490, 229); //(9) Data de nascimento
+    doc.text(notificacaoIndividual.dataNascimento, 490, 229); //(9) Data de nascimento
 
-    doc.text(notificaoIndividual.idadeTipo, 116, 252); //(10) (ou)Idade
+    doc.text(notificacaoIndividual.idadeTipo, 116, 252); //(10) (ou)Idade
 
-    doc.text(notificaoIndividual.sexo, 240, 246); //(11) Sexo
+    doc.text(notificacaoIndividual.sexo, 240, 246); //(11) Sexo
 
-    doc.text(notificaoIndividual.gestante, 441, 246); //(12) Gestante
+    doc.text(notificacaoIndividual.gestante, 441, 246); //(12) Gestante
 
-    doc.text(notificaoIndividual.racaCor, 569, 246, { width: 245 }); //(13) Raça/Cor
+    doc.text(notificacaoIndividual.racaCor, 569, 246, { width: 245 }); //(13) Raça/Cor
 
-    doc.text(notificaoIndividual.escolaridade, 569, 274); //(14) Escolaridade
+    doc.text(notificacaoIndividual.escolaridade, 569, 274); //(14) Escolaridade
 
-    doc.text(notificaoIndividual.numeroCartaoSus, 70, 315); //(15) Número do cartão SUS
+    doc.text(notificacaoIndividual.numeroCartaoSus, 70, 315); //(15) Número do cartão SUS
 
-    doc.text(notificaoIndividual.nomeMae, 262, 315); //(16) Nome da mãe
+    doc.text(notificacaoIndividual.nomeMae, 262, 315); //(16) Nome da mãe
 
     doc.text(dadosResidencia.uf, 65, 346); //(17) UF
 
