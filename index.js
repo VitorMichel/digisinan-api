@@ -7,15 +7,30 @@ const app = express();
 
 let port = process.env.PORT || 3333;
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Origin', 'https://digisinan.com.br');
-    res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
-    res.header('Access-Control-Allow-Credentials', true);
-    next();
-});
+const corsOpts = {
+    origin: '*',
+  
+    methods: [
+      'GET',
+      'POST',
+    ],
+  
+    allowedHeaders: [
+      'Content-Type',
+    ],
+  };
+  
+app.use(cors(corsOpts));
+
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+//     res.setHeader('Access-Control-Allow-Origin', 'https://digisinan.com.br');
+//     res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+//     res.header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+//     res.header('Access-Control-Allow-Credentials', true);
+//     next();
+// });
 app.use(express.json());
 app.use(routes);
 app.listen(port, () => {
