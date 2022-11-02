@@ -367,125 +367,125 @@ module.exports = {
 
     doc.text(notificaoIndividual.nomeMae, 262, 315); //(16) Nome da mãe
 
-    doc.text(dadosResidencia.uf, 65, 346); //(17) UF
+    // doc.text(dadosResidencia.uf, 65, 346); //(17) UF
 
-    doc.text(dadosResidencia.municipioResidencia, 100, 346); //(18) Município de residência
-    doc.text(dadosResidencia.codigoIbgeCidade, 350, 346); //(18) Código IBGE
+    // doc.text(dadosResidencia.municipioResidencia, 100, 346); //(18) Município de residência
+    // doc.text(dadosResidencia.codigoIbgeCidade, 350, 346); //(18) Código IBGE
 
-    doc.text(dadosResidencia.distrito, 450, 346); //(19) Distrito
+    // doc.text(dadosResidencia.distrito, 450, 346); //(19) Distrito
 
-    doc.text(dadosResidencia.bairro, 65, 369); //(20) Bairro
+    // doc.text(dadosResidencia.bairro, 65, 369); //(20) Bairro
 
-    doc.text(dadosResidencia.logradouro, 220, 369); //(21) Logradouro
-    doc.text('', 515, 369, { width: 245 }); //(21) Código???????
+    // doc.text(dadosResidencia.logradouro, 220, 369); //(21) Logradouro
+    // doc.text('', 515, 369, { width: 245 }); //(21) Código???????
 
-    doc.text(dadosResidencia.numero, 65, 391); //(22) Número
+    // doc.text(dadosResidencia.numero, 65, 391); //(22) Número
 
-    doc.text(dadosResidencia.complemento, 130, 391); //(23) Complemento
+    // doc.text(dadosResidencia.complemento, 130, 391); //(23) Complemento
 
-    doc.text('', 445, 392); //(24) Geo campo1
-    doc.text('', 65, 416); //(25) Geo campo2
+    // doc.text('', 445, 392); //(24) Geo campo1
+    // doc.text('', 65, 416); //(25) Geo campo2
 
-    doc.text(dadosResidencia.pontoReferencia, 235, 417); //(26) Ponto de referência
+    // doc.text(dadosResidencia.pontoReferencia, 235, 417); //(26) Ponto de referência
 
-    doc.text(dadosResidencia.cep, 490, 418); //(27) CEP
+    // doc.text(dadosResidencia.cep, 490, 418); //(27) CEP
 
-    doc.text(dadosResidencia.telefone, 65, 440); //(28) (DDD)Telefone
+    // doc.text(dadosResidencia.telefone, 65, 440); //(28) (DDD)Telefone
 
-    doc.text(dadosResidencia.zona, 345, 432); //(29) Zona
+    // doc.text(dadosResidencia.zona, 345, 432); //(29) Zona
 
-    doc.text(dadosResidencia.pais, 400, 440); //(30) Pais (se residente do Brasil)
+    // doc.text(dadosResidencia.pais, 400, 440); //(30) Pais (se residente do Brasil)
 
-    doc.text(antecedentesEpidemiologicos.ocupacao, 75, 492); //(31) Ocupação
+    // doc.text(antecedentesEpidemiologicos.ocupacao, 75, 492); //(31) Ocupação
 
-    doc.text(antecedentesEpidemiologicos.transmissaoVertical, 244, 519); //(32) Transmissão vertical
+    // doc.text(antecedentesEpidemiologicos.transmissaoVertical, 244, 519); //(32) Transmissão vertical
 
-    doc.text(antecedentesEpidemiologicos.sexual, 567, 515, { width: 245 }); //(33) Sexual
+    // doc.text(antecedentesEpidemiologicos.sexual, 567, 515, { width: 245 }); //(33) Sexual
 
-    doc.text(antecedentesEpidemiologicos.sanguinea.usaDrogaInjetavel, 295, 560); //(34) Uso de drogas injetáveis
-    doc.text(antecedentesEpidemiologicos.sanguinea.transfusaoSanguinea, 499, 559); //(34) Transfusão sanguínea
-    doc.text(antecedentesEpidemiologicos.sanguinea.tratamentoHemotransfusaoParaHemofilia, 295, 578); //(34) Tratamento/hemotranfusão para hemofilia
-    doc.text(antecedentesEpidemiologicos.sanguinea.acidenteComMaterialBiologico, 499, 576); //(34) Acidente com material biológico com posterior soroconversão até 6 meses
+    // doc.text(antecedentesEpidemiologicos.sanguinea.usaDrogaInjetavel, 295, 560); //(34) Uso de drogas injetáveis
+    // doc.text(antecedentesEpidemiologicos.sanguinea.transfusaoSanguinea, 499, 559); //(34) Transfusão sanguínea
+    // doc.text(antecedentesEpidemiologicos.sanguinea.tratamentoHemotransfusaoParaHemofilia, 295, 578); //(34) Tratamento/hemotranfusão para hemofilia
+    // doc.text(antecedentesEpidemiologicos.sanguinea.acidenteComMaterialBiologico, 499, 576); //(34) Acidente com material biológico com posterior soroconversão até 6 meses
 
-    doc.text(antecedentesEpidemiologicos.dataTransfusaoAcidente, 75, 614); //(35) Data da transfusão/acidente
+    // doc.text(antecedentesEpidemiologicos.dataTransfusaoAcidente, 75, 614); //(35) Data da transfusão/acidente
 
-    doc.text(antecedentesEpidemiologicos.uf, 200, 614); //(36) UF
+    // doc.text(antecedentesEpidemiologicos.uf, 200, 614); //(36) UF
 
-    doc.text(antecedentesEpidemiologicos.municipioAcidente, 230, 614); //(37) Município onde ocorreu a transfusão/acidente
-    doc.text(antecedentesEpidemiologicos.codigoIbge, 515, 614, { width: 245 }); //Código IBGE
+    // doc.text(antecedentesEpidemiologicos.municipioAcidente, 230, 614); //(37) Município onde ocorreu a transfusão/acidente
+    // doc.text(antecedentesEpidemiologicos.codigoIbge, 515, 614, { width: 245 }); //Código IBGE
 
-    doc.text(antecedentesEpidemiologicos.instituicaoTransfusaoAcidente, 75, 640); //(38) Instituição onde ocorreu a transfusão/acidente
-    doc.text(antecedentesEpidemiologicos.cnesInstituicao, 498, 640, { width: 245 }); //Código
+    // doc.text(antecedentesEpidemiologicos.instituicaoTransfusaoAcidente, 75, 640); //(38) Instituição onde ocorreu a transfusão/acidente
+    // doc.text(antecedentesEpidemiologicos.cnesInstituicao, 498, 640, { width: 245 }); //Código
 
-    doc.text(antecedentesEpidemiologicos.transfusaoAcidenteFoiConsideradaCausaInfecao, 560, 660); //(39) transfusaoAcidenteFoiConsideradaCausaInfecao
+    // doc.text(antecedentesEpidemiologicos.transfusaoAcidenteFoiConsideradaCausaInfecao, 560, 660); //(39) transfusaoAcidenteFoiConsideradaCausaInfecao
 
-    doc.text(dadosLaboratorio.testeTriagem, 117, 719, { height: 800 }); //(40) Teste de triagem
-    doc.text(dadosLaboratorio.dataColetaTesteTriagem, 200, 722, { height: 800 }); //(40) Teste de triagem DATA
-    doc.text(dadosLaboratorio.testeConfirmatorio, 322, 720, { height: 800 }); //(40) Teste confirmatório
-    doc.text(dadosLaboratorio.dataColetaTesteConfirmatorio, 430, 722, { height: 800 }); //(40) Teste confirmatório DATA
-    doc.text(dadosLaboratorio.testeRapido1, 162, 750, { height: 800 }); //(40) Teste rápido 1
-    doc.text(dadosLaboratorio.testeRapido2, 244, 751, { height: 800 }); //(40) Teste rápido 2
-    doc.text(dadosLaboratorio.testeRapido3, 322, 751, { height: 800 }); //(40) Teste rápido 3
+    // doc.text(dadosLaboratorio.testeTriagem, 117, 719, { height: 800 }); //(40) Teste de triagem
+    // doc.text(dadosLaboratorio.dataColetaTesteTriagem, 200, 722, { height: 800 }); //(40) Teste de triagem DATA
+    // doc.text(dadosLaboratorio.testeConfirmatorio, 322, 720, { height: 800 }); //(40) Teste confirmatório
+    // doc.text(dadosLaboratorio.dataColetaTesteConfirmatorio, 430, 722, { height: 800 }); //(40) Teste confirmatório DATA
+    // doc.text(dadosLaboratorio.testeRapido1, 162, 750, { height: 800 }); //(40) Teste rápido 1
+    // doc.text(dadosLaboratorio.testeRapido2, 244, 751, { height: 800 }); //(40) Teste rápido 2
+    // doc.text(dadosLaboratorio.testeRapido3, 322, 751, { height: 800 }); //(40) Teste rápido 3
 
-    doc.text(dadosLaboratorio.dataColetaTesteRapido1, 150, 758, { height: 800 }); //(40) Data da coleta 1
-    doc.text(dadosLaboratorio.dataColetaTesteRapido2, 316, 758, { height: 800 }); //(40) Data da coleta 2
-    doc.text(dadosLaboratorio.dataColetaTesteRapido3, 490, 758, { height: 800 }); //(40) Data da coleta 3
+    // doc.text(dadosLaboratorio.dataColetaTesteRapido1, 150, 758, { height: 800 }); //(40) Data da coleta 1
+    // doc.text(dadosLaboratorio.dataColetaTesteRapido2, 316, 758, { height: 800 }); //(40) Data da coleta 2
+    // doc.text(dadosLaboratorio.dataColetaTesteRapido3, 490, 758, { height: 800 }); //(40) Data da coleta 3
 
-    doc.addPage();
-    doc.fillColor('blue');
+    // doc.addPage();
+    // doc.fillColor('blue');
 
-    doc.image(page2, 1, 1, { width: 610, height: 800 });
+    // doc.image(page2, 1, 1, { width: 610, height: 800 });
 
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.sarcomaDeKaposi, 73, 42); //(41) Sarcoma de Kaposi
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculoseDisseminada, 73, 56); //(41) Tuberculose disseminada/extra-pulmonar/não cavitária
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseOral, 73, 70); //(41) Candidose oral ou leucoplasia pilosa
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculosePulmonarCavitaria, 73, 83); //(41) Tuberculose pulmonar cavitária ou não especificada
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.herpesZoster, 73, 97); //(41) Herpes zoster em indivíduo menor ou igual a 60 anos
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.disfuncaoSistemaNervoso, 73, 111); //(41) Disfução do sistema nervoso central
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.diarreia, 73, 125); //(41) Diarréia igual ou maior a 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.febre, 74, 137); //(41) Febre maior ou igual a 38 por tempo maior ou igual a 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.caquexia, 313, 42); //(41) Caquexia ou perda de peso maior que 10%
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.astenia, 313, 56); //(41) Astenia maior ou igual a 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.dermatite, 313, 70); //(41) Dermatite persistente
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.anemia, 313, 83); //(41) Anemia e/ou linfopenia e/ou trombocitopenia
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tosse, 313, 97); //(41) Tosse persistente ou qualquer pneumonia
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfadenopatia, 313, 111); //(41) Linfadenopatia maior ou igual a 1cm, maior ou igual a 2 sítios extra-inguinais e por tempo maior ou igual a 1 mês
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.sarcomaDeKaposi, 73, 42); //(41) Sarcoma de Kaposi
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculoseDisseminada, 73, 56); //(41) Tuberculose disseminada/extra-pulmonar/não cavitária
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseOral, 73, 70); //(41) Candidose oral ou leucoplasia pilosa
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculosePulmonarCavitaria, 73, 83); //(41) Tuberculose pulmonar cavitária ou não especificada
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.herpesZoster, 73, 97); //(41) Herpes zoster em indivíduo menor ou igual a 60 anos
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.disfuncaoSistemaNervoso, 73, 111); //(41) Disfução do sistema nervoso central
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.diarreia, 73, 125); //(41) Diarréia igual ou maior a 1 mês
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.febre, 74, 137); //(41) Febre maior ou igual a 38 por tempo maior ou igual a 1 mês
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.caquexia, 313, 42); //(41) Caquexia ou perda de peso maior que 10%
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.astenia, 313, 56); //(41) Astenia maior ou igual a 1 mês
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.dermatite, 313, 70); //(41) Dermatite persistente
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.anemia, 313, 83); //(41) Anemia e/ou linfopenia e/ou trombocitopenia
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tosse, 313, 97); //(41) Tosse persistente ou qualquer pneumonia
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfadenopatia, 313, 111); //(41) Linfadenopatia maior ou igual a 1cm, maior ou igual a 2 sítios extra-inguinais e por tempo maior ou igual a 1 mês
 
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.cancerCervical, 71, 168); //(42) Câncer cervical invasiso
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseEsofago, 71, 181); //(42) Candidose de esôfago
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseTraqueia, 71, 195); //(42) Candidose de traquéia, brônquios ou pulmâo
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.citomegalovirose, 71, 209); //(42) Citomegalovirose (exceto fígado, baço ou linfonodos)
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.criptococoseExtrapulmonar, 71, 223); //(42) Criptococose extrapulmonar
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.criptosporidioseIntestinalCronica, 71, 237); //(42) Criptosporidiose intestinal crônica > 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.herpesSimples, 71, 251); //(42) Herpes simples mucocutâneo > 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.histoplasmose, 71, 265); //(42) Histoplasmose disseminada
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.isosporidiose, 71, 279); //(42) Isosporidiose intestinal crônica > 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.leucoencefalopatia, 310, 167); //(42) Leucoencefalopatia multifocal progressiva
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfonaNaoHodkin, 310, 183); //(42) Linfoma não Hodgkin e outros linfomas
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfomaPrimarioCerebro, 310, 197); //(42) Linfoma primário do cérebro
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.micobacteriose, 310, 211); //(42) Micobacteriose disseminada exceto tuberculose e hanseníase
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.pneumonia, 310, 224); //(42) Pneumonia por Pneumocystis carinii
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.reativacaoDeDoencaDeChagas, 310, 238); //(42) Reativação de doença de Chagas (meningoencefalite e/ou miocardite)
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.salmonelose, 310, 251); //(42) Salmonelose (sepse recorrente não-tifóide)
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.toxoplasmose, 310, 266); //(42) Toxoplasmose cerebral
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.contagemLinfocitos, 310, 279); //(42) Contagem de linfócitos T CD4+ menor que 350 cel/mm³
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.cancerCervical, 71, 168); //(42) Câncer cervical invasiso
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseEsofago, 71, 181); //(42) Candidose de esôfago
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseTraqueia, 71, 195); //(42) Candidose de traquéia, brônquios ou pulmâo
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.citomegalovirose, 71, 209); //(42) Citomegalovirose (exceto fígado, baço ou linfonodos)
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.criptococoseExtrapulmonar, 71, 223); //(42) Criptococose extrapulmonar
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.criptosporidioseIntestinalCronica, 71, 237); //(42) Criptosporidiose intestinal crônica > 1 mês
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.herpesSimples, 71, 251); //(42) Herpes simples mucocutâneo > 1 mês
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.histoplasmose, 71, 265); //(42) Histoplasmose disseminada
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.isosporidiose, 71, 279); //(42) Isosporidiose intestinal crônica > 1 mês
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.leucoencefalopatia, 310, 167); //(42) Leucoencefalopatia multifocal progressiva
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfonaNaoHodkin, 310, 183); //(42) Linfoma não Hodgkin e outros linfomas
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfomaPrimarioCerebro, 310, 197); //(42) Linfoma primário do cérebro
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.micobacteriose, 310, 211); //(42) Micobacteriose disseminada exceto tuberculose e hanseníase
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.pneumonia, 310, 224); //(42) Pneumonia por Pneumocystis carinii
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.reativacaoDeDoencaDeChagas, 310, 238); //(42) Reativação de doença de Chagas (meningoencefalite e/ou miocardite)
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.salmonelose, 310, 251); //(42) Salmonelose (sepse recorrente não-tifóide)
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.toxoplasmose, 310, 266); //(42) Toxoplasmose cerebral
+    // doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.contagemLinfocitos, 310, 279); //(42) Contagem de linfócitos T CD4+ menor que 350 cel/mm³
 
-    doc.text(criteriosDefinicaoAids.criterioObito, 521, 307); //(43) Critério de óbito
+    // doc.text(criteriosDefinicaoAids.criterioObito, 521, 307); //(43) Critério de óbito
 
-    doc.text(tratamento.uf, 62, 352); //(44) UF
+    // doc.text(tratamento.uf, 62, 352); //(44) UF
 
-    doc.text(tratamento.municipioTratamento, 92, 352); //(45) Municício onde se realiza o tratamento
-    doc.text(tratamento.codigoIbge, 280, 352); //(45) Código (IBGE)
+    // doc.text(tratamento.municipioTratamento, 92, 352); //(45) Municício onde se realiza o tratamento
+    // doc.text(tratamento.codigoIbge, 280, 352); //(45) Código (IBGE)
 
-    doc.text(tratamento.unidadeSaudeTratamento, 360, 352); //(46) Unidade de saúde onde se realiza o tratamento
-    doc.text(tratamento.cnesUnidadeSaude, 515, 352, { width: 245 }); //(46) Código
+    // doc.text(tratamento.unidadeSaudeTratamento, 360, 352); //(46) Unidade de saúde onde se realiza o tratamento
+    // doc.text(tratamento.cnesUnidadeSaude, 515, 352, { width: 245 }); //(46) Código
 
-    doc.text(evolucao.evolucaoDoCaso, 439, 367); //(47) Evolução do caso
-    doc.text(evolucao.dataObito, 492, 383); //(48) Data do óbito
+    // doc.text(evolucao.evolucaoDoCaso, 439, 367); //(47) Evolução do caso
+    // doc.text(evolucao.dataObito, 492, 383); //(48) Data do óbito
 
-    doc.text(investigador.nome, 70, 414); // Nome
-    doc.text(investigador.funcao, 368, 414); // Função
-    doc.text('', 73, 367); // Assinatura?
+    // doc.text(investigador.nome, 70, 414); // Nome
+    // doc.text(investigador.funcao, 368, 414); // Função
+    // doc.text('', 73, 367); // Assinatura?
 
     let pdfEmBase64 = '';
     let stream = doc.pipe(new Base64Encode());
