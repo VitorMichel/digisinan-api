@@ -7,18 +7,18 @@ const app = express();
 
 let port = process.env.PORT || 3333;
 
-const corsOpts = {
-    origin: '*',
+// const corsOpts = {
+//     origin: '*',
   
-    methods: [
-      'GET',
-      'POST',
-    ],
+//     methods: [
+//       'GET',
+//       'POST',
+//     ],
   
-    allowedHeaders: [
-      'Content-Type',
-    ],
-  };
+//     allowedHeaders: [
+//       'Content-Type',
+//     ],
+//   };
   
 // app.use();
 
@@ -35,20 +35,29 @@ const corsOpts = {
 //     next();
 //   });
 
-var options = {
-    url:  'http://url',
-    timeout: 400000
-}
+// var options = {
+//     url:  'http://url',
+//     timeout: 400000
+// }
+
+// app.use((req, res, next) => {
+//     req(options, function(err, resp, body) {});
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+//     res.setHeader('Access-Control-Allow-Origin', 'https://digisinan.com.br');
+//     res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+//     res.header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+//     res.header('Access-Control-Allow-Credentials', true);
+//     cors(corsOpts);
+//     next();
+// });
 
 app.use((req, res, next) => {
-    req(options, function(err, resp, body) {});
     res.header("Access-Control-Allow-Origin", "*");
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Origin', 'https://digisinan.com.br');
     res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+    // res.header("Access-Control-Allow-Headers: Content-Type");
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
-    res.header('Access-Control-Allow-Credentials', true);
-    cors(corsOpts);
+    app.use(cors());
     next();
 });
 app.use(express.json());
@@ -56,7 +65,6 @@ app.use(routes);
 app.listen(port, () => {
     console.log('🚀 Server started on port: ' + port);
 })
-
 
 
 
