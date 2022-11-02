@@ -58,7 +58,7 @@ module.exports = {
     const { sanguinea } = antecedentesEpidemiologicos;
     const { criterioRioDeJaneiroCaracas, criterioCdc } = criteriosDefinicaoAids;
 
-    console.log("ok");
+    console.log("okay");
 
     let date = new Date();
 
