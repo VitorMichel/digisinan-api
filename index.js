@@ -37,7 +37,7 @@ const corsOpts = {
 
 var options = {
     url:  'http://url',
-    timeout: 120000
+    timeout: 400000
 }
 
 app.use((req, res, next) => {
