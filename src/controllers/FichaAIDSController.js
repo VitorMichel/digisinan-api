@@ -77,7 +77,7 @@ module.exports = {
     //                 '${IE_HISTOPLASMOSE}', '${IE_ISOSPORIDIOSE}', '${IE_LEUCOENCEFALOPATIA}', '${IE_LINFOMA_N_HODGKIN}', '${IE_LINFOMA_CEREBRO}', '${IE_MICOBACTERIOSE}', '${IE_PNEUMONIA}', '${IE_REATIVACAO_CHAGAS}', '${IE_SALMONELOSE}',
     //                 '${IE_TOXOPLASMOSE}', '${IE_CONT_LINFOCITOS}', '${IE_DECLARACAO_OBITO}', '${tratamento.uf}', '${tratamento.codigoIbge}', '${tratamento.cnesUnidadeSaude}', '${evolucao.evolucaoDoCaso}', '${evolucao.dataObito}', '${CD_USUARIO_LIBERACAO}', '${investigador.assinatura}');`;
 
-    // console.log(request.body);
+    console.log(request.body);
     // console.log(dadosGerais);
     // console.log(notificaoIndividual);
     // console.log(dadosResidencia);
@@ -499,6 +499,8 @@ module.exports = {
     // stream.on('end', function () {
     //   response.json({ ficha: pdfEmBase64, assunto: emailSubject, filename: stringFileName });
     // });
+
+    response.json({message: "terminou"});
 
     console.log('aqui')
   }
