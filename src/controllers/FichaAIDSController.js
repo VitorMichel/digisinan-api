@@ -487,19 +487,19 @@ module.exports = {
     doc.text(investigador.funcao, 368, 414); // Função
     doc.text('', 73, 367); // Assinatura?
 
-    // let pdfEmBase64 = '';
-    // let stream = doc.pipe(new Base64Encode());
+    let pdfEmBase64 = '';
+    let stream = doc.pipe(new Base64Encode());
 
-    // doc.end();
+    doc.end();
 
-    // stream.on('data', function (chunk) {
-    //     pdfEmBase64 += chunk;
-    // });
+    stream.on('data', function (chunk) {
+        pdfEmBase64 += chunk;
+    });
 
-    // stream.on('end', function () {
-    //   response.json({ ficha: pdfEmBase64, assunto: emailSubject, filename: stringFileName });
-    // });
+    stream.on('end', function () {
+      response.json({ ficha: pdfEmBase64, assunto: emailSubject, filename: stringFileName });
+    });
 
-    response.json({message: 'terminou'});
+    // response.json({message: 'terminou'});
   }
 }
