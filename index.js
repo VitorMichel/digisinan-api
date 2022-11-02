@@ -35,10 +35,13 @@ const corsOpts = {
 //     next();
 //   });
 
-
+var options = {
+    url:  'http://url',
+    timeout: 120000
+}
 
 app.use((req, res, next) => {
-    
+    req(options, function(err, resp, body) {});
     res.header("Access-Control-Allow-Origin", "*");
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.setHeader('Access-Control-Allow-Origin', 'https://digisinan.com.br');
@@ -53,5 +56,9 @@ app.use(routes);
 app.listen(port, () => {
     console.log('🚀 Server started on port: ' + port);
 })
+
+
+
+
 
 //http://localhost:3333
