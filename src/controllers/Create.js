@@ -22,11 +22,22 @@ module.exports = {
         
     },
 
+    async pegarUsuarioEstabelecimento(request, response)
+    {
+        let query = `SELECT * FROM USUARIO_ESTABELECIMENTO`;
+
+        connection.query(query, function (error, results) {
+            if (error)
+                return response.json({ status: 404, message: error.message });
+
+            return response.json(results);
+        });
+    },
+
     async pegarUsuarioPorCpf(request, response)
     {
         const { cpf } = request.query;
 
-        // Pegar descrição do conselho e sigla
         let query = `SELECT * FROM USUARIO WHERE NR_CPF = '${cpf}'`;
 
         connection.query(query, function (error, results) {

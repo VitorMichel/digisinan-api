@@ -19,6 +19,7 @@ routes.get('/country', LocalizationtionController.getCountry);
 routes.post('/postUser', CreateController.postUser);
 routes.get('/dadosConselho', CreateController.pegarDadosConselho);
 routes.get('/pegarUsuario', CreateController.pegarUsuarioPorCpf);
+routes.get('/pegarUsuarioEstabelecimento', CreateController.pegarUsuarioEstabelecimento);
 routes.get('/login', CreateController.login);
 routes.get('/occupation', OtherController.getOccupation);
 
