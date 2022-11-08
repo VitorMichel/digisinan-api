@@ -249,21 +249,21 @@ module.exports = {
     // });
     // // End transaction
 
-    // let removeNames = (str, arr) => {
-    //   return arr.reduce((acc, val) => {
-    //     const regex = new RegExp(` ${val}`, "g");
-    //     return acc.replace(regex, '');
-    //   }, str);
-    // };
+    let removeNames = (str, arr) => {
+      return arr.reduce((acc, val) => {
+        const regex = new RegExp(` ${val}`, "g");
+        return acc.replace(regex, '');
+      }, str);
+    };
 
-    // function getFirstLetter(str) {
-    //   const firstLetter = str
-    //     .split(' ')
-    //     .map(palavra => palavra[0])
-    //     .join('');
+    function getFirstLetter(str) {
+      const firstLetter = str
+        .split(' ')
+        .map(palavra => palavra[0])
+        .join('');
 
-    //   return firstLetter.toUpperCase();
-    // }
+      return firstLetter.toUpperCase();
+    }
 
     async function fetchImage(src) {
       const image = await axios
@@ -273,41 +273,39 @@ module.exports = {
       return image.data;
     }
 
-    // var today = new Date();
-    // var day = today.getDate() + "";
-    // var month = (today.getMonth() + 1) + "";
-    // var year = today.getFullYear() + "";
-    // var hour = today.getHours() + "";
-    // var minutes = today.getMinutes() + "";
-    // var seconds = today.getSeconds() + "";
+    var today = new Date();
+    var day = today.getDate() + "";
+    var month = (today.getMonth() + 1) + "";
+    var year = today.getFullYear() + "";
+    var hour = today.getHours() + "";
+    var minutes = today.getMinutes() + "";
+    var seconds = today.getSeconds() + "";
 
-    // day = checkZero(day);
-    // month = checkZero(month);
-    // year = checkZero(year);
-    // hour = checkZero(hour);
-    // minutes = checkZero(minutes);
-    // seconds = checkZero(seconds);
+    day = checkZero(day);
+    month = checkZero(month);
+    year = checkZero(year);
+    hour = checkZero(hour);
+    minutes = checkZero(minutes);
+    seconds = checkZero(seconds);
 
-    // let todayDate = day + "." + month + "." + year;
+    let todayDate = day + "." + month + "." + year;
 
-    // function checkZero(data) {
-    //   if (data.length == 1) {
-    //     data = '0' + data;
-    //   }
-    //   return data;
-    // }
+    function checkZero(data) {
+      if (data.length == 1) {
+        data = '0' + data;
+      }
+      return data;
+    }
 
-    // const data = request.body;
-    // let signaturePath;
-    // const namesToRemove = ['da', 'de', 'dos', 'do', 'De', 'Do', 'Dos', 'Da', 'De'];
+    const data = request.body;
+    let signaturePath;
+    const namesToRemove = ['da', 'de', 'dos', 'do', 'De', 'Do', 'Dos', 'Da', 'De'];
 
-    // let acronymHospital = getFirstLetter(removeNames(data.generalData.healthUnit.name, namesToRemove));
-    // let acronymName = getFirstLetter(removeNames(data.patientData.patientName, namesToRemove));
+    let acronymHospital = getFirstLetter(removeNames(data.generalData.healthUnit.name, namesToRemove));
+    let acronymName = getFirstLetter(removeNames(data.patientData.patientName, namesToRemove));
 
-    // let emailSubject = 'Ficha SRAG: ' + acronymHospital + '-' + acronymName;
-    let emailSubject = 'Ficha Aids Adulto';
-    // let stringFileName = 'SRAG ' + acronymHospital + ' ' + todayDate + ' ' + acronymName + '.pdf';
-    let stringFileName = 'AidsAdulto.pdf';
+    let emailSubject = 'Ficha SRAG: ' + acronymHospital + '-' + acronymName;
+    let stringFileName = 'SRAG ' + acronymHospital + ' ' + todayDate + ' ' + acronymName + '.pdf';
 
     // if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456') {
     //   signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1-removebg-preview.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS1yZW1vdmViZy1wcmV2aWV3LnBuZyIsImlhdCI6MTY1MDI4OTYzMCwiZXhwIjoxOTY1NjQ5NjMwfQ.yhlGZPGkPDIgnK6zPk_C9VX_f4Q19CTo-NdjyKIuWb8");

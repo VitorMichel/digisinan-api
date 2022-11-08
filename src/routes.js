@@ -22,6 +22,7 @@ routes.get('/pegarUsuario', CreateController.pegarUsuarioPorCpf);
 routes.get('/pegarUsuarioEstabelecimento', CreateController.pegarUsuarioEstabelecimento);
 routes.get('/login', CreateController.login);
 routes.get('/occupation', OtherController.getOccupation);
+routes.post('postUsuarioestabelceimento', CreateController.postUsuarioEstabelecimento);
 
 // Dados iguais para fichas
 routes.get('/tipoIdade', FichasController.dadoTipoIdade);

@@ -22,6 +22,21 @@ module.exports = {
         
     },
 
+    async postUsuarioEstabelecimento(request, response)
+    {
+        let date = new Date();
+
+        let query = 'INSERT INTO USUARIO_ESTABELECIMENTO (CD_USUARIO, NR_CNES, DT_REGISTRO, DT_ATIVACAO, DT_INATIVACAO, IE_SITUACAO)';
+        query +=    `VALUES ('${request.body.codigoUsuario}', '${request.body.cnes}', '${date.toISOString().split('T')[0]}', '${date.toISOString().split('T')[0]}', '${date.toISOString().split('T')[0]}', 'null');`;
+
+        connection.query(query, function (error, results) {
+            if (error) 
+                return response.json({ status: 404, message: error.message });
+                
+            return response.json(results);
+        });
+    },
+
     async pegarUsuarioEstabelecimento(request, response)
     {
         let query = `SELECT * FROM USUARIO_ESTABELECIMENTO`;
