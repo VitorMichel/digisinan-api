@@ -298,11 +298,11 @@ module.exports = {
     }
 
     const data = request.body;
-    let signaturePath;
+    // let signaturePath;
     const namesToRemove = ['da', 'de', 'dos', 'do', 'De', 'Do', 'Dos', 'Da', 'De'];
 
-    let acronymHospital = getFirstLetter(removeNames(data.generalData.healthUnit.name, namesToRemove));
-    let acronymName = getFirstLetter(removeNames(data.patientData.patientName, namesToRemove));
+    let acronymHospital = getFirstLetter(removeNames(dadosGerais.unidadeSaude, namesToRemove));
+    let acronymName = getFirstLetter(removeNames(notificacaoIndividual.nomePaciente, namesToRemove));
 
     let emailSubject = 'Ficha SRAG: ' + acronymHospital + '-' + acronymName;
     let stringFileName = 'SRAG ' + acronymHospital + ' ' + todayDate + ' ' + acronymName + '.pdf';
