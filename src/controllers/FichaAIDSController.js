@@ -304,8 +304,8 @@ module.exports = {
     let acronymHospital = getFirstLetter(removeNames(dadosGerais.unidadeSaude, namesToRemove));
     let acronymName = getFirstLetter(removeNames(notificacaoIndividual.nomePaciente, namesToRemove));
 
-    let emailSubject = 'Ficha SRAG: ' + acronymHospital + '-' + acronymName;
-    let stringFileName = 'SRAG ' + acronymHospital + ' ' + todayDate + ' ' + acronymName + '.pdf';
+    let emailSubject = 'Ficha Aids Adulto: ' + acronymHospital + '-' + acronymName;
+    let stringFileName = 'Aids Adulto ' + acronymHospital + ' ' + todayDate + ' ' + acronymName + '.pdf';
 
     // if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456') {
     //   signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1-removebg-preview.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS1yZW1vdmViZy1wcmV2aWV3LnBuZyIsImlhdCI6MTY1MDI4OTYzMCwiZXhwIjoxOTY1NjQ5NjMwfQ.yhlGZPGkPDIgnK6zPk_C9VX_f4Q19CTo-NdjyKIuWb8");
