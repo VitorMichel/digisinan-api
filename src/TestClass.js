@@ -45,7 +45,8 @@ async function testMethod(request, response) {
 
     doc.text('01/01/1111', 490, 229); //(9) Data de nascimento
 
-    doc.text('4', 116, 252); //(10) (ou)Idade
+    doc.text('4', 116, 252); //(10) (ou)Idade tipo
+    doc.text('23', 78, 257); //(10) (ou)Idade valor
 
     doc.text('M', 240, 246); //(11) Sexo
 
