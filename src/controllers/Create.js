@@ -74,5 +74,29 @@ module.exports = {
 
             return response.json(results);
         });
+    },
+
+    async getUsuarioEstabelecimento(request, response)
+    {
+        let query = 'SELECT * FROM USUARIO_ESTABELECIMENTO;';
+
+        connection.query(query, function (error, results) {
+            if (error)
+                return response.json({ status: 404, message: error.message });
+
+            return response.json(results);
+        });
+    },
+
+    async getEstabelecimentoCarga(request, response)
+    {
+        let query = 'SELECT * FROM dbdigisinan.ESTABELECIMENTO_CARGA;';
+
+        connection.query(query, function (error, results) {
+            if (error)
+                return response.json({ status: 404, message: error.message });
+
+            return response.json(results);
+        });
     }
 };
