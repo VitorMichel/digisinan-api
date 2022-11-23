@@ -26,7 +26,7 @@ routes.post('postUsuarioestabelceimento', CreateController.postUsuarioEstabeleci
 routes.get('/pegarUsuarioEstabelecimento', CreateController.getUsuarioEstabelecimento);
 
 // Estabelecimento
-routes.get('/pegarUsuarioEstabelecimento', CreateController.getEstabelecimentoCarga);
+routes.get('/pegarEstabelecimentoCarga', CreateController.getEstabelecimentoCarga);
 
 // Dados iguais para fichas
 routes.get('/tipoIdade', FichasController.dadoTipoIdade);
