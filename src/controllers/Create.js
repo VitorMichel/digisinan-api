@@ -90,7 +90,9 @@ module.exports = {
 
     async getEstabelecimentoCarga(request, response)
     {
-        let query = `SELECT * FROM ESTABELECIMENTO_CARGA WHERE CD_MUNICIPIO_IBGE LIKE '43%';`;
+        const { cdMunicipioIbge } = request.query;
+
+        let query = `SELECT * FROM ESTABELECIMENTO_CARGA WHERE CD_MUNICIPIO_IBGE LIKE '${cdMunicipioIbge}%';`;
 
         connection.query(query, function (error, results) {
             if (error)
