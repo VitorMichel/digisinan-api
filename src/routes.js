@@ -22,7 +22,7 @@ routes.get('/pegarUsuario', CreateController.pegarUsuarioPorCpf);
 routes.get('/pegarUsuarioEstabelecimento', CreateController.pegarUsuarioEstabelecimento);
 routes.get('/login', CreateController.login);
 routes.get('/occupation', OtherController.getOccupation);
-routes.post('postUsuarioestabelceimento', CreateController.postUsuarioEstabelecimento);
+routes.post('postUsuarioEstabelecimento', CreateController.postUsuarioEstabelecimento);
 routes.get('/pegarUsuarioEstabelecimento', CreateController.getUsuarioEstabelecimento);
 
 // Estabelecimento
