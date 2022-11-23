@@ -14,7 +14,9 @@ app.use((req, res, next) => {
 });
 app.use(express.json());
 app.use(routes);
-app.listen(port, () => {
+var server = app.listen(port, () => {
     console.log('🚀 Server started on port: ' + port);
-})
+});
+
+app.timeout = 600000;
 //http://localhost:3333
