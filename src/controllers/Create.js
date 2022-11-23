@@ -90,7 +90,7 @@ module.exports = {
 
     async getEstabelecimentoCarga(request, response)
     {
-        let query = 'SELECT * FROM dbdigisinan.ESTABELECIMENTO_CARGA;';
+        let query = 'SELECT * FROM ESTABELECIMENTO_CARGA;';
 
         connection.query(query, function (error, results) {
             if (error)
