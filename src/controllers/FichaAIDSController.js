@@ -431,37 +431,37 @@ module.exports = {
 
     doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.sarcomaDeKaposi == true ? '1' : '2' , 73, 42); //(41) Sarcoma de Kaposi
     doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculoseDisseminada == true ? '1' : '2' , 73, 56); //(41) Tuberculose disseminada/extra-pulmonar/não cavitária
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseOral = true ? '1' : '2' , 73, 70); //(41) Candidose oral ou leucoplasia pilosa
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculosePulmonarCavitaria = true ? '1' : '2' , 73, 83); //(41) Tuberculose pulmonar cavitária ou não especificada
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.herpesZoster = true ? '1' : '2' , 73, 97); //(41) Herpes zoster em indivíduo menor ou igual a 60 anos
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.disfuncaoSistemaNervoso = true ? '1' : '2' , 73, 111); //(41) Disfução do sistema nervoso central
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.diarreia = true ? '1' : '2' , 73, 125); //(41) Diarréia igual ou maior a 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.febre = true ? '1' : '2' , 74, 137); //(41) Febre maior ou igual a 38 por tempo maior ou igual a 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.caquexia = true ? '1' : '2' , 313, 42); //(41) Caquexia ou perda de peso maior que 10%
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.astenia = true ? '1' : '2' , 313, 56); //(41) Astenia maior ou igual a 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.dermatite = true ? '1' : '2' , 313, 70); //(41) Dermatite persistente
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.anemia = true ? '1' : '2' , 313, 83); //(41) Anemia e/ou linfopenia e/ou trombocitopenia
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tosse = true ? '1' : '2' , 313, 97); //(41) Tosse persistente ou qualquer pneumonia
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfadenopatia = true ? '1' : '2' , 313, 111); //(41) Linfadenopatia maior ou igual a 1cm, maior ou igual a 2 sítios extra-inguinais e por tempo maior ou igual a 1 mês
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseOral == true ? '1' : '2' , 73, 70); //(41) Candidose oral ou leucoplasia pilosa
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculosePulmonarCavitaria == true ? '1' : '2' , 73, 83); //(41) Tuberculose pulmonar cavitária ou não especificada
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.herpesZoster == true ? '1' : '2' , 73, 97); //(41) Herpes zoster em indivíduo menor ou igual a 60 anos
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.disfuncaoSistemaNervoso == true ? '1' : '2' , 73, 111); //(41) Disfução do sistema nervoso central
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.diarreia == true ? '1' : '2' , 73, 125); //(41) Diarréia igual ou maior a 1 mês
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.febre == true ? '1' : '2' , 74, 137); //(41) Febre maior ou igual a 38 por tempo maior ou igual a 1 mês
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.caquexia == true ? '1' : '2' , 313, 42); //(41) Caquexia ou perda de peso maior que 10%
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.astenia == true ? '1' : '2' , 313, 56); //(41) Astenia maior ou igual a 1 mês
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.dermatite == true ? '1' : '2' , 313, 70); //(41) Dermatite persistente
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.anemia == true ? '1' : '2' , 313, 83); //(41) Anemia e/ou linfopenia e/ou trombocitopenia
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tosse == true ? '1' : '2' , 313, 97); //(41) Tosse persistente ou qualquer pneumonia
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfadenopatia == true ? '1' : '2' , 313, 111); //(41) Linfadenopatia maior ou igual a 1cm, maior ou igual a 2 sítios extra-inguinais e por tempo maior ou igual a 1 mês
 
-    doc.text(criteriosDefinicaoAids.criterioCdc.cancerCervical = true ? '1' : '2' , 71, 168); //(42) Câncer cervical invasiso
-    doc.text(criteriosDefinicaoAids.criterioCdc.candidoseEsofago = true ? '1' : '2' , 71, 181); //(42) Candidose de esôfago
-    doc.text(criteriosDefinicaoAids.criterioCdc.candidoseTraqueia = true ? '1' : '2' , 71, 195); //(42) Candidose de traquéia, brônquios ou pulmâo
-    doc.text(criteriosDefinicaoAids.criterioCdc.citomegalovirose = true ? '1' : '2' , 71, 209); //(42) Citomegalovirose (exceto fígado, baço ou linfonodos)
-    doc.text(criteriosDefinicaoAids.criterioCdc.criptococoseExtrapulmonar = true ? '1' : '2' , 71, 223); //(42) Criptococose extrapulmonar
-    doc.text(criteriosDefinicaoAids.criterioCdc.criptosporidioseIntestinalCronica = true ? '1' : '2' , 71, 237); //(42) Criptosporidiose intestinal crônica > 1 mês
-    doc.text(criteriosDefinicaoAids.criterioCdc.herpesSimples = true ? '1' : '2' , 71, 251); //(42) Herpes simples mucocutâneo > 1 mês
-    doc.text(criteriosDefinicaoAids.criterioCdc.histoplasmose = true ? '1' : '2' , 71, 265); //(42) Histoplasmose disseminada
-    doc.text(criteriosDefinicaoAids.criterioCdc.isosporidiose = true ? '1' : '2' , 71, 279); //(42) Isosporidiose intestinal crônica > 1 mês
-    doc.text(criteriosDefinicaoAids.criterioCdc.leucoencefalopatia = true ? '1' : '2' , 310, 167); //(42) Leucoencefalopatia multifocal progressiva
-    doc.text(criteriosDefinicaoAids.criterioCdc.linfonaNaoHodkin = true ? '1' : '2' , 310, 183); //(42) Linfoma não Hodgkin e outros linfomas
-    doc.text(criteriosDefinicaoAids.criterioCdc.linfomaPrimarioCerebro = true ? '1' : '2' , 310, 197); //(42) Linfoma primário do cérebro
-    doc.text(criteriosDefinicaoAids.criterioCdc.micobacteriose = true ? '1' : '2' , 310, 211); //(42) Micobacteriose disseminada exceto tuberculose e hanseníase
-    doc.text(criteriosDefinicaoAids.criterioCdc.pneumonia = true ? '1' : '2' , 310, 224); //(42) Pneumonia por Pneumocystis carinii
-    doc.text(criteriosDefinicaoAids.criterioCdc.reativacaoDeDoencaDeChagas = true ? '1' : '2' , 310, 238); //(42) Reativação de doença de Chagas (meningoencefalite e/ou miocardite)
-    doc.text(criteriosDefinicaoAids.criterioCdc.salmonelose = true ? '1' : '2' , 310, 251); //(42) Salmonelose (sepse recorrente não-tifóide)
-    doc.text(criteriosDefinicaoAids.criterioCdc.toxoplasmose = true ? '1' : '2' , 310, 266); //(42) Toxoplasmose cerebral
-    doc.text(criteriosDefinicaoAids.criterioCdc.contagemLinfocitos = true ? '1' : '2' , 310, 279); //(42) Contagem de linfócitos T CD4+ menor que 350 cel/mm³
+    doc.text(criteriosDefinicaoAids.criterioCdc.cancerCervical == true ? '1' : '2' , 71, 168); //(42) Câncer cervical invasiso
+    doc.text(criteriosDefinicaoAids.criterioCdc.candidoseEsofago == true ? '1' : '2' , 71, 181); //(42) Candidose de esôfago
+    doc.text(criteriosDefinicaoAids.criterioCdc.candidoseTraqueia == true ? '1' : '2' , 71, 195); //(42) Candidose de traquéia, brônquios ou pulmâo
+    doc.text(criteriosDefinicaoAids.criterioCdc.citomegalovirose == true ? '1' : '2' , 71, 209); //(42) Citomegalovirose (exceto fígado, baço ou linfonodos)
+    doc.text(criteriosDefinicaoAids.criterioCdc.criptococoseExtrapulmonar == true ? '1' : '2' , 71, 223); //(42) Criptococose extrapulmonar
+    doc.text(criteriosDefinicaoAids.criterioCdc.criptosporidioseIntestinalCronica == true ? '1' : '2' , 71, 237); //(42) Criptosporidiose intestinal crônica > 1 mês
+    doc.text(criteriosDefinicaoAids.criterioCdc.herpesSimples == true ? '1' : '2' , 71, 251); //(42) Herpes simples mucocutâneo > 1 mês
+    doc.text(criteriosDefinicaoAids.criterioCdc.histoplasmose == true ? '1' : '2' , 71, 265); //(42) Histoplasmose disseminada
+    doc.text(criteriosDefinicaoAids.criterioCdc.isosporidiose == true ? '1' : '2' , 71, 279); //(42) Isosporidiose intestinal crônica > 1 mês
+    doc.text(criteriosDefinicaoAids.criterioCdc.leucoencefalopatia == true ? '1' : '2' , 310, 167); //(42) Leucoencefalopatia multifocal progressiva
+    doc.text(criteriosDefinicaoAids.criterioCdc.linfonaNaoHodkin == true ? '1' : '2' , 310, 183); //(42) Linfoma não Hodgkin e outros linfomas
+    doc.text(criteriosDefinicaoAids.criterioCdc.linfomaPrimarioCerebro == true ? '1' : '2' , 310, 197); //(42) Linfoma primário do cérebro
+    doc.text(criteriosDefinicaoAids.criterioCdc.micobacteriose == true ? '1' : '2' , 310, 211); //(42) Micobacteriose disseminada exceto tuberculose e hanseníase
+    doc.text(criteriosDefinicaoAids.criterioCdc.pneumonia == true ? '1' : '2' , 310, 224); //(42) Pneumonia por Pneumocystis carinii
+    doc.text(criteriosDefinicaoAids.criterioCdc.reativacaoDeDoencaDeChagas == true ? '1' : '2' , 310, 238); //(42) Reativação de doença de Chagas (meningoencefalite e/ou miocardite)
+    doc.text(criteriosDefinicaoAids.criterioCdc.salmonelose == true ? '1' : '2' , 310, 251); //(42) Salmonelose (sepse recorrente não-tifóide)
+    doc.text(criteriosDefinicaoAids.criterioCdc.toxoplasmose == true ? '1' : '2' , 310, 266); //(42) Toxoplasmose cerebral
+    doc.text(criteriosDefinicaoAids.criterioCdc.contagemLinfocitos == true ? '1' : '2' , 310, 279); //(42) Contagem de linfócitos T CD4+ menor que 350 cel/mm³
 
     doc.text(criteriosDefinicaoAids.criterioObito, 521, 307); //(43) Critério de óbito
 
