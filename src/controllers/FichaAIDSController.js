@@ -304,36 +304,22 @@ module.exports = {
     let acronymHospital = getFirstLetter(removeNames(dadosGerais.unidadeSaude, namesToRemove));
     let acronymName = getFirstLetter(removeNames(notificacaoIndividual.nomePaciente, namesToRemove));
 
-    let emailSubject = 'Ficha Aids Adulto: ' + acronymHospital + '-' + acronymName;
-    let stringFileName = 'Aids Adulto ' + acronymHospital + ' ' + todayDate + ' ' + acronymName + '.pdf';
-
-    // if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '123456') {
-    //   signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura1-removebg-preview.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhMS1yZW1vdmViZy1wcmV2aWV3LnBuZyIsImlhdCI6MTY1MDI4OTYzMCwiZXhwIjoxOTY1NjQ5NjMwfQ.yhlGZPGkPDIgnK6zPk_C9VX_f4Q19CTo-NdjyKIuWb8");
-    //   professionalName = 'Fabrício Bremm';
-    // }
-    // else if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '535040') {
-    //   signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura-535040.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhLTUzNTA0MC5wbmciLCJpYXQiOjE2NDk4MDMxMjAsImV4cCI6MTk2NTE2MzEyMH0.4J1t09VaVYB6Jd1H0w9JVycUNDVwnpCaMRbeZrhOVWk");
-    //   professionalName = 'Paulo Francisco Berni Teixeira';
-    // }
-    // else if (data.finalData.healthProfessionalResponsibleForFillingOutTheForm === '380367') {
-    //   signaturePath = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/assinatura-380367.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9hc3NpbmF0dXJhLTM4MDM2Ny5wbmciLCJpYXQiOjE2NTIyMTUxMDksImV4cCI6MTk2NzU3NTEwOX0.6kJ5C3xYvHgNxyHCVTjuZbEv33AWXBaVx4CfPrtEghE");
-    //   professionalName = 'Ellin Maiara Mallmann Schimidt';
-    // }
+    let emailSubject = 'Ficha AIDS Adulto: ' + acronymHospital + '-' + acronymName;
+    let stringFileName = 'AIDS Adulto ' + acronymHospital + ' ' + todayDate + ' ' + acronymName + '.pdf';
 
     let doc = new PDFDocument();
 
     doc.fontSize(9);
     doc.fillColor('blue');
 
-    // doc.pipe(stream);
-
     const page1 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18xLmpwZyIsImlhdCI6MTY2NjIyMjM5MCwiZXhwIjoxOTgxNTgyMzkwfQ.xU8RCD5W5XJTg-e2obyI3QjmYNZd0SO-lro9Oonzh9M&t=2022-10-19T23%3A33%3A51.795Z");
     const page2 = await fetchImage("https://wigwsxuobmtlhlcdigsa.supabase.co/storage/v1/object/sign/files/aids_adulto_2.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJmaWxlcy9haWRzX2FkdWx0b18yLmpwZyIsImlhdCI6MTY2MjgzMjY3NCwiZXhwIjoxOTc4MTkyNjc0fQ.qnyzBaBnAq_9DJ6tfjxGx-rT2HKxAOFYtSNPd4aqVTs&t=2022-09-10T17%3A58%3A21.842Z");
 
     doc.image(page1, 1, 1, { width: 610, height: 800 });
 
-    doc.text('123456789123456', 490, 35, { width: 245 }); // Nº //se vier, colocar. Senão, não
-    //TODO VITOR
+    if (dadosGerais.numeroNotificacao != "") {
+      doc.text(dadosGerais.numeroNotificacao, 490, 35, { width: 245 }); // Nº
+    }
 
     doc.text(dadosGerais.dataNotificacao, 480, 145); //(3) Data da notificação
     
@@ -351,13 +337,14 @@ module.exports = {
 
     doc.text(notificacaoIndividual.dataNascimento, 490, 229); //(9) Data de nascimento
 
-    doc.text(notificacaoIndividual.idadeTipo, 116, 252); //(10) (ou)Idade tipo
+    //4 - Ano
+    doc.text('4', 116, 252); //(10) (ou)Idade tipo
     doc.text(notificacaoIndividual.idadeValor, 78, 257); //(10) (ou)Idade valor
     
 
     doc.text(notificacaoIndividual.sexo, 240, 246); //(11) Sexo
 
-    if (notificacaoIndividual.sexo != 'M'){
+    if (notificacaoIndividual.sexo != 'M') {
       doc.text(notificacaoIndividual.gestante, 441, 246); //(12) Gestante
     }
     else {
@@ -429,9 +416,9 @@ module.exports = {
     doc.text(dadosLaboratorio.dataColetaTesteTriagem, 200, 722, { height: 800 }); //(40) Teste de triagem DATA
     doc.text(dadosLaboratorio.testeConfirmatorio, 322, 720, { height: 800 }); //(40) Teste confirmatório
     doc.text(dadosLaboratorio.dataColetaTesteConfirmatorio, 430, 722, { height: 800 }); //(40) Teste confirmatório DATA
-    doc.text(dadosLaboratorio.testeRapido1, 162, 750, { height: 800 }); //(40) Teste rápido 1
-    doc.text(dadosLaboratorio.testeRapido2, 244, 751, { height: 800 }); //(40) Teste rápido 2
-    doc.text(dadosLaboratorio.testeRapido3, 322, 751, { height: 800 }); //(40) Teste rápido 3
+    doc.text(dadosLaboratorio.testeRapido1, 71, 752, { height: 800 }); //(40) Teste rápido 1
+    doc.text(dadosLaboratorio.testeRapido2, 246, 754, { height: 800 }); //(40) Teste rápido 2
+    doc.text(dadosLaboratorio.testeRapido3, 413, 752, { height: 800 }); //(40) Teste rápido 3
 
     doc.text(dadosLaboratorio.dataColetaTesteRapido1, 150, 758, { height: 800 }); //(40) Data da coleta 1
     doc.text(dadosLaboratorio.dataColetaTesteRapido2, 316, 758, { height: 800 }); //(40) Data da coleta 2
@@ -442,39 +429,39 @@ module.exports = {
 
     doc.image(page2, 1, 1, { width: 610, height: 800 });
 
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.sarcomaDeKaposi = 'false' ? '1' : '2' , 73, 42); //(41) Sarcoma de Kaposi
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculoseDisseminada = 'false' ? '1' : '2' , 73, 56); //(41) Tuberculose disseminada/extra-pulmonar/não cavitária
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseOral = 'false' ? '1' : '2' , 73, 70); //(41) Candidose oral ou leucoplasia pilosa
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculosePulmonarCavitaria = 'false' ? '1' : '2' , 73, 83); //(41) Tuberculose pulmonar cavitária ou não especificada
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.herpesZoster = 'false' ? '1' : '2' , 73, 97); //(41) Herpes zoster em indivíduo menor ou igual a 60 anos
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.disfuncaoSistemaNervoso = 'false' ? '1' : '2' , 73, 111); //(41) Disfução do sistema nervoso central
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.diarreia = 'false' ? '1' : '2' , 73, 125); //(41) Diarréia igual ou maior a 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.febre = 'false' ? '1' : '2' , 74, 137); //(41) Febre maior ou igual a 38 por tempo maior ou igual a 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.caquexia = 'false' ? '1' : '2' , 313, 42); //(41) Caquexia ou perda de peso maior que 10%
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.astenia = 'false' ? '1' : '2' , 313, 56); //(41) Astenia maior ou igual a 1 mês
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.dermatite = 'false' ? '1' : '2' , 313, 70); //(41) Dermatite persistente
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.anemia = 'false' ? '1' : '2' , 313, 83); //(41) Anemia e/ou linfopenia e/ou trombocitopenia
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tosse = 'false' ? '1' : '2' , 313, 97); //(41) Tosse persistente ou qualquer pneumonia
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfadenopatia = 'false' ? '1' : '2' , 313, 111); //(41) Linfadenopatia maior ou igual a 1cm, maior ou igual a 2 sítios extra-inguinais e por tempo maior ou igual a 1 mês
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.sarcomaDeKaposi = 'true' ? '1' : '2' , 73, 42); //(41) Sarcoma de Kaposi
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculoseDisseminada = 'true' ? '1' : '2' , 73, 56); //(41) Tuberculose disseminada/extra-pulmonar/não cavitária
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseOral = 'true' ? '1' : '2' , 73, 70); //(41) Candidose oral ou leucoplasia pilosa
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculosePulmonarCavitaria = 'true' ? '1' : '2' , 73, 83); //(41) Tuberculose pulmonar cavitária ou não especificada
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.herpesZoster = 'true' ? '1' : '2' , 73, 97); //(41) Herpes zoster em indivíduo menor ou igual a 60 anos
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.disfuncaoSistemaNervoso = 'true' ? '1' : '2' , 73, 111); //(41) Disfução do sistema nervoso central
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.diarreia = 'true' ? '1' : '2' , 73, 125); //(41) Diarréia igual ou maior a 1 mês
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.febre = 'true' ? '1' : '2' , 74, 137); //(41) Febre maior ou igual a 38 por tempo maior ou igual a 1 mês
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.caquexia = 'true' ? '1' : '2' , 313, 42); //(41) Caquexia ou perda de peso maior que 10%
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.astenia = 'true' ? '1' : '2' , 313, 56); //(41) Astenia maior ou igual a 1 mês
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.dermatite = 'true' ? '1' : '2' , 313, 70); //(41) Dermatite persistente
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.anemia = 'true' ? '1' : '2' , 313, 83); //(41) Anemia e/ou linfopenia e/ou trombocitopenia
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tosse = 'true' ? '1' : '2' , 313, 97); //(41) Tosse persistente ou qualquer pneumonia
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.linfadenopatia = 'true' ? '1' : '2' , 313, 111); //(41) Linfadenopatia maior ou igual a 1cm, maior ou igual a 2 sítios extra-inguinais e por tempo maior ou igual a 1 mês
 
-    doc.text(criteriosDefinicaoAids.criterioCdc.cancerCervical = 'false' ? '1' : '2' , 71, 168); //(42) Câncer cervical invasiso
-    doc.text(criteriosDefinicaoAids.criterioCdc.candidoseEsofago = 'false' ? '1' : '2' , 71, 181); //(42) Candidose de esôfago
-    doc.text(criteriosDefinicaoAids.criterioCdc.candidoseTraqueia = 'false' ? '1' : '2' , 71, 195); //(42) Candidose de traquéia, brônquios ou pulmâo
-    doc.text(criteriosDefinicaoAids.criterioCdc.citomegalovirose = 'false' ? '1' : '2' , 71, 209); //(42) Citomegalovirose (exceto fígado, baço ou linfonodos)
-    doc.text(criteriosDefinicaoAids.criterioCdc.criptococoseExtrapulmonar = 'false' ? '1' : '2' , 71, 223); //(42) Criptococose extrapulmonar
-    doc.text(criteriosDefinicaoAids.criterioCdc.criptosporidioseIntestinalCronica = 'false' ? '1' : '2' , 71, 237); //(42) Criptosporidiose intestinal crônica > 1 mês
-    doc.text(criteriosDefinicaoAids.criterioCdc.herpesSimples = 'false' ? '1' : '2' , 71, 251); //(42) Herpes simples mucocutâneo > 1 mês
-    doc.text(criteriosDefinicaoAids.criterioCdc.histoplasmose = 'false' ? '1' : '2' , 71, 265); //(42) Histoplasmose disseminada
-    doc.text(criteriosDefinicaoAids.criterioCdc.isosporidiose = 'false' ? '1' : '2' , 71, 279); //(42) Isosporidiose intestinal crônica > 1 mês
-    doc.text(criteriosDefinicaoAids.criterioCdc.leucoencefalopatia = 'false' ? '1' : '2' , 310, 167); //(42) Leucoencefalopatia multifocal progressiva
-    doc.text(criteriosDefinicaoAids.criterioCdc.linfonaNaoHodkin = 'false' ? '1' : '2' , 310, 183); //(42) Linfoma não Hodgkin e outros linfomas
-    doc.text(criteriosDefinicaoAids.criterioCdc.linfomaPrimarioCerebro = 'false' ? '1' : '2' , 310, 197); //(42) Linfoma primário do cérebro
-    doc.text(criteriosDefinicaoAids.criterioCdc.micobacteriose = 'false' ? '1' : '2' , 310, 211); //(42) Micobacteriose disseminada exceto tuberculose e hanseníase
-    doc.text(criteriosDefinicaoAids.criterioCdc.pneumonia = 'false' ? '1' : '2' , 310, 224); //(42) Pneumonia por Pneumocystis carinii
-    doc.text(criteriosDefinicaoAids.criterioCdc.reativacaoDeDoencaDeChagas = 'false' ? '1' : '2' , 310, 238); //(42) Reativação de doença de Chagas (meningoencefalite e/ou miocardite)
-    doc.text(criteriosDefinicaoAids.criterioCdc.salmonelose = 'false' ? '1' : '2' , 310, 251); //(42) Salmonelose (sepse recorrente não-tifóide)
-    doc.text(criteriosDefinicaoAids.criterioCdc.toxoplasmose = 'false' ? '1' : '2' , 310, 266); //(42) Toxoplasmose cerebral
-    doc.text(criteriosDefinicaoAids.criterioCdc.contagemLinfocitos = 'false' ? '1' : '2' , 310, 279); //(42) Contagem de linfócitos T CD4+ menor que 350 cel/mm³
+    doc.text(criteriosDefinicaoAids.criterioCdc.cancerCervical = 'true' ? '1' : '2' , 71, 168); //(42) Câncer cervical invasiso
+    doc.text(criteriosDefinicaoAids.criterioCdc.candidoseEsofago = 'true' ? '1' : '2' , 71, 181); //(42) Candidose de esôfago
+    doc.text(criteriosDefinicaoAids.criterioCdc.candidoseTraqueia = 'true' ? '1' : '2' , 71, 195); //(42) Candidose de traquéia, brônquios ou pulmâo
+    doc.text(criteriosDefinicaoAids.criterioCdc.citomegalovirose = 'true' ? '1' : '2' , 71, 209); //(42) Citomegalovirose (exceto fígado, baço ou linfonodos)
+    doc.text(criteriosDefinicaoAids.criterioCdc.criptococoseExtrapulmonar = 'true' ? '1' : '2' , 71, 223); //(42) Criptococose extrapulmonar
+    doc.text(criteriosDefinicaoAids.criterioCdc.criptosporidioseIntestinalCronica = 'true' ? '1' : '2' , 71, 237); //(42) Criptosporidiose intestinal crônica > 1 mês
+    doc.text(criteriosDefinicaoAids.criterioCdc.herpesSimples = 'true' ? '1' : '2' , 71, 251); //(42) Herpes simples mucocutâneo > 1 mês
+    doc.text(criteriosDefinicaoAids.criterioCdc.histoplasmose = 'true' ? '1' : '2' , 71, 265); //(42) Histoplasmose disseminada
+    doc.text(criteriosDefinicaoAids.criterioCdc.isosporidiose = 'true' ? '1' : '2' , 71, 279); //(42) Isosporidiose intestinal crônica > 1 mês
+    doc.text(criteriosDefinicaoAids.criterioCdc.leucoencefalopatia = 'true' ? '1' : '2' , 310, 167); //(42) Leucoencefalopatia multifocal progressiva
+    doc.text(criteriosDefinicaoAids.criterioCdc.linfonaNaoHodkin = 'true' ? '1' : '2' , 310, 183); //(42) Linfoma não Hodgkin e outros linfomas
+    doc.text(criteriosDefinicaoAids.criterioCdc.linfomaPrimarioCerebro = 'true' ? '1' : '2' , 310, 197); //(42) Linfoma primário do cérebro
+    doc.text(criteriosDefinicaoAids.criterioCdc.micobacteriose = 'true' ? '1' : '2' , 310, 211); //(42) Micobacteriose disseminada exceto tuberculose e hanseníase
+    doc.text(criteriosDefinicaoAids.criterioCdc.pneumonia = 'true' ? '1' : '2' , 310, 224); //(42) Pneumonia por Pneumocystis carinii
+    doc.text(criteriosDefinicaoAids.criterioCdc.reativacaoDeDoencaDeChagas = 'true' ? '1' : '2' , 310, 238); //(42) Reativação de doença de Chagas (meningoencefalite e/ou miocardite)
+    doc.text(criteriosDefinicaoAids.criterioCdc.salmonelose = 'true' ? '1' : '2' , 310, 251); //(42) Salmonelose (sepse recorrente não-tifóide)
+    doc.text(criteriosDefinicaoAids.criterioCdc.toxoplasmose = 'true' ? '1' : '2' , 310, 266); //(42) Toxoplasmose cerebral
+    doc.text(criteriosDefinicaoAids.criterioCdc.contagemLinfocitos = 'true' ? '1' : '2' , 310, 279); //(42) Contagem de linfócitos T CD4+ menor que 350 cel/mm³
 
     doc.text(criteriosDefinicaoAids.criterioObito, 521, 307); //(43) Critério de óbito
 
@@ -486,12 +473,20 @@ module.exports = {
     doc.text(tratamento.unidadeSaudeTratamento, 360, 352); //(46) Unidade de saúde onde se realiza o tratamento
     doc.text(tratamento.cnesUnidadeSaude, 515, 352, { width: 245 }); //(46) Código
 
-    doc.text(evolucao.evolucaoDoCaso, 439, 367); //(47) Evolução do caso
+    // Se critério de óbito for 1 (sim), evolução do caso será 9 (ignorado)
+    if (criteriosDefinicaoAids.criterioObito == '1') {
+      doc.text('9', 439, 367); //(47) Evolução do caso
+    } else {
+      doc.text(evolucao.evolucaoDoCaso, 439, 367); //(47) Evolução do caso
+    }
+    
     doc.text(evolucao.dataObito, 492, 383); //(48) Data do óbito
 
     doc.text(investigador.nome, 70, 414); // Nome
     doc.text(investigador.funcao, 368, 414); // Função
     doc.text('', 73, 367); // Assinatura?
+
+    doc.text('https://digisinan.com.br/', 270, 670); // Link site
 
     let pdfEmBase64 = '';
     let stream = doc.pipe(new Base64Encode());

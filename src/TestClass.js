@@ -179,6 +179,8 @@ async function testMethod(request, response) {
     doc.text('Alguma função aqui', 368, 414); // Função
     doc.text('', 73, 367); // Assinatura?
 
+    doc.text('https://digisinan.com.br/', 270, 670); // Função
+      
     doc.end();
 
     return response.json({ status: 200 });
