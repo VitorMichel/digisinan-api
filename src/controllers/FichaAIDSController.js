@@ -429,7 +429,7 @@ module.exports = {
 
     doc.image(page2, 1, 1, { width: 610, height: 800 });
 
-    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.sarcomaDeKaposi = true ? '1' : '2' , 73, 42); //(41) Sarcoma de Kaposi
+    doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.sarcomaDeKaposi, 73, 42); //(41) Sarcoma de Kaposi
     doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculoseDisseminada = true ? '1' : '2' , 73, 56); //(41) Tuberculose disseminada/extra-pulmonar/não cavitária
     doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.candidoseOral = true ? '1' : '2' , 73, 70); //(41) Candidose oral ou leucoplasia pilosa
     doc.text(criteriosDefinicaoAids.criterioRioDeJaneiroCaracas.tuberculosePulmonarCavitaria = true ? '1' : '2' , 73, 83); //(41) Tuberculose pulmonar cavitária ou não especificada
