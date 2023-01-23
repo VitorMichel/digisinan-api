@@ -16,17 +16,16 @@ routes.get('/city', LocalizationtionController.getCity);
 routes.get('/country', LocalizationtionController.getCountry);
 
 // Usuario
+routes.post('/postUsuarioEstabelecimento', CreateController.postUsuarioEstabelecimento);
 routes.post('/postUser', CreateController.postUser);
 routes.get('/dadosConselho', CreateController.pegarDadosConselho);
 routes.get('/pegarUsuario', CreateController.pegarUsuarioPorCpf);
 routes.get('/pegarUsuarioEstabelecimento', CreateController.pegarUsuarioEstabelecimento);
-routes.get('/login', CreateController.login);
 routes.get('/occupation', OtherController.getOccupation);
-routes.post('postUsuarioEstabelecimento', CreateController.postUsuarioEstabelecimento);
 routes.get('/pegarUsuarioEstabelecimento', CreateController.getUsuarioEstabelecimento);
 
 // Estabelecimento
-routes.get('/pegarEstabelecimentoCarga', CreateController.getEstabelecimentoCarga);
+routes.get('   ', CreateController.getEstabelecimentoCarga);
 
 // Dados iguais para fichas
 routes.get('/tipoIdade', FichasController.dadoTipoIdade);
