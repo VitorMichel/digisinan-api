@@ -484,7 +484,7 @@ module.exports = {
 
     doc.text(investigador.nome, 70, 414); // Nome
     doc.text(investigador.funcao, 368, 414); // Função
-    doc.text('', 73, 367); // Assinatura?
+    doc.text((fetchImageinvestigador.assinatura), 73, 367); // Assinatura
 
     doc.text('https://digisinan.com.br/', 270, 670); // Link site
 
