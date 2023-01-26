@@ -39,9 +39,9 @@ async function PostEstabelecimento(estabelecimento) {
     let ieSituacaoCnes = estabelecimento.codigo_motivo_desabilitacao_estabelecimento;
     let ieSituacaoCliente = estabelecimento.codigo_motivo_desabilitacao_estabelecimento;
     if (ieSituacaoCnes == null)
-        ieSituacaoCnes = 'A';
+        ieSituacaoCnes = '0';
     if (ieSituacaoCliente == null)
-        ieSituacaoCliente = '0';
+        ieSituacaoCliente = 'A';
 
     let query = 'INSERT INTO ESTABELECIMENTO (NR_CNES, IE_SITUACAO_CNES, NR_CNPJ, NR_CNPJ_MANTENEDORA, DS_RAZAO_SOCIAL, DS_ESTABELECIMENTO, DS_ENDERECO, NR_ENDERECO, DS_COMPLEMENTO, DS_BAIRRO, NR_CEP, CD_MUNICIPIO_IBGE, IE_COMPETENCIA, NR_TELEFONE, DS_RAMAL, DS_EMAIL, DS_SENHA, DS_INICIAIS_ESTAB, IE_SITUACAO_CLIENTE, DT_AQUISICAO, DT_CANCELAMENTO)';
     query +=    `VALUES ('${estabelecimento.codigo_cnes}', '${ieSituacaoCnes}', '${estabelecimento.numero_cnpj}', '${estabelecimento.numero_cnpj_entidade}', '${estabelecimento.nome_razao_social}', '${estabelecimento.nome_fantasia}', '${estabelecimento.endereco_estabelecimento}', '${estabelecimento.numero_estabelecimento}',        null, '${estabelecimento.bairro_estabelecimento}', '${estabelecimento.codigo_cep_estabelecimento}', '${estabelecimento.codigo_ibge_municipio}', 'null', '${estabelecimento.numero_telefone_estabelecimento}', null, '${estabelecimento.endereco_email_estabelecimento}', 'null', '${siglaEstabelecimento}', '${ieSituacaoCliente}', '${date.toISOString().split('T')[0]}', null);`;
