@@ -500,7 +500,5 @@ module.exports = {
     stream.on('end', function () {
       response.json({ ficha: pdfEmBase64, assunto: emailSubject, filename: stringFileName });
     });
-
-    // response.json({message: 'terminou'});
   }
 }

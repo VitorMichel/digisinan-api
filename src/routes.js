@@ -25,7 +25,7 @@ routes.get('/occupation', OtherController.getOccupation);
 routes.get('/pegarUsuarioEstabelecimento', CreateController.getUsuarioEstabelecimento);
 
 // Estabelecimento
-routes.get('   ', CreateController.getEstabelecimentoCarga);
+routes.get('pegarEstabelecimentoCarga', CreateController.getEstabelecimentoCarga);
 
 // Dados iguais para fichas
 routes.get('/tipoIdade', FichasController.dadoTipoIdade);
