@@ -190,5 +190,19 @@ module.exports = {
 
             return response.json(results);
         });
+    },
+
+    async getEstabelecimentoCargaPeloCnes(request, response)
+    {
+        const { cnes } = request.query;
+
+        let query = `SELECT * FROM ESTABELECIMENTO_CARGA WHERE NR_CNES = '${cnes}';`;
+
+        connection.query(query, function (error, results) {
+            if (error)
+                return response.json({ status: 404, message: error.message });
+
+            return response.json(results);
+        });
     }
 };
