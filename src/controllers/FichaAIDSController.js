@@ -47,6 +47,8 @@ module.exports = {
   async postFichaAidsAdulto(request, response) {
     console.log("parou aqui");
 
+    console.log(request.body);
+
     const { dadosGerais } = request.body;
     const { notificacaoIndividual } = request.body;
     const { dadosResidencia } = request.body;
