@@ -15,7 +15,8 @@
     "node-pre-gyp": "0.12.0",
     "nodemon": "^2.0.15",
     "pdfkit": "^0.13.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "url-to-image": "^1.0.0"
   },
   "name": "api-digi-sinan",
   "version": "1.0.0",

@@ -3,6 +3,7 @@ const connection = getConnection();
 const PDFDocument = require('pdfkit');
 const { Base64Encode } = require('base64-stream');
 var axios = require('axios');
+var urlToImage = require('url-to-image');
 
 module.exports = {
     async dadoRelacoesSexuais(request, response)
@@ -267,7 +268,8 @@ module.exports = {
       const image = await axios
         .get(src, {
           responseType: 'arraybuffer'
-        })
+        });
+
       return image.data;
     }
 
@@ -477,14 +479,8 @@ module.exports = {
 
 
 
-
-
-
-
-    const assinaturaTeste = await fetchImage(investigador.assinatura);
-    doc.text(assinaturaTeste, 73, 367); // Assinatura
-
-
+    // let assinaturaImg = await fetchImage(investigador.assinatura);
+    // doc.image(assinaturaImg, 73, 367);
 
 
 
