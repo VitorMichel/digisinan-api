@@ -299,7 +299,7 @@ module.exports = {
 
     const data = request.body;
     // let signaturePath;
-    const namesToRemove = ['da', 'de', 'dos', 'do', 'De', 'Do', 'Dos', 'Da', 'De'];
+    const namesToRemove = ['da', 'de', 'dos', 'do', 'Da', 'De', 'Dos', 'Do'];
 
     let acronymHospital = getFirstLetter(removeNames(dadosGerais.unidadeSaude, namesToRemove));
     let acronymName = getFirstLetter(removeNames(notificacaoIndividual.nomePaciente, namesToRemove));
