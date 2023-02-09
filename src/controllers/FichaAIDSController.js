@@ -46,7 +46,7 @@ module.exports = {
 
   async postFichaAidsAdulto(request, response) {
     console.log("parou aqui");
-    
+
     // const { dadosGerais } = request.body;
     // const { notificacaoIndividual } = request.body;
     // const { dadosResidencia } = request.body;
@@ -277,16 +277,10 @@ module.exports = {
     var day = today.getDate() + "";
     var month = (today.getMonth() + 1) + "";
     var year = today.getFullYear() + "";
-    var hour = today.getHours() + "";
-    var minutes = today.getMinutes() + "";
-    var seconds = today.getSeconds() + "";
 
     day = checkZero(day);
     month = checkZero(month);
     year = checkZero(year);
-    hour = checkZero(hour);
-    minutes = checkZero(minutes);
-    seconds = checkZero(seconds);
 
     let todayDate = day + "." + month + "." + year;
 
@@ -297,8 +291,6 @@ module.exports = {
       return data;
     }
 
-    const data = request.body;
-    // let signaturePath;
     const namesToRemove = ['da', 'de', 'dos', 'do', 'Da', 'De', 'Dos', 'Do'];
 
     let acronymHospital = getFirstLetter(removeNames(dadosGerais.unidadeSaude, namesToRemove));
@@ -485,8 +477,7 @@ module.exports = {
     doc.text(investigador.nome, 70, 414); // Nome
     doc.text(investigador.funcao, 368, 414); // Função
 
-    const assinatura = await fetchImage(investigador.assinatura);
-    doc.text(assinatura, 73, 367); // Assinatura
+    doc.text(investigador.assinatura, 73, 367); // Assinatura
 
     doc.text('https://digisinan.com.br/', 270, 670); // Link site
 
