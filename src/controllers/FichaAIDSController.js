@@ -45,7 +45,7 @@ module.exports = {
     },
 
   async postFichaAidsAdulto(request, response, next) {
-    console.log('post ficha');
+    console.log(request.body);
 
     // const { dadosGerais } = request.body;
     // const { notificacaoIndividual } = request.body;
