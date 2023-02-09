@@ -475,12 +475,9 @@ module.exports = {
     doc.text(investigador.nome, 70, 414); // Nome
     doc.text(investigador.funcao, 368, 414); // Função
 
+    const assinaturaTeste = await fetchImage(investigador.assinatura);
 
-    let base64String = investigador.assinatura;
-
-    let base64image = base64String.split(';base64,').pop();
-
-    doc.text(base64image, 73, 367); // Assinatura
+    doc.text(assinaturaTeste, 73, 367); // Assinatura
 
     doc.text('https://digisinan.com.br/', 270, 670); // Link site
 
