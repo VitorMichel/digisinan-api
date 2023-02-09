@@ -271,6 +271,13 @@ module.exports = {
       return image.data;
     }
 
+    const fetchImagem = async (src) => {
+      const response = await fetch(src);
+      const image = await response.buffer();
+    
+      return image;
+    };
+
     var today = new Date();
     var day = today.getDate() + "";
     var month = (today.getMonth() + 1) + "";
@@ -475,9 +482,19 @@ module.exports = {
     doc.text(investigador.nome, 70, 414); // Nome
     doc.text(investigador.funcao, 368, 414); // Função
 
-    const assinaturaTeste = await fetchImage(investigador.assinatura);
 
+
+
+
+
+
+    const assinaturaTeste = await fetchImagem(investigador.assinatura);
     doc.text(assinaturaTeste, 73, 367); // Assinatura
+
+
+
+
+
 
     doc.text('https://digisinan.com.br/', 270, 670); // Link site
 
