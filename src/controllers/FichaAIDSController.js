@@ -3,7 +3,7 @@ const connection = getConnection();
 const PDFDocument = require('pdfkit');
 const { Base64Encode } = require('base64-stream');
 var axios = require('axios');
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
 module.exports = {
     async dadoRelacoesSexuais(request, response)
