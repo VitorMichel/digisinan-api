@@ -45,10 +45,6 @@ module.exports = {
     },
 
   async postFichaAidsAdulto(request, response) {
-    console.log("parou aqui");
-
-    console.log(request.body);
-
     const { dadosGerais } = request.body;
     const { notificacaoIndividual } = request.body;
     const { dadosResidencia } = request.body;
@@ -59,8 +55,8 @@ module.exports = {
     const { evolucao } = request.body;
     const { investigador } = request.body;
 
-    const { sanguinea } = antecedentesEpidemiologicos;
-    const { criterioRioDeJaneiroCaracas, criterioCdc } = criteriosDefinicaoAids;
+    // const { sanguinea } = antecedentesEpidemiologicos;
+    // const { criterioRioDeJaneiroCaracas, criterioCdc } = criteriosDefinicaoAids;
 
     let date = new Date();
 
@@ -479,7 +475,12 @@ module.exports = {
     doc.text(investigador.nome, 70, 414); // Nome
     doc.text(investigador.funcao, 368, 414); // Função
 
-    doc.text(investigador.assinatura, 73, 367); // Assinatura
+
+    let base64String = investigador.assinatura;
+
+    let base64image = base64String.split(';base64,').pop();
+
+    doc.text(base64image, 73, 367); // Assinatura
 
     doc.text('https://digisinan.com.br/', 270, 670); // Link site
 
