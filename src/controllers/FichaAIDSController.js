@@ -47,18 +47,18 @@ module.exports = {
   async postFichaAidsAdulto(request, response) {
     console.log("parou aqui");
 
-    // const { dadosGerais } = request.body;
-    // const { notificacaoIndividual } = request.body;
-    // const { dadosResidencia } = request.body;
-    // const { antecedentesEpidemiologicos } = request.body;
-    // const { dadosLaboratorio } = request.body;
-    // const { criteriosDefinicaoAids } = request.body;
-    // const { tratamento } = request.body;
-    // const { evolucao } = request.body;
-    // const { investigador } = request.body;
+    const { dadosGerais } = request.body;
+    const { notificacaoIndividual } = request.body;
+    const { dadosResidencia } = request.body;
+    const { antecedentesEpidemiologicos } = request.body;
+    const { dadosLaboratorio } = request.body;
+    const { criteriosDefinicaoAids } = request.body;
+    const { tratamento } = request.body;
+    const { evolucao } = request.body;
+    const { investigador } = request.body;
 
-    // const { sanguinea } = antecedentesEpidemiologicos;
-    // const { criterioRioDeJaneiroCaracas, criterioCdc } = criteriosDefinicaoAids;
+    const { sanguinea } = antecedentesEpidemiologicos;
+    const { criterioRioDeJaneiroCaracas, criterioCdc } = criteriosDefinicaoAids;
 
     let date = new Date();
 
