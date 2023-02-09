@@ -3,7 +3,6 @@ const connection = getConnection();
 const PDFDocument = require('pdfkit');
 const { Base64Encode } = require('base64-stream');
 var axios = require('axios');
-const fetch = require('node-fetch');
 
 module.exports = {
     async dadoRelacoesSexuais(request, response)
@@ -272,13 +271,6 @@ module.exports = {
       return image.data;
     }
 
-    const fetchImagem = async (src) => {
-      const response = await fetch(src);
-      const image = await response.buffer();
-    
-      return image;
-    };
-
     var today = new Date();
     var day = today.getDate() + "";
     var month = (today.getMonth() + 1) + "";
@@ -489,7 +481,7 @@ module.exports = {
 
 
 
-    const assinaturaTeste = await fetchImagem(investigador.assinatura);
+    const assinaturaTeste = await fetchImage(investigador.assinatura);
     doc.text(assinaturaTeste, 73, 367); // Assinatura
 
 
